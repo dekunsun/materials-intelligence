@@ -1,0 +1,7 @@
+gate,name_en,name_zh,criterion_en,criterion_zh
+1,Buyer Need & Acceptance Criteria,买家需求与验收标准,"A clear problem, alternatives and acceptance targets","有明确的问题、替代方案和验收目标"
+2,Computational Candidate & Prediction,计算候选与预测,"Candidates, predicted values and model provenance","有候选、预测值和模型来源"
+3,Independent Computational Evaluation,独立的计算评估,"Baselines, error analysis and boundaries","有基线、误差分析和适用边界"
+4,Physical Synthesis & Measurement,合成与测量,"Sample preparation, structural and property experiments","样品制备，结构和物性实验"
+5,Device / System Validation,器件或系统验证,"Performance and reliability under relevant application conditions","在相关应用条件下验证性能和可靠性"
+6,Buyer Qualification & Adoption,买家认证与采用,"External buyer qualification, purchase or actual use","外部买家认证、采购或实际采用"
