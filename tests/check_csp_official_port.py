@@ -11,7 +11,7 @@ Usage: .venv/bin/python tests/check_csp_official_port.py
 """
 import sys, json, pathlib, importlib.util, types
 import numpy as np, pandas as pd
-ROOT = pathlib.Path("/Users/xtc/Downloads/materials-intelligence")
+ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/"src"))
 from csp.discovery_metrics import prepare, pred_hull
 SRC = ROOT/"data/raw/mbd_src/matbench-discovery"
