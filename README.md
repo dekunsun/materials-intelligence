@@ -105,13 +105,14 @@ PRODUCT_PLAN.md 最初的落地方案（2026-11-20），保留作为记录
 
 本仓库不重新分发任何原始数据。
 
+代码（`src/`、`board/`、`tests/`）采用 MIT 许可，见 [LICENSE](LICENSE)。报告、备忘录、关卡文件和本项目整理的证据表不在 MIT 许可范围内；第三方数据沿用上游许可。
+
 ## 局限
 
 - 两个重新计分的模块，真值都是 DFT，不是合成或实测。
 - 电池回测的"实验次数"是读出已发表的数，不是实验成本；没有任何一项投入的真实成本数据。
 - 市场层的很多数字来自一个未公开的系列文章，还没有核实，看板里用灰色标出。
 - 三种视角（科学验证、商业策略、S&O）只用来组织问题，不代表任何人的意见。
-- 还没有选择开源许可证。
 
 ---
 
@@ -218,10 +219,11 @@ PRODUCT_PLAN.md the original build plan (20 November 2026), kept as a record
 
 This repository does not redistribute any raw data.
 
+The code (`src/`, `board/`, `tests/`) is MIT licensed; see [LICENSE](LICENSE). The reports, memos, gate files and the evidence tables compiled for this project are not covered by the MIT licence; third-party data keeps its upstream licence.
+
 ### Limits
 
 - In both re-scoring modules the truth is DFT, not synthesis or measurement.
 - The battery backtest's "experiment count" is reading a published number, not an experiment cost; there is no real cost data for any investment.
 - Many market-layer numbers come from an unpublished article series and are not yet verified; the board shows them in grey.
 - The three lenses (scientific validation, commercial strategy, S&O) organise the questions; they do not represent anyone's views.
-- No open-source licence has been chosen yet.
