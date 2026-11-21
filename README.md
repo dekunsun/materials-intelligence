@@ -72,6 +72,10 @@ python3.12 -m venv .venv
 .venv/bin/python src/csp/run_screening.py
 .venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
 
+# CSP 随机移除对照（只生成划分；训练是付费计算，见 modules/csp/RANDOM_REMOVAL_CONTROL.md）
+.venv/bin/python -I src/csp/fetch_csp_ablation.py
+.venv/bin/python -I src/csp/random_removal_control.py
+
 # 对照官方实现
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
 .venv/bin/python tests/check_csp_official_port.py
@@ -185,6 +189,10 @@ python3.12 -m venv .venv
 .venv/bin/python -I src/csp/fetch_discovery.py
 .venv/bin/python src/csp/run_screening.py
 .venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
+
+# CSP random-removal control (builds the splits only; training is paid compute, see modules/csp/RANDOM_REMOVAL_CONTROL.md)
+.venv/bin/python -I src/csp/fetch_csp_ablation.py
+.venv/bin/python -I src/csp/random_removal_control.py
 
 # Checks against the official implementation
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>

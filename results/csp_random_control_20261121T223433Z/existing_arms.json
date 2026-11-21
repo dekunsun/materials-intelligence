@@ -1,0 +1,35 @@
+{
+  "status": "post-hoc (the counts were read before this script was written)",
+  "summary_recomputed_from_per_target": true,
+  "mismatches": [],
+  "equicsp_targets": 11,
+  "consensus": {
+    "baseline": 8,
+    "ABC2D6": 8,
+    "PEROV": 3
+  },
+  "fit": {
+    "baseline": 8,
+    "ABC2D6": 10,
+    "PEROV": 7
+  },
+  "ABC2D6_to_PEROV_consensus_lost": [
+    "mp-12449",
+    "mp-16307",
+    "mp-19093",
+    "mp-6389",
+    "mp-6603"
+  ],
+  "ABC2D6_to_PEROV_consensus_gained": [],
+  "ABC2D6_to_PEROV_fit_lost": [
+    "mp-1215245",
+    "mp-19093",
+    "mp-6389"
+  ],
+  "ABC2D6_to_PEROV_fit_gained": [],
+  "baseline_to_ABC2D6_fit_gained": [
+    "mp-1215245",
+    "mp-557387"
+  ],
+  "reading": "ABC2D6 and PEROV share recipe, seed and checkpoint selection, so this contrast is free of the paper's checkpoint-selection confound. It is not free of training-set size (PEROV has 1,268 fewer training structures) or of run-to-run noise (one run per arm; ABC2D6 alone moved fit from 8 to 10)."
+}

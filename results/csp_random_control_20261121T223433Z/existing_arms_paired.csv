@@ -1,0 +1,12 @@
+material_id,base_fit,base_cons,abc2d6_fit,abc2d6_cons,perov_fit,perov_cons
+mp-6231,True,True,True,True,True,True
+mp-19093,True,True,True,True,False,False
+mp-19274,True,True,True,True,True,True
+mp-6389,True,True,True,True,False,False
+mp-16307,True,True,True,True,True,False
+mp-557387,False,False,True,False,True,False
+mp-6603,True,True,True,True,True,False
+mp-1215245,False,False,True,False,False,False
+mp-10321,True,True,True,True,True,True
+mp-12449,True,True,True,True,True,False
+mp-556434,False,False,False,False,False,False

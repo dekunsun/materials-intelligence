@@ -1,0 +1,78 @@
+{
+  "question": "Is EquiCSP's loss of 1:1:2:6 consensus recoveries after perovskite-framework removal specific to those structures, or would removing the same number of random structures cause it too?",
+  "model": "EquiCSP, recipe of the paper's ablation/PROTOCOL.md: 106,000 optimizer steps, effective batch 256 (64 x 4 accumulation), FP32, validation-selected checkpoint; never initialised from a published checkpoint",
+  "targets": "the 11 ABC2D6 targets of T180 (benchmark_deep_csp data/testsets/v3.1), 20 candidates each",
+  "arms": {
+    "ABC2D6": "remove the ABC2D6 family (1,551 train / 487 val), as released by the paper",
+    "PEROV": "ABC2D6 family plus 1,268 train / 410 val perovskite-framework structures, as released by the paper",
+    "R1-R3": "ABC2D6 family plus 1,268 train / 410 val drawn uniformly at random, without replacement, from the structures left after the ABC2D6 removal that are not in the PEROV lists; one draw per arm"
+  },
+  "runs": [
+    {
+      "arm": "ABC2D6",
+      "seed": 42,
+      "role": "runner check (paper: consensus 8 of 11)"
+    },
+    {
+      "arm": "PEROV",
+      "seed": 42,
+      "role": "runner check (paper: consensus 3 of 11) and PEROV run 1"
+    },
+    {
+      "arm": "PEROV",
+      "seed": 43,
+      "role": "PEROV run 2"
+    },
+    {
+      "arm": "PEROV",
+      "seed": 44,
+      "role": "PEROV run 3"
+    },
+    {
+      "arm": "R1",
+      "seed": 42,
+      "role": "random run 1"
+    },
+    {
+      "arm": "R2",
+      "seed": 43,
+      "role": "random run 2"
+    },
+    {
+      "arm": "R3",
+      "seed": 44,
+      "role": "random run 3"
+    }
+  ],
+  "optional_runs": [
+    {
+      "arm": "ABC2D6",
+      "seed": 43
+    },
+    {
+      "arm": "ABC2D6",
+      "seed": 44
+    }
+  ],
+  "draw_seeds": {
+    "R1": 2026112101,
+    "R2": 2026112102,
+    "R3": 2026112103
+  },
+  "primary_metric": "consensus: number of the 11 targets for which one candidate passes StructureMatcher (ltol 0.2, stol 0.3, angle_tol 5) and has the target's space group (symprec 0.1)",
+  "secondary_metric": "fit: number of the 11 targets matched by at least one of the 20 candidates",
+  "decision_rules": {
+    "G0_runner": "Our ABC2D6 seed-42 and PEROV seed-42 runs must give consensus within 1 of the paper's 8 and 3. If either misses, stop: audit the runner before attributing anything (no further runs are spent).",
+    "template_specific": "Supported if every R run beats every PEROV run on consensus AND mean(R) - mean(PEROV) >= 3.",
+    "data_amount": "Supported if mean(R) - mean(PEROV) <= 1: removing the same number of random structures does about as much damage.",
+    "not_reproduced": "If mean(PEROV) >= 6, the 8 -> 3 drop does not survive repeated seeds; report that and stop.",
+    "otherwise": "Inconclusive. Report all runs; no further runs without a new written decision.",
+    "note": "With 3 vs 3 runs the smallest exact one-sided permutation p-value is 1/20 = 0.05; we report counts per run and per target and do not claim more than that."
+  },
+  "cost_gate": "Before any full run: one smoke run of 1,000 steps on the rented GPU to measure time per step, then report the projected cost of all runs and wait for the owner's go-ahead.",
+  "limits": [
+    "Random draws are not matched on composition or number of species to the perovskite structures; the control tests 'these structures' against 'any structures of the same count', nothing finer.",
+    "11 targets: one target is 9 percentage points.",
+    "One model (EquiCSP), one family (perovskite frameworks)."
+  ]
+}

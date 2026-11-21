@@ -1,0 +1,76 @@
+{
+  "mp20_train": 27136,
+  "mp20_val": 9047,
+  "arms": {
+    "ABC2D6": {
+      "train": {
+        "removed": 1551,
+        "remaining": 25585
+      },
+      "val": {
+        "removed": 487,
+        "remaining": 8560
+      }
+    },
+    "PEROV": {
+      "train": {
+        "removed": 2819,
+        "extra_beyond_family": 1268,
+        "remaining": 24317
+      },
+      "val": {
+        "removed": 897,
+        "extra_beyond_family": 410,
+        "remaining": 8150
+      }
+    },
+    "R1": {
+      "train": {
+        "removed": 2819,
+        "random_extra": 1268,
+        "remaining": 24317,
+        "removed_ids_sha256": "4d2935bbeb48ed8141107a899d292f05f064ff9a372d8ea237311ae637790c89"
+      },
+      "val": {
+        "removed": 897,
+        "random_extra": 410,
+        "remaining": 8150,
+        "removed_ids_sha256": "ef5d6c426b8a2807aebe12b5eff365f1469435950253a6b4faa94d36a66afab4"
+      }
+    },
+    "R2": {
+      "train": {
+        "removed": 2819,
+        "random_extra": 1268,
+        "remaining": 24317,
+        "removed_ids_sha256": "385349c587e641b93c4c1db230970bef9ce9d66554bb46f219c3067711a38388"
+      },
+      "val": {
+        "removed": 897,
+        "random_extra": 410,
+        "remaining": 8150,
+        "removed_ids_sha256": "cc5053f059e3df4a0abaa855f1678025195d44fbc4a4d8c0292eb0ce725cdb94"
+      }
+    },
+    "R3": {
+      "train": {
+        "removed": 2819,
+        "random_extra": 1268,
+        "remaining": 24317,
+        "removed_ids_sha256": "9710271da29867ce331f5cf6e4e142ec2ee635360d9d568d2f4e568b5944b81f"
+      },
+      "val": {
+        "removed": 897,
+        "random_extra": 410,
+        "remaining": 8150,
+        "removed_ids_sha256": "f8462fe0a50406900b4eee598496fca76ffebbc5403ba4bbb9a884b9a4e7c2a7"
+      }
+    }
+  },
+  "pairwise_overlap_random_extra_train": {
+    "R1&R2": 74,
+    "R1&R3": 62,
+    "R2&R3": 65
+  },
+  "expected_overlap_if_independent": 66.1
+}

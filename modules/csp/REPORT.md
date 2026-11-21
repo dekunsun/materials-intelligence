@@ -106,9 +106,11 @@ AI 能一次产出几十万个候选晶体结构，但每验证一个都要花�
 - **还没证明什么。**
     - 没有同等规模的随机移除对照（ABC₂ 移除 4,026 个训练结构，AB 只移除 1,038 个）。
     - 每组只重训一次。
+    - 基线用上游发布的最终检查点，消融模型用按验证集选的检查点，论文自己也写了这会混进比较。
     - 框架层面的移除只做了钙钛矿一个家族、一个模型。
     - 没有在训练集之外的独立数据库上检验。
-- **结论。** 现有证据支持"在当前基准上，生成模型没有超过模板方法"，不支持"生成模型不能产生新结构"。决定这个结论站不站得住的，是随机移除对照和多种子重训，计算花费都不大。
+- **结论。** 现有证据支持"在当前基准上，生成模型没有超过模板方法"，不支持"生成模型不能产生新结构"。决定这个结论站不站得住的，是随机移除对照和多种子重训。
+- **2026-11-21 更新：对照已预登记，还没训练。** 论文公开的逐目标结果里，ABC2D6 组和 PEROV 组的训练方案完全相同：PEROV 多去掉 1,268 个钙钛矿框架结构，一致恢复丢了 5 个、一个没多。这排除了检查点选择的影响，但排除不了数据变少和单次训练的波动。规则、划分和花费关卡见 [RANDOM_REMOVAL_CONTROL.md](RANDOM_REMOVAL_CONTROL.md)。训练是付费计算，花费要先用冒烟测试测出来。
 
 **和 D2A 合起来看。** D2A 的候选来自对已知结构做元素替换，按筛选时的信息判断，新结构类型只占 2%；D2B 说明在真正要预测新结构时，生成模型还没有超过模板。所以"AI 能发现新结构"这个卖点，目前缺的是**离已知原型更远**的测试证据，而不是更高的排行榜分数。
 
@@ -278,9 +280,11 @@ This part runs no experiments; it audits one benchmark paper and one review. All
 - **What it has not yet established.**
     - There is no random-removal control of the same size (removing ABC₂ removes 4,026 training structures; removing AB removes only 1,038).
     - Each group is retrained only once.
+    - The baseline uses the upstream final checkpoint while the ablated models use the validation-selected checkpoint; the paper itself notes that this enters the comparison.
     - Framework-level removal was done for only one family (perovskites) and one model.
     - It was not tested on an independent database outside the training set.
-- **Conclusion.** The current evidence supports "on current benchmarks, generative models do not outperform template methods". It does not support "generative models cannot produce new structures". What decides whether this conclusion holds is a random-removal control and multi-seed retraining, and neither costs much compute.
+- **Conclusion.** The current evidence supports "on current benchmarks, generative models do not outperform template methods". It does not support "generative models cannot produce new structures". What decides whether this conclusion holds is a random-removal control and multi-seed retraining.
+- **Update 2026-11-21: the control is pre-registered; no training yet.** In the paper's released per-target results, the ABC2D6 and PEROV arms use exactly the same recipe: PEROV removes a further 1,268 perovskite-framework structures and loses 5 consensus recoveries while gaining none. That rules out checkpoint selection, but not less data or single-run noise. Rules, splits and the cost gate are in [RANDOM_REMOVAL_CONTROL.md](RANDOM_REMOVAL_CONTROL.md). Training is paid compute, and its cost has to be measured with a smoke test first.
 
 **Taken together with D2A.** D2A's candidates come from element substitution on known structures; judged by screening-time information, new structure types make up only 2%. D2B shows that when new structures really have to be predicted, generative models do not yet outperform templates. So what the selling point "AI can discover new structures" currently lacks is test evidence **further from known prototypes**, not higher leaderboard scores.
 
