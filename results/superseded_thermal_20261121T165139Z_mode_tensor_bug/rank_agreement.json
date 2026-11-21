@@ -1,0 +1,20 @@
+{
+  "point": {
+    "srme_vs_sre_high": 0.6473740734978329,
+    "srme_vs_srme_high": 0.9808542345482558,
+    "srme_vs_spearman_log": 0.6202372741256849,
+    "srme_vs_recall@5": 0.5386386557469295,
+    "srme_vs_recall@10": 0.5442723495434252
+  },
+  "bootstrap_95": {
+    "srme_vs_sre_high": [
+      0.6174113648602118,
+      0.6630609593802456
+    ],
+    "srme_vs_spearman_log": [
+      0.5740328379828004,
+      0.6724184123416895
+    ]
+  },
+  "note": "positive = models that rank better on SRME also rank better on the other metric"
+}

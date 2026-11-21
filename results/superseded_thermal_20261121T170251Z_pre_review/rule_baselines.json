@@ -1,0 +1,18 @@
+{
+  "lightest_first": {
+    "recall@5": 0.4,
+    "recall@10": 0.6,
+    "spearman_log": 0.5200521748542908,
+    "rank_of_zb_BAs": 33,
+    "rank_of_wz_BAs": 34,
+    "status": "post-hoc"
+  },
+  "tetrahedral_then_lightest": {
+    "recall@5": 0.4,
+    "recall@10": 0.6,
+    "spearman_log": 0.7885274968874169,
+    "rank_of_zb_BAs": 21,
+    "rank_of_wz_BAs": 22,
+    "status": "post-hoc"
+  }
+}

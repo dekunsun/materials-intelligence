@@ -1,0 +1,10 @@
+{
+  "mp_2023_ids": 154718,
+  "mp_rows_with_labels": 154718,
+  "distinct_bare_prototypes_in_mp2023": 53018,
+  "uniq_pool_by_novelty_bin": {
+    "common type (>=10)": 133638,
+    "rare type (1-9)": 58147,
+    "new type (0 in MP)": 23703
+  }
+}

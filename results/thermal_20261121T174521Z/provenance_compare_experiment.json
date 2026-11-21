@@ -1,0 +1,33 @@
+{
+  "step": "compare_experiment",
+  "status": "post-hoc",
+  "note": "n=7, descriptive",
+  "utc": "2026-11-21T17:48:01.106636+00:00",
+  "seed": null,
+  "python": "3.12.4",
+  "packages": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "pymatgen": "2026.10.24",
+    "matplotlib": "3.11.2",
+    "PyYAML": "6.0.3",
+    "certifi": "2026.11.20"
+  },
+  "inputs": {
+    "data/thermal/experimental_kappa.csv": "7ec2cd5de60c0bbf720345eac434743b08a4696d366527adf05cf15e16df3b15",
+    "results/thermal_20261121T174521Z/per_material.csv": "6186a92405dfbcace6aeb7c8898381769587940a74eeeb7949f6e21773f8a7a4",
+    "results/thermal_20261121T174521Z/model_metrics.csv": "d164170fcf7b93308aa832b6ba07e1517af6674d39f3cd3e8379bbb58dc7d409"
+  },
+  "code": {
+    "src/thermal/analyze_thermal.py": "ecfcb0059fcb233c2ebe5fc809ee8699c907a06f77a62ab9c91d3d1ab94a16de",
+    "src/thermal/compare_experiment.py": "40cedbf69d851643f82642b511d951ea8c9825f331105ac9ae9c1cedf7d64d22",
+    "src/thermal/fetch_kappa.py": "a963ea06b85e370dcd9ec67b76bad90c467f226f2703eeead56e9f0707476574",
+    "src/thermal/kappa_metrics.py": "9cc8b08f24de598aa9fa4296533c2846e0a6415d43265451e9432def94939542",
+    "src/thermal/plot_thermal.py": "24ad5336ec563309d467b82453a3007c7e31aad29c71f91db31f0cbc6bb86c89",
+    "src/thermal/provenance.py": "405464f01f707dfc81c900aeb58f843e245feb9c862cb2c9e6ae060a7cbfd08d",
+    "src/thermal/run_rescore.py": "141e61189e90d3db70cad28203c682bf3bc20282a1f8dcb424bcbd6e716a1604"
+  },
+  "git_commit": null,
+  "git_note": "project not under git yet; code identified by file hashes"
+}

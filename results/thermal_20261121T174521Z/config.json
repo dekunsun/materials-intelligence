@@ -1,0 +1,26 @@
+{
+  "question": "Does the leaderboard metric for lattice thermal conductivity (kappa_SRME) pick the models that would best find high-kappa materials for heat spreading?",
+  "data": "Matbench Discovery @ 6d587c184cdb4a4865dc0b15b04a5e6d77ed464f: phononDB PBE (no NAC) reference, 103 binaries, 300 K; every model with a kappa-103 prediction file",
+  "reproduction_level": "re-score from published predictions; no phonon calculation re-run",
+  "leaderboard_match_tolerance": 0.0005,
+  "tiers_W_per_mK": {
+    "high": ">= 100 (17 materials)",
+    "mid": "10 to 100",
+    "low": "< 10",
+    "beyond_copper": ">= 400 (5 materials: BAs x2, BN x2, zinc-blende BP)"
+  },
+  "tier_note": "Tiers were fixed after looking at the DFT reference values but before scoring any prediction file. 100 W/mK is a round number near the conductivity of common packaging ceramics; 400 W/mK is roughly copper.",
+  "screening_metrics": [
+    "recall@5 and recall@10: share of the DFT top-k materials (by kappa) that the model also ranks in its top k",
+    "spearman_log: Spearman correlation of log kappa over all 103",
+    "sre_high: mean SRE over the 17 high-tier materials",
+    "srd_high: mean SRD over the high tier (sign = systematic over/under-prediction)"
+  ],
+  "rank_agreement": "Spearman correlation between the model ranking by kappa_SRME and the ranking by each screening metric; 95% percentile bootstrap over materials (2000 resamples, materials resampled within tier so each resample keeps 17 high-tier materials)",
+  "censoring": "As on the leaderboard: SRME = 2 for imaginary modes, broken symmetry or missing values. SRE/SRD are not censored for imaginary modes (leaderboard behaviour), only for missing kappa (SRD = -2). Missing k_pred ranks last in screening.",
+  "limits": [
+    "DFT (PBE, three-phonon, no NAC) is the reference, not experiment",
+    "103 simple binaries; diamond and Si are absent; some entries are polymorphs that are not the commercial phase",
+    "intrinsic lattice kappa only; device heat flow depends on interfaces, thickness, defects and temperature"
+  ]
+}

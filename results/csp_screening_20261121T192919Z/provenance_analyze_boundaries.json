@@ -1,0 +1,47 @@
+{
+  "step": "analyze_boundaries",
+  "status": "mixed: see 'status' column of boundary_intervals.csv",
+  "note": "cluster bootstrap by chemical system; 1,000 resamples for differences, 500 for within-bin budgets",
+  "utc": "2026-11-21T19:51:12.618375+00:00",
+  "seed": 11,
+  "python": "3.12.4",
+  "packages": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "pymatgen": "2026.10.24",
+    "matplotlib": "3.11.2",
+    "PyYAML": "6.0.3",
+    "certifi": "2026.11.20"
+  },
+  "inputs": {
+    "results/csp_screening_20261121T192919Z/model_metrics.csv": "2b151933a3911a5a72776121abeb762a0ad9da54f29dacac33eca0c23601ae91",
+    "data/raw/discovery/6d587c184cdb4a4865dc0b15b04a5e6d77ed464f/MANIFEST.json": "2256e738d16a77ab9b4665b642958e2fcb91e16ce9bc9f4d1bf6ccfb4755686f",
+    "data/raw/discovery/6d587c184cdb4a4865dc0b15b04a5e6d77ed464f/wbm_summary.csv.gz": "adbdd8b24086d4888195d8894c77f6d5fb29ce33bbb5d7d3898b4d79e964dc54",
+    "data/raw/discovery/6d587c184cdb4a4865dc0b15b04a5e6d77ed464f/mp_energies.csv.gz": "f1d083a56cacb02cdcb556830f58216890f84503c6a19e1c53bf92939aaedb8e",
+    "data/raw/discovery/6d587c184cdb4a4865dc0b15b04a5e6d77ed464f/mp2023_material_ids.txt": "a58c16bd741aec6d8446438e8603c0e072b85ab0783a0ba9c27d30285d586338"
+  },
+  "code": {
+    "src/battery/analyze.py": "54a0da6738ac293ab4fe281e171e18a013e1b6a9c6352e4b204b2a3d6b8ea511",
+    "src/battery/campaign.py": "c515a565b82080fd46ba59a2531a0560d07f67a3187276b8c834b285abd74803",
+    "src/battery/data.py": "272e2ce1ad44b6e208bc21185fc8b21dd660d656b83bd93ee4128c625310eaa1",
+    "src/battery/fetch_obelix.py": "42f4b6e182f5d2847d0f81d54b5afbb80c4a352eaed7427e2bd1ae8bb0b420d6",
+    "src/battery/plot_results.py": "75edfa8f28a3ed6b0b12d15d0f62a369a0f378748a2aa55ff50fb5fa80bc2837",
+    "src/battery/run_experiment.py": "5854cbe7849ed275f445850b1f2d58324f914a899ae9dd35eb5eda73d87edaee",
+    "src/battery/run_grouped.py": "74984a43c5b2f3368dfe5e4b830d0d658b6fe7eba04726056a22bfb25f158ef7",
+    "src/csp/analyze_boundaries.py": "61bd844f7b92413cca770fd46ce73c03bad4a09cf8c728cb9435c5b4993cc7b5",
+    "src/csp/discovery_metrics.py": "0cb73210a63119b1b844c25ce0a2706a61dc8d878ae5837c3bf35c1e68447c56",
+    "src/csp/fetch_discovery.py": "6f3dd9f37cb4007dbe415a72c4242f2486e4f1092119f36c4ab303c084062794",
+    "src/csp/plot_screening.py": "06db991e46d4b4e9165f00aa9176f994b820a47a973253558c65cf6f43dde5cc",
+    "src/csp/run_screening.py": "00390ab95b1212e5d23beea194ba378e3bbc930ba2e22d3eef902ee07758dda5",
+    "src/thermal/analyze_thermal.py": "ecfcb0059fcb233c2ebe5fc809ee8699c907a06f77a62ab9c91d3d1ab94a16de",
+    "src/thermal/compare_experiment.py": "40cedbf69d851643f82642b511d951ea8c9825f331105ac9ae9c1cedf7d64d22",
+    "src/thermal/fetch_kappa.py": "a963ea06b85e370dcd9ec67b76bad90c467f226f2703eeead56e9f0707476574",
+    "src/thermal/kappa_metrics.py": "9cc8b08f24de598aa9fa4296533c2846e0a6415d43265451e9432def94939542",
+    "src/thermal/plot_thermal.py": "8ab6ad55fd8a5587fb62d20ac9d82a5d4b508867adc588728e2ce3e82abc328f",
+    "src/thermal/provenance.py": "92cf5afb4be8d05c381c7dbf470c62e07d7e0dcd9803aff82c7bfbd80da68578",
+    "src/thermal/run_rescore.py": "141e61189e90d3db70cad28203c682bf3bc20282a1f8dcb424bcbd6e716a1604"
+  },
+  "git_commit": null,
+  "git_note": "project not under git yet; code identified by file hashes"
+}

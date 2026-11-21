@@ -1,0 +1,30 @@
+{
+  "novelty_relaxed_bare_label": {
+    "common type (>=10)": 133638,
+    "rare type (1-9)": 58147,
+    "new type (0 in MP)": 23703
+  },
+  "novelty_relaxed_invariant_label": {
+    "common type (>=10)": 166803,
+    "rare type (1-9)": 40856,
+    "new type (0 in MP)": 7829
+  },
+  "novelty_initial_invariant_label": {
+    "common type (>=10)": 170875,
+    "rare type (1-9)": 40358,
+    "new type (0 in MP)": 4255
+  },
+  "mp2023_ids": 154718,
+  "lithium": {
+    "no Li": 208636,
+    "contains Li": 6852
+  },
+  "near_hull_true_distance": {
+    "|hull| > 0.05": 149430,
+    "|hull| <= 0.05": 66058
+  },
+  "relabelled_during_relaxation_all": 20358,
+  "relabelled_during_relaxation_among_new_relaxed_type": 4687,
+  "new_relaxed_type_with_initial_type_in_mp": 4262,
+  "n_new_relaxed_type": 7829
+}

@@ -1,0 +1,8 @@
+material_id,material,phase,commercial_phase,exp_low,exp_high,exp_note,source,source_read,exp_is_lower_bound,commercial_grade_low,commercial_grade_high
+mp-10044,BAs,zinc-blende,yes,1000,1300,"single crystals, 2018; Tian ~900 bulk average; 2025 report >2100 not used",Kang et al. Science 361:575 (2018) doi:10.1126/science.aat5522; Li et al. Science 361:579 (2018) doi:10.1126/science.aat8982,primary (research agent),False,,
+mp-1639,BN,zinc-blende (cubic),yes,850,880,"natural isotopes; FDTR 850, TDTR 880; enriched ~1650 not comparable",Chen et al. Science 367:555 (2020) doi:10.1126/science.aaz6149,primary (research agent),False,,
+mp-1479,BP,zinc-blende,yes,490,490,natural isotopes,Chen et al. Science 367:555 (2020) doi:10.1126/science.aaz6149,primary (research agent),False,,
+mp-8062,SiC,3C (zinc-blende),"yes (4H is the main commercial polytype, not in the set)",500,500,"reported as >500, isotropic, wafer-scale; lower bound",Cheng et al. Nat. Commun. 13:7201 (2022) doi:10.1038/s41467-022-34943-w,primary (research agent),True,,
+mp-2542,BeO,wurtzite,yes,370,370,3.7 W/cm K,Slack & Austerman J. Appl. Phys. 42:4713 (1971) doi:10.1063/1.1659844,primary abstract (research agent),False,,
+mp-661,AlN,wurtzite,yes,321,321,"thick MOCVD layer, intrinsic; commercial bulk 216-278",Cheng et al. Phys. Rev. Mater. 4:044602 (2020) arXiv:1911.01595,primary (research agent),False,216,278
+mp-804,GaN,wurtzite,yes,200,200,approximate,Zheng et al. Phys. Rev. Mater. 3:014601 (2019),primary abstract (research agent),False,,

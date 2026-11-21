@@ -1,0 +1,12 @@
+{
+  "status": "post-hoc",
+  "n_models": 62,
+  "high_worse_uncorrected": 4,
+  "high_better_uncorrected": 16,
+  "high_worse_bh": 1,
+  "high_better_bh": 12,
+  "expected_false_positives_per_side_uncorrected": 1.6,
+  "srd_valid_interval_below_0": 46,
+  "srd_valid_interval_above_0": 0,
+  "models_with_failed_high_predictions": 14
+}

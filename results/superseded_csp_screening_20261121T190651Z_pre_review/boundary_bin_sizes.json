@@ -1,0 +1,16 @@
+{
+  "novelty_bare_label": {
+    "common type (>=10)": 133638,
+    "rare type (1-9)": 58147,
+    "new type (0 in MP)": 23703
+  },
+  "novelty_invariant_label": {
+    "common type (>=10)": 166803,
+    "rare type (1-9)": 40856,
+    "new type (0 in MP)": 7829
+  },
+  "near_hull": {
+    "|hull| > 0.05": 149430,
+    "|hull| <= 0.05": 66058
+  }
+}

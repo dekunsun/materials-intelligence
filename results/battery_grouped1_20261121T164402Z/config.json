@@ -1,0 +1,18 @@
+{
+  "status": "post-hoc (designed after seeing battery_20261121T080824Z)",
+  "question": "Does the advantage of prior data survive when no doping-series neighbour of a candidate is in the prior?",
+  "data": "OBELiX @ 4eaac889809dd489e3bae468c45d5c0e02b9147a, same pool and features as the main run",
+  "series_definition": "connected components of compositions linked when standardized Euclidean distance < 1.0",
+  "folds": "5 folds of whole series, largest series first, each to the currently smallest fold",
+  "threshold_S_per_cm": 0.001,
+  "budget_experiments": 40,
+  "seeds_per_fold": 10,
+  "methods": [
+    "random",
+    "family_rule",
+    "bo_gp",
+    "screen_rf",
+    "bo_rf_prior"
+  ],
+  "rl": "not re-run (paused)"
+}

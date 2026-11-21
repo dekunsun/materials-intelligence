@@ -1,0 +1,21 @@
+{
+  "all": {
+    "point": 0.8128263890799207,
+    "ci95": [
+      0.7677831846432793,
+      0.8425269253246356
+    ]
+  },
+  "better_half_exploratory": {
+    "point": 0.35453846343425927,
+    "ci95": [
+      0.26571258682278226,
+      0.44905175193125874
+    ]
+  },
+  "n_models": 73,
+  "n_better_half": 37,
+  "primary_k_fraction": 0.01,
+  "n_clusters_chemsys": 74149,
+  "note": "cluster bootstrap over chemical systems; intervals are conditional on this set of 73 models (several are near-duplicate variants)"
+}

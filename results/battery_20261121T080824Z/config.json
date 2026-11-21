@@ -1,0 +1,49 @@
+{
+  "question": "How many experiments does each selection policy need to find solid electrolytes above a conductivity threshold?",
+  "data": "OBELiX @ 4eaac889809dd489e3bae468c45d5c0e02b9147a, room-temperature total ionic conductivity, duplicates merged by median log10",
+  "features": "composition only (38 features: Li fraction, element-property statistics, framework/anion element fractions)",
+  "primary_threshold_S_per_cm": 0.001,
+  "sensitivity_thresholds_S_per_cm": [
+    0.0001,
+    0.01
+  ],
+  "threshold_note": "1e-3 S/cm chosen before running as the primary gate; the buyer-side source for this number is still to be found (open item). 1e-4 is too easy here (45% of compositions pass).",
+  "budget_experiments": 40,
+  "metrics": [
+    "first_hit (experiments until the first composition above threshold; budget+1 if none)",
+    "to_5_hits (experiments until five compositions above threshold; budget+1 if not reached)",
+    "hits@10",
+    "hits@20",
+    "hits@40"
+  ],
+  "families": "oxide if O present; else sulfide if S or Se; else halide if Cl/Br/I/F; else other",
+  "splits": {
+    "official": "OBELiX train/test split; prior = train compositions, pool = test compositions",
+    "cv5": "5 folds over unique compositions; prior = other 4 folds, pool = held-out fold",
+    "family": "leave one chemistry family out (oxide, sulfide); prior = all other families, pool = that family. Tests whether prior data helps when the lab moves to a new chemistry."
+  },
+  "methods": [
+    "random",
+    "family_rule",
+    "bo_gp",
+    "screen_rf",
+    "bo_rf_prior",
+    "rl_reinforce"
+  ],
+  "seeds_official": 30,
+  "seeds_cv5_per_fold": 10,
+  "seeds_family": 10,
+  "rl": {
+    "algorithm": "REINFORCE, linear softmax, Adam lr 0.02, gamma 0.97, running per-step baseline",
+    "episodes": 1500,
+    "training_pool_size": 110,
+    "trained_on": "prior compositions only"
+  },
+  "ci": "95% percentile bootstrap over campaigns, 2000 resamples. Captures algorithm randomness and, for cv5, fold variation; it does not capture uncertainty about which materials the literature happened to report.",
+  "limits": [
+    "retrospective on materials already reported in papers, not new discovery",
+    "published conductivities skew toward successes; negative results are under-represented",
+    "composition features only; no structure",
+    "DFT is not involved; values are experimental measurements as curated by OBELiX"
+  ]
+}

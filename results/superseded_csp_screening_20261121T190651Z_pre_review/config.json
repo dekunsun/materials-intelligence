@@ -1,0 +1,36 @@
+{
+  "question": "AI produces many candidate crystal structures. With a fixed budget of validation calculations, which structures are worth validating, and does the leaderboard metric pick the model that fills that budget with the most truly stable structures?",
+  "data": "Matbench Discovery @ 6d587c184cdb4a4865dc0b15b04a5e6d77ed464f: WBM summary (256,963 structures; 215,488 unique prototypes), every model with a discovery prediction file",
+  "reproduction_level": "re-score from published formation-energy predictions; no relaxation re-run",
+  "truth": "DFT (MP2020-corrected) energy above the MP convex hull; a computational reference, not experiment",
+  "leaderboard_match_tolerance": {
+    "rates_and_errors": 0.0006,
+    "counts": 0
+  },
+  "decision_setting": "unique-prototype test set as the candidate pool; a validation budget of K structures chosen by lowest predicted hull distance",
+  "k_fractions": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1
+  ],
+  "primary_k_fraction": 0.01,
+  "hypotheses_stated_before_running": {
+    "H1": "Among models, the ranking by F1 differs from the ranking by precision@1% (Spearman < 0.9).",
+    "H2": "For each model, precision@K as K shrinks from 10% to 0.1% either keeps rising, plateaus or falls. 'Falls' (Goodhart-like) is defined as precision@0.1% below precision@1% with the bootstrap interval of the difference below 0. No direction is assumed.",
+    "H3": "Precision and recall are lower for candidates whose structure type (prototype label without elements) is rare or absent in the 2023 Materials Project snapshot."
+  },
+  "boundaries": {
+    "lithium": "composition contains Li vs not",
+    "structure_type_novelty": "count of the bare prototype label (protostructure_spglib before ':') among Materials Project entries in the 2023-02-07 snapshot used by the benchmark: 0, 1-9, >=10",
+    "near_hull": "|DFT hull distance| <= 0.05 eV/atom vs further away"
+  },
+  "display_models": "the 10 best by unique-prototype F1, plus older baselines present in the data (Voronoi RF, CGCNN, MEGNet, BOWSR, CHGNet, M3GNet, MACE-MP-0)",
+  "bootstrap": "structures resampled with replacement, 500 resamples, K taken as a fraction of the resample; seed 2026",
+  "limits": [
+    "WBM candidates come from element substitution on known MP structures, so most are near known prototypes",
+    "truth is DFT, not synthesis or measurement",
+    "precision@K treats every validation as equal cost"
+  ]
+}
