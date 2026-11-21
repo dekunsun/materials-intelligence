@@ -96,6 +96,39 @@ PRE_REGISTERED = {
 }
 
 
+# Amendments are appended, never edited, and each must be committed before any training run.
+AMENDMENTS = [
+    {
+        "id": "A1",
+        "date": "2026-11-21",
+        "made_before_any_training": True,
+        "reason": "Review of the committed pre-registration (commit 4220c46) found gaps in sampling seeds, rule order, "
+                  "what the comparison is between, and how strong a claim each outcome allows.",
+        "changes": {
+            "sampling_seed": "Candidate generation (20 per target) uses a fixed sampling seed equal to the run's training "
+                             "seed (42, 43, 44). The seed, library versions and GPU type are recorded per run. GPU "
+                             "kernels may still be non-deterministic; that remaining variation is part of what the "
+                             "repeated seeds measure.",
+            "comparison": "Every comparison is between our own runs, trained, sampled and scored with the same pinned "
+                          "code and settings. The paper's numbers (8 and 3) are used only for the G0 runner check.",
+            "rule_order": "Rules are applied in this order and the first that matches decides: G0_runner, "
+                          "not_reproduced, template_specific, data_amount, otherwise (inconclusive). data_amount also "
+                          "covers the case where R scores below PEROV.",
+            "claim_scope": "template_specific supports only that removing these particular structures may matter beyond "
+                           "their number, for EquiCSP on these 11 targets. It does not establish a causal mechanism "
+                           "(for example the paper's degeneracy explanation). data_amount supports only that this "
+                           "experiment cannot tell the two apart from training-set size. Inconclusive is reported as "
+                           "inconclusive and is not assigned to either reading.",
+            "approvals": "The 1,000-step smoke test and the full training runs are approved separately.",
+        },
+    },
+]
+
+
+def write_amendments(run: Path) -> None:
+    (Path(run) / "amendments.json").write_text(json.dumps(AMENDMENTS, indent=2, ensure_ascii=False))
+
+
 def sha256_bytes(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
@@ -181,6 +214,7 @@ def main() -> int:
     run = ROOT / "results" / f"csp_random_control_{stamp}"
     run.mkdir(parents=True)
     (run / "config.json").write_text(json.dumps(PRE_REGISTERED, indent=2, ensure_ascii=False))
+    write_amendments(run)
 
     s1 = step1_existing_arms(run)
     (run / "existing_arms.json").write_text(json.dumps(s1, indent=2))

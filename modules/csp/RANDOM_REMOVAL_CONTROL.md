@@ -63,12 +63,25 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
 **判定规则（事先定好）。**
 
 - **G0 流程检查：** 我们的 ABC2D6 和 PEROV（种子 42）的一致恢复必须分别在论文的 8 和 3 的 ±1 以内。不满足就停下，先查运行流程，不做任何归因，也不再花钱。
-- **支持"特定模板信息"：** 每一次 R 都高于每一次 PEROV，并且 R 的平均比 PEROV 的平均多至少 3 个。
+- **支持"特定模板信息可能重要"：** 每一次 R 都高于每一次 PEROV，并且 R 的平均比 PEROV 的平均多至少 3 个。
 - **支持"数据变少"：** R 的平均比 PEROV 的平均多不到 2 个（差 ≤ 1）。
 - **下降没有复现：** PEROV 三次的平均 ≥ 6，说明 8 → 3 经不起重复种子，报告后停止。
 - **其他情况：** 结论不定。报告全部结果；没有新的书面决定，不再追加训练。
 
 3 对 3 次训练，精确单侧置换检验最小的 p 值是 1/20 = 0.05。我们只报告每次训练和每个目标的计数，不做更强的说法。
+
+## 3a. 修订 A1（2026-11-21，在任何训练之前）
+
+原规则（commit `4220c46`）不改，修订另存为 `amendments.json`，同样在训练前提交。
+
+- **抽样种子。** 每次训练生成 20 个候选时，抽样种子固定为这次的训练种子（42、43、44），并记录库版本和 GPU 型号。GPU 计算本身可能不完全确定，剩下的波动正是重复种子要测的。
+- **比较对象。** 所有比较都在我们自己的训练之间进行，训练、抽样、评分用同一套固定版本的代码和设置。论文的 8 和 3 只用于 G0 流程检查。
+- **规则顺序。** 按 G0 → 下降没有复现 → 特定模板信息 → 数据变少 → 结论不定 的顺序判断，第一个满足的决定结果。R 低于 PEROV 的情况也归入"数据变少"。
+- **结论强度。**
+    - 即使 R 明显好于 PEROV，也只支持"去掉的是哪些结构可能比去掉多少更重要"，限于 EquiCSP 和这 11 个目标，**不证明因果机制**（比如论文的简并解释）。
+    - "数据变少"只说明这个实验分不开两者和训练集大小。
+    - 结论不定就报告为不定，不归入任何一种解释。
+- **审批。** 冒烟测试和完整训练分开审批。
 
 ## 4. 已完成和未完成
 
@@ -95,7 +108,7 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
 
 - `src/csp/fetch_csp_ablation.py`：下载并核对哈希。
 - `src/csp/random_removal_control.py`：现有结果的配对比较、预登记规则、划分生成。
-- `results/csp_random_control_20261121T223433Z/`：`config.json`、`existing_arms.json`、`existing_arms_paired.csv`、`splits.json`、`splits/`、溯源记录。
+- `results/csp_random_control_20261121T223433Z/`：`config.json`、`amendments.json`、`existing_arms.json`、`existing_arms_paired.csv`、`splits.json`、`splits/`、溯源记录。
 
 ---
 
@@ -166,12 +179,25 @@ The core plan is 7 training runs, plus 2 optional runs. The recipe follows the p
 **Decision rules (set in advance).**
 
 - **G0 runner check:** our ABC2D6 and PEROV runs (seed 42) must land within ±1 of the paper's 8 and 3. If either misses, stop and audit the runner. Nothing is attributed, and no more money is spent.
-- **"Specific template information" supported:** every R run beats every PEROV run, and the R mean exceeds the PEROV mean by at least 3.
+- **"Specific template information may matter" supported:** every R run beats every PEROV run, and the R mean exceeds the PEROV mean by at least 3.
 - **"Less data" supported:** the R mean exceeds the PEROV mean by 1 or less.
 - **Drop not reproduced:** if the PEROV mean over three seeds is 6 or more, the 8 → 3 drop does not survive repeated seeds. Report that and stop.
 - **Anything else:** inconclusive. Report all runs, and add no further runs without a new written decision.
 
 With 3 vs 3 runs, the smallest exact one-sided permutation p-value is 1/20 = 0.05. We report counts per run and per target and claim no more than that.
+
+## 3a. Amendment A1 (2026-11-21, before any training)
+
+The original rules (commit `4220c46`) stay as they are. The amendment is saved separately as `amendments.json` and is also committed before training.
+
+- **Sampling seeds.** When each run generates its 20 candidates, the sampling seed is fixed to that run's training seed (42, 43, 44). Library versions and the GPU type are recorded. GPU kernels may still not be fully deterministic, and that remaining variation is part of what the repeated seeds measure.
+- **What is compared.** Every comparison is between our own runs, trained, sampled and scored with the same pinned code and settings. The paper's 8 and 3 are used only for the G0 runner check.
+- **Rule order.** The rules apply in the order G0 → drop not reproduced → specific template information → less data → inconclusive, and the first that matches decides. R scoring below PEROV also counts as "less data".
+- **Strength of the conclusion.**
+    - Even if R clearly beats PEROV, that supports only "which structures were removed may matter more than how many", for EquiCSP on these 11 targets. **It does not establish a causal mechanism** (for example the paper's degeneracy explanation).
+    - "Less data" means only that this experiment cannot tell the two apart from training-set size.
+    - Inconclusive is reported as inconclusive and is not assigned to either reading.
+- **Approvals.** The smoke test and the full training runs are approved separately.
 
 ## 4. Done and not done
 
@@ -198,4 +224,4 @@ With 3 vs 3 runs, the smallest exact one-sided permutation p-value is 1/20 = 0.0
 
 - `src/csp/fetch_csp_ablation.py`: downloads and checks hashes.
 - `src/csp/random_removal_control.py`: paired comparison of the existing results, pre-registered rules, split generation.
-- `results/csp_random_control_20261121T223433Z/`: `config.json`, `existing_arms.json`, `existing_arms_paired.csv`, `splits.json`, `splits/`, provenance record.
+- `results/csp_random_control_20261121T223433Z/`: `config.json`, `amendments.json`, `existing_arms.json`, `existing_arms_paired.csv`, `splits.json`, `splits/`, provenance record.
