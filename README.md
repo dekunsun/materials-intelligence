@@ -2,237 +2,226 @@
 
 **A market-led strategy for AI materials discovery, scientific validation, and commercialization**
 
-> 草稿 v0.1 · 2026-11-20 · 用于检查整体结构是否连贯，尚未发布。发布范围：最多发到 GitHub，不上 ai4s.fyi。落地方案见 [PRODUCT_PLAN.md](PRODUCT_PLAN.md)。
-> 本项目是由外向内的分析，只用公开资料，不代表 Google DeepMind 的实际计划。凡是推断都单独标出；凡是还没核实的数字都标"待核"。
+中文在上，[English below](#english-version)。
 
----
+> 状态：v0.1，2026-11-21。由外向内的分析，只用公开资料，不代表 Google DeepMind 或任何公司的实际计划。所有建议都是推断，并在文中标出；没有核实的数字标为未核实。
 
-## 核心问题
+## 这个项目做什么
 
-> 根据公开证据，如果 Google DeepMind 希望把 AI 材料发现能力转化为产业影响，应该优先进入哪些市场、解决哪些技术瓶颈、选择什么商业模式，以及如何配置研究和实验资源？
+核心问题：
 
-贯穿全项目的分析问题：
+> 根据公开证据，如果要把 AI 材料发现能力转化为产业影响，应该优先进入哪些市场、解决哪些技术瓶颈、选择什么商业模式，以及如何配置研究和实验资源？
 
-> **从哪个阶段开始，研究不再只需要更多 AI 算力，而是需要不同类型的实验、数据、工程能力或商业伙伴？**
+做法是三层：市场层给出买家的门槛；技术层复现公开的评测，找到结论不再成立的地方；决策层把两者合成投资建议。项目不提出新算法或新基准，而是检验已有的研究和评测，再把证据变成资源决策。
 
-我的工作假设（推断，由各模块检验）：**检验器决定了推进速度。** 检验结果的东西是便宜的计算或买家已有的数据时，加算力就能推进，强化学习也适用；变成实物测量之后，推进速度取决于实验、工程和伙伴。
+## 结果一览
 
-## 三个视角
-
-同一个项目，从三个角度回答同一个问题：**科学上可信吗？买家要吗？资源该怎么分？**
-
-| 视角 | 这个视角会问的问题 | 项目里的证据 | 边界 |
+| 模块 | 做了什么 | 主要发现 | 报告 |
 |---|---|---|---|
-| Scientific Validation | 预测在哪里可信？计算和实验的偏差来自哪里？实验资源怎样约束研究节奏？ | CSP 原型依赖分析、Matbench 适用边界、古德哈特曲线、κ_SRME 与器件热阻的差距、二维材料数据库与实验报道对比、测试设计 | 用公开的 DFT 标签和实验数据，没有自己做 DFT 或实验 |
-| Commercial Strategy | 研究问题是否从买家需求出发？预测性能、实验数据、伙伴和 IP 是什么关系？ | Layer 1 买家门槛表、各模块的商业问题、商业模式表、六步流程第 05 步 | 商业模式和路径都是推断；门槛取自公开来源 |
-| Strategy & Operations | 方向多、资源少，怎么做有证据的投资、合作、组织和里程碑决策？ | "算力在哪一步不再够用"分析表、两种排序对比、关卡的继续或停止标准、决策备忘录、按依赖关系排的下一步 | 由外向内，不代表实际计划 |
+| 固态电池电解质 | 把 OBELiX 的 499 个实测组成当离线实验室，比较六种选材策略需要的实验次数 | 已知化学家族里，先验实测数据省下的实验远多于算法之间的差别；把同一掺杂系列整个留出后，机器学习只比"先测硫化物"的经验规则多省 3–4 次实验；迁移到新家族对硫化物有效、对氧化物无效 | [modules/battery/REPORT.md](modules/battery/REPORT.md) |
+| 芯片散热 | 重新计分 Matbench Discovery 上 62 个模型的 κ_SRME，加经验规则基线和 7 个材料的实测对照 | 在 103 个简单二元化合物上，较好的模型对高导热候选的排序几乎一致，但测试集太容易，不能说明发现问题已解决；DFT 参考值对 7 个材料里的 6 个比实测低 10–27% | [modules/thermal/REPORT.md](modules/thermal/REPORT.md) |
+| 稳定性筛选与 CSP | 重新计分 73 个模型的稳定性预测，按"给定验证预算挑哪些结构"来读；审计一篇 CSP 基准论文 | 1% 预算下 48 个模型挑到至少 95% DFT 稳定的结构（随机 15.5%）；超出模型有把握的候选后，模型之间差别很大；CSP 基准上生成模型没有超过模板方法 | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
 
----
+两个重新计分的模块都和官方排行榜逐个对上（κ_SRME：62 个模型；稳定性：146 组指标），并有逐材料、逐结构对照官方逻辑的测试。
 
-## 结构总览
+**商业证据关卡。** 两个方向各做了一次事先定好退出条件的需求检验：只问四个问题、只认一手来源、最多 30 次检索。
+- [芯片散热](modules/thermal/COMMERCIAL_EVIDENCE_GATE.md)：问题和规模有一手依据，验收指标已知；但买家一侧都指向冷却架构，没有一手证据表明需要新材料，方向降为观察。
+- [固态电池](modules/battery/COMMERCIAL_EVIDENCE_GATE.md)：规则在检索前提交到 git（commit `80f062e`）。买家侧的电芯级验收指标找到了；买家点名的材料限制是界面耐久性，不是电导率；没有买家侧的电导率门槛。
+
+**决策。** 11 项投入的决定、继续条件和停止条件在 [data/board/decisions.csv](data/board/decisions.csv)，看板里可以按方向查看。简短地说：近期只批准便宜、能快速检验的投入；更大规模的晶体筛选暂缓，芯片散热观察，和电池厂的合作只谈联合探索。
+
+![稳定性筛选结果](results/csp_screening_20261121T192919Z/screening_summary.png)
+
+## 证据规则
+
+每个模块都按同一套规则做：
+- **运行前登记。** 设计写进运行目录的 `config.json`，再读任何预测或结果；事后加的分析单独标明。
+- **基线不只是随机。** 包括领域经验规则或老一代模型。
+- **独立审查。** 每个模块跑完都请独立代理审查代码和结论，修正记录在各报告末尾；作废的运行以 `superseded_` 开头保留。
+- **来历记录。** 每次运行记录输入文件哈希、代码哈希、包版本、种子，以及 git commit。
+- **复现层级写清楚。** 区分"重新计分""重新推理""重新训练"；本项目只到重新计分，没有重算声子或结构弛豫。
+
+## 投资组合看板
+
+只读的 Streamlit 应用，中英文切换：总览（每个方向的三个独立证据维度，不合成总分）、方向详情（六道关卡和每条证据的出处与核实状态）、决策、模块结果。
+
+```bash
+.venv/bin/streamlit run board/app.py
+```
+
+## 复现
+
+需要 Python 3.12。原始数据不在仓库里，由脚本按固定的版本和 md5 下载（约 0.9 GB）。
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+
+# 固态电池
+.venv/bin/python -I src/battery/fetch_obelix.py
+.venv/bin/python src/battery/run_experiment.py
+.venv/bin/python src/battery/analyze.py results/<run_id>
+
+# 芯片散热
+.venv/bin/python -I src/thermal/fetch_kappa.py
+.venv/bin/python src/thermal/run_rescore.py
+.venv/bin/python src/thermal/analyze_thermal.py results/<run_id>
+
+# 稳定性筛选
+.venv/bin/python -I src/csp/fetch_discovery.py
+.venv/bin/python src/csp/run_screening.py
+.venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
+
+# 对照官方实现
+.venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
+.venv/bin/python tests/check_csp_official_port.py
+```
+
+每个模块报告末尾有完整的命令，包括画图。
+
+## 仓库结构
 
 ```
-Layer 1 · Market Opportunities（市场主导）
-  芯片散热 · 超导 · 固态电池 · 二维材料        核聚变 → 作为超导带材的需求来源
-  谁在付钱 · 买家门槛 · 从样品到采购的时间 · 竞争格局
-        │  每个买家门槛 → 卡在技术链的哪一步
-        ▼
-Layer 2 · Technical Validation（技术深挖，分档）
-  深：CSP（横向）· 芯片散热     中：固态电池     轻：二维材料
-  代码复现 · 评测 · 模拟与实验差距 · 验证成本
-        │  验证结果 → 回头修正 Layer 1 的排序
-        ▼
-Layer 3 · Research-to-Market Decisions
-  路径选择 · 资源配置 · 两种排序对比 · 按关卡排的下一步
+board/          投资组合看板（Streamlit，只读）
+data/board/     看板的数据：方向、证据（带出处和核实状态）、决策、关卡
+data/battery/   电池关卡的一手来源
+data/thermal/   散热的实测值和文献来源
+modules/        三个模块的报告和两个商业证据关卡（中文在上、英文在下）
+src/            每个模块的下载、运行、分析和画图脚本
+results/        每次运行的配置、来历记录、原始输出和图
+tests/          逐材料、逐结构对照官方计分逻辑的检查
+memo/           决策备忘录的索引
+PRODUCT_PLAN.md 最初的落地方案（2026-11-20），保留作为记录
 ```
 
----
+## 数据来源和许可
 
-## Layer 1 · 市场
-
-底稿是《AI4S 商业化策略系列》00–12 篇（内部研究，不随本仓库发布）。下表摘自系列总目录，**所有数字待核**，发到 GitHub 之前回到原始出处核对。
-
-| 方向 | 今天谁在付钱 | 买家门槛 | 从样品到采购 | 系列里的排序（我的判断） |
-|---|---|---|---|---|
-| 芯片散热 | 芯片厂、封装厂、存储厂、云厂商 | 装到芯片上、上千次功率循环后的表现 | 新冷却液传统上约 10 年（Orbital 的说法）；Orbital 称目标 2027 年出货 | 1 |
-| 超导 | 造磁体和电缆的人 | 指定磁场和温度下的电流、单根长度、每千安·米价格 | CFS 从第一个磁体到大单约 5 年 | 2（做带材工艺，不做新材料） |
-| 固态电池电解质 | 电池厂和车厂的电芯开发团队 | 电芯级：700 次循环、容量损失 ≤ 20% | A 样到 B1 样约两年（QuantumScape） | 3（先做液态配方合作） |
-| 核聚变 | 聚变公司和政府项目 | 软件：对上已有装置数据；材料：聚变中子辐照数据 | 软件约 1 年（TORAX）；材料等 2034 年中子源 | 不单列，见下 |
-| 二维材料 | 按吨买石墨烯的工业客户 | 接触电阻 ≤ 10 Ω·μm | 进逻辑芯片按 imec 路线图约 2041 年 | 5 |
-
-**核聚变出现两次，但不占技术模块：**
-1. 在 Layer 1 作为超导带材的下游需求：聚变公司需要大量可制造、可验证的高温超导带材。
-2. 在 Layer 3 作为合作模式的先例：TORAX × CFS。注意这是等离子体模拟软件的合作，不是材料。
-
-**另一种排序。** 上表按"先做一个能卖的东西"排。如果实验室的首要目的是验证模型（系列 05 篇引用了 Kohli 的说法），应按"哪个方向能最快做出并测量大量样品"来排，超导和二维薄膜会往前移。两种排序在 Layer 3 并排比较。
-
----
-
-## Layer 2 · 技术验证
-
-技术模块的选择标准：公开数据能否复现、与实验室方向是否匹配、能否回答 Layer 1 的门槛问题。不是按市场排序选的；市场排第一的芯片散热因此单独设了深模块。
-
-| 模块 | 深度 | 商业问题 | 研究任务 | 材料技术 | AI 技术 | 决策产出 |
-|---|---|---|---|---|---|---|
-| 稳定性筛选与 CSP | 深（横向） | AI 生成了大量晶体结构，哪些真的值得花钱验证？ | D2A：Matbench Discovery 重新计分、极端筛选实验；D2B：CSP 基准的结构恢复与原型依赖 | 稳定性、凸包、结构原型、结构匹配 | 扩散和流匹配生成模型、等变势函数、数据泄漏与留出测试、奖励过度优化 | 验证对象的筛选信号和预算分配 |
-| 芯片散热 | 深 | 如果 Google 自己是第一个客户，钱该花在发现新的高导热材料，还是把已知材料装上芯片？ | κ_SRME 复现；高导热材料器件化的文献梳理 | 声子、晶格导热系数、界面热阻 | 势函数算声子、不确定性估计、主动学习 | 两条路的投入比例 |
-| 固态电池 | 中 | 一个预测具有高离子电导率的材料，距离电池厂愿意测试还有多远？ | 计算筛选论文的文献回测；OBELiX 实验电导率数据 | 离子电导、电化学窗口、可合成性 | 基于证据的大模型文献抽取 | 候选材料卡在哪一关，钱投在哪一关 |
-| 二维材料 | 轻 | 计算能预测到哪一步？下一步应该投入哪种实验能力？ | 读技术链；计算数据库与实验报道的差距小分析 | 能带、可剥离性、接触电阻 | 贝叶斯优化与强化学习的适用条件 | 实验能力的优先级 |
-
-### 稳定性筛选与 CSP 模块（Crystal Candidate Screening & CSP Evaluation）
-
-Matbench Discovery 测的是**稳定性筛选**（给定候选结构，问是否稳定），不是**结构预测**（给定组成，问原子怎么排）。下面的复现和边界属于 D2A；原型依赖属于 D2B。DFT 是计算参考值，不是实验真值。
-
-**复现分三层，报告里写明做到哪一层：**
-
-| 层级 | 做什么 | 本项目 |
+| 来源 | 用途 | 许可 |
 |---|---|---|
-| 重新计分 | 用公开的预测结果重算指标 | 全量 |
-| 重新推理 | 用公开权重自己跑预测 | 子集（MACE-MP-0） |
-| 重新训练 | 从头训练模型 | 不做 |
+| [OBELiX](https://github.com/NRC-Mila/OBELiX)（commit `4eaac88`） | 实测离子电导率 | CC BY 4.0 |
+| [Matbench Discovery](https://github.com/janosh/matbench-discovery)（commit `6d587c1`） | WBM 测试集、各模型的公开预测、κ_SRME 参考值 | 代码 MIT；数据见上游仓库 |
+| Materials Project（经 Matbench Discovery 下载） | 结构类型标签、2023 年快照的编号 | 见上游说明 |
+| 文献和公司公开材料 | 实测值、需求侧证据 | 只记录事实和出处链接，见 `data/*/literature_sources.csv`；关卡文件里的原文引用都不超过 25 词 |
 
-**适用边界：** 把 WBM 测试集按化学体系（含锂、电池相关）、离凸包的距离、和已知原型的距离切开，看排行榜结论在哪里不再成立；比较分类 F1 与"前 k 个命中率"给出的模型排名是否一致。
+本仓库不重新分发任何原始数据。
 
-**原型依赖：** 以 Wei et al., arXiv:2609.26502 **v2**（2026-10-17）为准。v2 与 v1 的实验设计不同（对照方法、重训模型、移除类别和结论数字都变了）；同团队综述 arXiv:2610.22600 引用的是 v1 的数字。v2 仍缺：同等规模的随机移除对照、多次重训、更多结构框架层面的移除。
+## 局限
 
-**古德哈特曲线（尚未运行）：** 把势函数预测的能量当作"奖励"，按奖励在 WBM 中挑出前 k 个结构，k 逐步收紧，用 DFT 标签检验真正稳定的比例。若挑得越狠、命中率反而下降，说明对奖励的过度优化会偏离真实目标，这对用势函数做奖励的强化学习是直接警示。若不下降，说明在这个范围内势函数作为奖励是可靠的。两种结果都有用。
-
-### 芯片散热模块
-
-Matbench Discovery 的 κ_SRME 任务（103 个 PhononDB 结构）测的是**晶体本身的晶格导热系数**。买家门槛是**装到芯片上的热阻和功率循环后的表现**，界面热阻、加工和可靠性都不在基准里。这个不匹配就是本模块要量化的东西。
-
-- 复现：几个模型的 κ_SRME 重新计分；一个小模型在少量结构上重新计算（三阶力常数计算量大，可行规模待试跑）。
-- 边界：在高导热材料上误差是否变大；平均误差指标与"前几名命中"指标的模型排名是否一致。
-- 假设（推断）：和超导一样，瓶颈可能在"把已知材料造出来、装上去"，而不是缺新材料。
-
-### 固态电池模块
-
-- 候选池：一篇公开的固态电解质计算筛选论文（待选）。
-- 结果：筛选论文发表后的实验文献，看候选是否被合成、测了电导率、达到门槛；门槛在开始前从公开来源定下。
-- 数据：OBELiX（锂固态电解质的晶体结构与实验测得的离子电导率，CC BY 4.0；数据量和字段待查）。
-- 抽取：沿用 BioEvidenceBench 的方法，模型只返回原文位置，不改写原文。
-
-### 二维材料模块（领域学习）
-
-- 读：系列 08 篇的技术链和接触电阻门槛；实验室方向的代表性论文（从作者公开主页选）。
-- 小分析：一个公开的二维材料计算数据库（MC2D 或 C2DB，许可和下载方式待查）与实验报道的差距。
-- 产出：一页笔记，回答三个问题：AI 能改哪一步；为什么器件级门槛计算够不到；为什么二维薄膜适合快速做出并测量大量样品。
-- （RL 与贝叶斯优化的对比已移到固态电池模块：在那里实验次数直接对应实验室预算。）
-
-### 六步验证模板（四个模块共用）
-
-以固态电池为例：
-
-| 步 | 内容 | 进入下一步的关卡（数字取自公开买家标准，待定） | 需要的资源 |
-|---|---|---|---|
-| 01 Market Need | 电芯厂对电导率、寿命、安全、成本和加工的要求 | 门槛有公开出处 | 公开资料 |
-| 02 Scientific Hypothesis | 哪些材料体系可能同时满足关键约束？ | 至少一个体系不违反已知物理约束 | 文献 |
-| 03 AI Candidate Evaluation | CSP 与稳定性审核；OBELiX 评测；排序与不确定性 | 预测电导率与不确定性过线 | 算力 → **实验数据** |
-| 04a Material-level Validation | 晶相确认、电化学阻抗（测试设计） | 晶相正确、电导率达标 | **实验室** |
-| 05 Industry Partnership | 选电池厂、材料供应商或第三方实验室；明确 IP 和数据权利 | 有伙伴愿意做电芯级测试 | **伙伴、法务** |
-| 04b Cell-level Validation | 界面与电芯级测试（测试设计） | 电芯级循环门槛 | **电池工程** |
-| 06 Commercial Decision | 继续投入、追加验证、合作授权、转向液态配方，或停止 | — | 商业判断 |
-
-- 第 04 步拆成两半，选伙伴提前到中间，因为电芯级测试通常要伙伴来做。
-- 04 → 03 有反馈箭头：实验结果回流改进模型。
-- 本项目里第 04 步只是测试设计（每项测试回答哪个门槛、约需多少钱和时间），没有做实验。
+- 两个重新计分的模块，真值都是 DFT，不是合成或实测。
+- 电池回测的"实验次数"是读出已发表的数，不是实验成本；没有任何一项投入的真实成本数据。
+- 市场层的很多数字来自一个未公开的系列文章，还没有核实，看板里用灰色标出。
+- 三种视角（科学验证、商业策略、S&O）只用来组织问题，不代表任何人的意见。
+- 还没有选择开源许可证。
 
 ---
 
-## Layer 3 · 决策
+## English version
 
-### 算力在哪一步不再够用（推断，由各模块检验）
+> Status: v0.1, 21 November 2026. An outside-in analysis using public information only; it does not represent the plans of Google DeepMind or any company. Every recommendation is an inference and is marked as such; unverified numbers are marked unverified.
 
-| 模块 | 算力还够用的阶段 | 转向什么能力 | 转变发生在哪 |
+### What this project does
+
+Core question:
+
+> Based on public evidence, to turn AI materials-discovery capability into industrial impact, which markets should come first, which technical bottlenecks should be solved, which business model should be chosen, and how should research and lab resources be allocated?
+
+The approach has three layers: the market layer gives buyers' thresholds; the technical layer reproduces public benchmarks and finds where their conclusions stop holding; the decision layer combines both into investment recommendations. The project does not propose new algorithms or benchmarks; it tests existing research and benchmarks, then turns the evidence into resource decisions.
+
+### Results at a glance
+
+| Module | What was done | Main findings | Report |
 |---|---|---|---|
-| 固态电池 | 稳定性筛选 | 实验电导率数据 → 电芯工程与电池厂 | 电导率；电芯级测试 |
-| 芯片散热 | 晶体导热系数预测 | 界面热阻测量 → 封装工程 | 装上测试芯片 |
-| CSP | 生成与稳定性排序 | 合成与结构确认 | 第一次实物验证 |
-| 二维材料 | 能带、可剥离性 | 薄膜生长 → 器件制造 | 接触电阻 |
+| Solid-state electrolytes | Used 499 measured OBELiX compositions as an offline lab and compared how many experiments six selection policies need | In known chemical families, prior measured data saves far more experiments than the differences between algorithms; with whole doping series held out, ML saves only 3–4 more experiments than a "test sulfides first" rule; transfer to a new family works for sulfides and fails for oxides | [modules/battery/REPORT.md](modules/battery/REPORT.md) |
+| Chip cooling | Re-scored 62 models on Matbench Discovery's κ_SRME, with a rule-of-thumb baseline and measured values for 7 materials | On 103 simple binary compounds, the better models rank high-conductivity candidates almost identically, but the test set is too easy to show that discovery is solved; the DFT reference is 10–27% below measurement for 6 of 7 materials | [modules/thermal/REPORT.md](modules/thermal/REPORT.md) |
+| Stability screening & CSP | Re-scored the stability predictions of 73 models, read as "which structures to pick for a given validation budget"; audited one CSP benchmark paper | At a 1% budget, 48 models pick at least 95% DFT-stable structures (random: 15.5%); past the candidates a model is confident about, models differ a lot; on the CSP benchmark, generative models do not beat a template method | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
 
-### 商业化路径
+Both re-scoring modules match the official leaderboard value by value (κ_SRME: 62 models; stability: 146 metric sets), with tests that compare against the official logic per material and per structure.
 
-**可选模式**（根据系列 02、05 篇归纳；不代表这些企业的合同条款已公开；区分企业自述、已确认收入和未披露信息）：
+**Commercial evidence gates.** Each of two directions had one demand check with exit conditions set in advance: four questions only, primary sources only, at most 30 searches.
+- [Chip cooling](modules/thermal/COMMERCIAL_EVIDENCE_GATE.md): the problem and its scale have primary support and the acceptance metric is known; but buyer-side sources all point to cooling architecture, with no primary evidence that a new material is needed, so the direction moved to watch.
+- [Solid-state electrolytes](modules/battery/COMMERCIAL_EVIDENCE_GATE.md): the rules were committed to git before any search (commit `80f062e`). Buyer-side cell-level acceptance metrics were found; the material limit buyers name is interface durability, not conductivity; there is no buyer-side conductivity threshold.
 
-| 模式 | 案例参照 | 适合什么情形 |
-|---|---|---|
-| AI 工具 / 云 | Microsoft Discovery（MatterGen 以 MIT 许可开源，收费的是云平台） | 可标准化、能反复调用的材料计算工具 |
-| 联合研发 / 里程碑 | Aionics 的联合开发（见 05 篇）、CuspAI × Kemira | 买家有清楚指标，需要联合实验验证 |
-| 验证过的发现成果包 | Lila Sciences | 结构、性质、实验协议与数据可作为成果交付 |
-| 嵌入式工程 | Periodic Labs | 客户数据和工艺高度专有，需要深度定制 |
-| 卖材料或产品 | Radical AI（自己卖合金）、Orbital（自己卖数据中心冷却液） | 能自己掌握制造和销售 |
-| 材料或工艺 IP 授权 | 系列中尚未找到具名案例（Orbital 授权的是平台，不是材料） | 成果有明确保护方式，制造与认证由伙伴承担 |
+**Decisions.** The decision, continue condition and stop condition for 11 investments are in [data/board/decisions.csv](data/board/decisions.csv) and can be browsed by direction on the board. In short: near term, approve only cheap investments that can be checked quickly; defer larger-scale crystal screening, watch chip cooling, and limit a battery partnership to joint exploration.
 
-**DeepMind 的三条候选路径**（推断；与 05 篇的字母对应）：
+![Stability screening results](results/csp_screening_20261121T192919Z/screening_summary.png)
 
-| 路径 | 对应 05 篇 | 收入来源 | IP | 验证责任 | 销售周期 |
-|---|---|---|---|---|---|
-| 1 工具商业化：嵌入 Google Cloud 或 Gemini 的科学工作流 | A + B | 待填 | 待填 | 待填 | 待填 |
-| 2 联合研发：与材料厂、设备厂或终端买家共同定义指标，按里程碑推进 | C 的一部分 | 待填 | 待填 | 待填 | 待填 |
-| 3 内部采用：针对 Google 自身芯片和基础设施需求验证 | D（05 篇注明无来源，纯属推断） | 待填 | 待填 | 待填 | 待填 |
+### Evidence rules
 
-- 05 篇的 C 还包括"另设公司、自己持有材料 IP"（Isomorphic 先例）。是否作为第四条，待定。
-- 对照路径 F（OpenAI × Synopsys：模型接进行业工具商，按收入分成）说明材料为什么难走这条路：芯片设计有全行业通用的量法和签核工具，材料没有。
-- DeepMind 公开宣布的英国自动化实验室，目标是加速科学发现；不能仅凭建实验室就断定会形成材料销售业务。
+Every module follows the same rules:
+- **Pre-registration.** The design is written to the run's `config.json` before any prediction or result is read; analyses added afterwards are labelled post-hoc.
+- **Baselines beyond random.** They include a domain rule of thumb or older models.
+- **Independent review.** After each module ran, an independent agent reviewed the code and the conclusions; the fixes are recorded at the end of each report, and superseded runs are kept with a `superseded_` prefix.
+- **Provenance.** Each run records input-file hashes, code hashes, package versions, seeds and the git commit.
+- **Stated reproduction level.** "Re-score", "re-infer" and "retrain" are kept apart; this project only re-scores and does not recompute phonons or structure relaxations.
 
-**模块与主路径的对应：**
+### Portfolio board
 
-| 模块 | 主路径 | 原因 |
-|---|---|---|
-| 芯片散热 | 3 内部采用 | Google 自己是用户，门槛能在自家测试芯片上测 |
-| 固态电池 | 2 联合研发 | 买家有数字门槛，需要联合实验 |
-| CSP | 1 工具商业化 | 筛选能力可标准化、反复调用 |
-| 二维材料 | 暂不商业化 | 买家在 2041 年前后；适合作为验证能力 |
+A read-only Streamlit app with a Chinese/English toggle: overview (three independent evidence dimensions per direction, no total score), direction detail (six gates, with the source and verification status of every evidence row), decisions, and module results.
 
-**先例：TORAX × CFS。** 软件约一年进入合作方的日常流程（系列数字，待核）。它快，是因为门槛能用买家已有的装置数据检验。材料的门槛要实物测量，这条经验不能直接搬过来。
-
-### 交付物
-
-- 一页决策备忘录：三节（科学上可信吗？买家要吗？资源该怎么分？），最后合成一个决策。
-- 按关卡排的下一步：每条带继续或停止的判断标准，不写日期。
-
----
-
-## 数据与代码来源
-
-| 来源 | 用途 | 许可 | 核实情况 |
-|---|---|---|---|
-| [Matbench Discovery](https://github.com/janosh/matbench-discovery) | WBM 测试集、各模型预测、κ_SRME 任务 | MIT（代码） | 仓库和数据登记表已核实；Figshare 自动下载返回 202，未拿到文件 |
-| MACE-MP-0 权重 | 重新推理 | MIT（据 Matbench 模型元数据） | 链接已登记，未下载 |
-| GNoME 预测 | 只能重新计分 | 权重标注 unreleased | 已核实 |
-| [OBELiX](https://github.com/NRC-Mila/OBELiX) | 实验离子电导率 | CC BY 4.0 | 仓库已核实；数据量和字段未查 |
-| [TORAX](https://github.com/google-deepmind/torax) | 先例案例 | GitHub 未识别出许可证，需看仓库许可文件 | 2024-03 起公开 |
-| MC2D / C2DB | 二维材料小分析 | 待查 | 未核实 |
-| Wei et al., arXiv:2609.26502v2 | 原型依赖 | — | 已对照原文 |
-| Hu et al., arXiv:2610.22600v1 | 原型综述 | — | 已对照原文 |
-
-复现注意：Matbench 说明里提到，精确复现凸包距离需要 2023 年 5 月前后版本的 pymatgen（issue #358）。
-
-## 建议的目录结构
-
-```
-materials-intelligence/
-  README.md              本文件
-  market/                Layer 1：买家门槛表及出处
-  modules/
-    csp/                 重新计分、原型依赖、古德哈特曲线
-    thermal/             κ_SRME、器件化文献
-    battery/             文献回测、OBELiX
-    2d/                  领域笔记、小分析
-  decisions/             Layer 3：路径表、算力转变表、备忘录
-  results/<run_id>/      每次运行的配置、输入哈希、原始输出、时间戳
+```bash
+.venv/bin/streamlit run board/app.py
 ```
 
-## 待决定
+### Reproduction
 
-1. **和 BioEvidenceBench 的时间分配。** 两个项目同时做不完：BioEvidenceBench 缩小到约 10 页试点，还是往后推？
-2. 固态电池模块用哪一篇筛选论文作候选池。
-3. 是否把"另设公司"作为 DeepMind 的第四条路径。
-4. GitHub 版的语言：中文在上、英文在下（和系列一致），还是只用英文。
+Requires Python 3.12. Raw data is not in the repository; scripts download it at pinned versions with md5 checks (about 0.9 GB).
 
-## 发到 GitHub 之前的检查
+```bash
+python3.12 -m venv .venv
+.venv/bin/pip install -r requirements.txt
 
-- Layer 1 的数字逐条回到原始出处核对。
-- 所有推断保留"推断"标注。
-- GitHub 上只用角色视角，不写具体人名。
-- 不写"复现了"，写清做到哪一层。
+# Solid-state electrolytes
+.venv/bin/python -I src/battery/fetch_obelix.py
+.venv/bin/python src/battery/run_experiment.py
+.venv/bin/python src/battery/analyze.py results/<run_id>
+
+# Chip cooling
+.venv/bin/python -I src/thermal/fetch_kappa.py
+.venv/bin/python src/thermal/run_rescore.py
+.venv/bin/python src/thermal/analyze_thermal.py results/<run_id>
+
+# Stability screening
+.venv/bin/python -I src/csp/fetch_discovery.py
+.venv/bin/python src/csp/run_screening.py
+.venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
+
+# Checks against the official implementation
+.venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
+.venv/bin/python tests/check_csp_official_port.py
+```
+
+Each module report ends with its full command list, including plotting.
+
+### Repository layout
+
+```
+board/          portfolio board (Streamlit, read-only)
+data/board/     board data: directions, evidence (with source and verification status), decisions, gates
+data/battery/   primary sources for the battery gate
+data/thermal/   measured values and literature sources for chip cooling
+modules/        reports for the three modules and the two commercial evidence gates (Chinese first, English below)
+src/            download, run, analysis and plotting scripts per module
+results/        per-run configuration, provenance, raw outputs and figures
+tests/          per-material and per-structure checks against the official scoring logic
+memo/           index of the decision memos
+PRODUCT_PLAN.md the original build plan (20 November 2026), kept as a record
+```
+
+### Data sources and licences
+
+| Source | Use | Licence |
+|---|---|---|
+| [OBELiX](https://github.com/NRC-Mila/OBELiX) (commit `4eaac88`) | Measured ionic conductivity | CC BY 4.0 |
+| [Matbench Discovery](https://github.com/janosh/matbench-discovery) (commit `6d587c1`) | WBM test set, published model predictions, κ_SRME reference values | Code MIT; data: see upstream repository |
+| Materials Project (downloaded via Matbench Discovery) | Structure-type labels, IDs of the 2023 snapshot | See upstream notes |
+| Literature and companies' public material | Measured values, demand-side evidence | Only facts and source links are recorded, in `data/*/literature_sources.csv`; quotes in the gate files are under 25 words |
+
+This repository does not redistribute any raw data.
+
+### Limits
+
+- In both re-scoring modules the truth is DFT, not synthesis or measurement.
+- The battery backtest's "experiment count" is reading a published number, not an experiment cost; there is no real cost data for any investment.
+- Many market-layer numbers come from an unpublished article series and are not yet verified; the board shows them in grey.
+- The three lenses (scientific validation, commercial strategy, S&O) organise the questions; they do not represent anyone's views.
+- No open-source licence has been chosen yet.
