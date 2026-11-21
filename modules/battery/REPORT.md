@@ -138,6 +138,8 @@
 
 ## 这个结果能改变什么决策
 
+> **2026-11-21 更新：** 之后做了一次事先定好退出条件的商业证据关卡（`COMMERCIAL_EVIDENCE_GATE.md`，规则在检索前提交到 git，commit `80f062e`）。买家侧的验收指标找到了：大众的 700 次循环、容量损失不超过 20%（没有测试条件），以及 USABC 的电芯目标；买家点名的材料限制是界面耐久性，不是电导率；没有找到买家侧的电导率门槛，10⁻³ S/cm 仍是研究筛选阈值。按事先定好的规则，下表中"和电池厂谈合作"改为**批准（限定范围）**：只谈联合探索，里程碑按带测试条件的电芯级指标设。下表保留原文。
+
 这一节是推断，依据是一个只包含已发表材料的回测。
 
 | 决策 | 回测给出的依据 | 建议 |
@@ -332,6 +334,8 @@ Values are experiments needed to find 5 hits; intervals are cluster bootstrap by
 - **10⁻² S/cm (cv5):** only 6 compositions in the full data reach this threshold, and one fold has none. For every method, at least 20% of campaigns found none within 40; for random it is 52%. First hit (censored): prior + closed loop 12.4, computational screening 14.2, reinforcement learning 16.4, family rule 19.1, random 30.1. The by-fold intervals are all wide (for example, computational screening [1.2, 30.0]). Use this only as a directional reference.
 
 ### What decisions this result can change
+
+> **Update, 21 November 2026:** a commercial evidence gate with exit conditions set in advance was run afterwards (`COMMERCIAL_EVIDENCE_GATE.md`; rules committed to git before any search, commit `80f062e`). Buyer-side acceptance metrics were found: Volkswagen's 700 cycles with at most 20% capacity loss (no test conditions) and USABC's cell targets; the material limit buyers name is interface durability, not conductivity; no buyer-side conductivity threshold was found, so 10⁻³ S/cm remains a research screening threshold. Under the pre-set rules, "partnership talks with a battery maker" in the table below moves to **approve (limited scope)**: joint exploration only, with milestones on cell-level metrics with stated test conditions. The table below keeps its original text.
 
 This section is inference, based on a backtest that contains only published materials.
 

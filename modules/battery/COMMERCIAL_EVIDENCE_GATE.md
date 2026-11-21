@@ -38,9 +38,33 @@
 
 不管结果如何，关卡结束后不再做桌面调研。
 
-## 结果
+## 结果（2026-11-21）
 
-（关卡执行后填写。）
+研究代理用了 30 次预算中的 28 次。我打开四个页面核对了引文，都与原文一致：大众（PowerCo）关于 QuantumScape 耐久测试的新闻稿、宝马关于 Solid Power 和三星 SDI 的新闻稿、丰田与出光的新闻稿、三星 SDI 的新闻页。一手来源记在 `data/battery/literature_sources.csv`，编号 B001–B013。
+
+| 问题 | 结论 | 依据 |
+|---|---|---|
+| Q1 谁有这个问题 | **过** | 丰田、三星 SDI、大众（PowerCo）、宝马都在自己的新闻稿里把全固态电池列为在做的开发目标（B001、B003、B004、B009） |
+| Q2 问题有多大 | **过** | 三星 SDI 计划 2027 年量产，能量密度 900 Wh/L（B003）；丰田与出光目标 2027 或 2028 年商业化（B001）；PowerCo 获授权最多每年 40 GWh，可选扩到 80 GWh（B004） |
+| Q3 用什么指标验收 | **过（有保留）** | 大众称"这一开发阶段的行业标准目标是 700 次充电循环、容量损失不超过 20%"，但没写温度和倍率等测试条件（B005）。美国汽车厂联盟 USABC 的电芯目标写了条件：300 Wh/kg、700 Wh/L、1,000 次 DST 循环、30 °C 下 10 分钟快充到 80%、−30 到 +65 °C；但这是通用电动车目标，不专门针对固态（B007）。USABC 是汽车厂联盟，不是正式的标准组织 |
+| Q4 为什么需要新的电解质材料 | **过（混合）** | 丰田说"最大的挑战是耐久性"，反复充放电会在正负极和固态电解质之间产生裂纹，并和出光自 2013 年起合作开发抗裂的电解质（B002）。宝马的新闻稿说 Solid Power 将向三星 SDI 供应硫化物固态电解质（B009），但没写付款。同时，大众说下一步是"完善并放大制造工艺"（B006）。买家一侧既点名了材料和界面，也点名了制造 |
+
+**电导率门槛：没有找到买家侧出处。** 只找到供应商一侧的数字：Solid Power 的硫银锗矿粉末规格是 25 °C 下大于 5.0、3.25、1.5 mS/cm（B010，投资者材料；对应哪一代是从表格列的顺序推断的）。USABC 的活性材料目标里没有电解质或电导率的指标（B008）。按规则，10⁻³ S/cm 继续叫"研究筛选阈值"。
+
+**系列文章的三条说法：**
+- **电芯级门槛（700 次循环、容量损失不超过 20%）：** 找到一手来源，是大众的新闻稿（B005）；但它是"这一开发阶段的行业标准目标"，不是正式的验收规范，也没有测试条件。
+- **QuantumScape 从 A 样到 B1 样约两年：** 需要修正。一手来源显示 A0 样品 2022 年发出（B012），B1 样品 2025 年第三季度开始发出（B011），约 2.5–2.8 年；B0 的日期没有核实。
+- **"一种筛选出的电解质做出来了，电导率远低于门槛"：** 找到一手来源，是微软和 PNNL 的预印本：AI 筛选出的 Na₂LiYCl₆ 在 100 °C 下电导率 2.2×10⁻⁶ S/cm（B013），比 10⁻³ S/cm 低约三个数量级。"系列文章指的就是这篇"是推断。
+
+**没找到一手来源的：** 买家侧的电导率门槛；大众 700 次循环目标的测试条件；有具名买家为固态电解质材料付钱的说法；QuantumScape 2022 年第四季度股东信（投资者网站返回 403，改用了 SEC 上的年报）。学术基准（Randau 2020；Bielefeld、Weber、Janek 2020）没有打开，什么也没记录。
+
+**按规则得出的处理：**
+- Q1、Q2 过：固态电解质可以作为投资前提。
+- Q3 过：**"和电池厂谈合作"从暂缓改为批准（限定范围）**，只谈联合探索，里程碑按买家侧的电芯级指标设：先用大众的 700 次循环、容量损失不超过 20%，测试条件要在谈判中补齐。要注意，这些都是电芯级指标；本项目的回测只到电导率这一步，从电导率到电芯级循环之间，需要伙伴的电芯工程能力。
+- Q4 按标准算过，但买家点名的材料限制是**界面耐久性（裂纹）**，不是电导率；而本模块的回测只衡量电导率。所以已批准的两笔内部小投入保留；"为提高电导率而扩大筛选"不扩大；界面稳定性是下一个需要证据的关卡。
+- 10⁻³ S/cm 维持"研究筛选阈值"的说法。
+
+关卡到此结束，不再做桌面调研。
 
 ---
 
@@ -86,6 +110,30 @@ The battery backtest used 10⁻³ S/cm as its "above threshold" bar, but that is
 
 Whatever the result, no further desk research follows this gate.
 
-#### Results
+#### Results (21 November 2026)
 
-(To be filled in after the gate runs.)
+The research agent used 28 of its 30-search budget. I opened four pages and checked the quotes; all match the original text: Volkswagen's (PowerCo) release on the QuantumScape endurance test, BMW's release on Solid Power and Samsung SDI, the Toyota–Idemitsu release, and Samsung SDI's news page. Primary sources are recorded in `data/battery/literature_sources.csv`, IDs B001–B013.
+
+| Question | Result | Evidence |
+|---|---|---|
+| Q1 Who has the problem? | **Pass** | Toyota, Samsung SDI, Volkswagen (PowerCo) and BMW each list all-solid-state batteries as a development goal in their own releases (B001, B003, B004, B009) |
+| Q2 How big is it? | **Pass** | Samsung SDI plans mass production in 2027 at 900 Wh/L (B003); Toyota and Idemitsu target commercialisation in 2027 or 2028 (B001); PowerCo is licensed for up to 40 GWh a year, with an option for 80 GWh (B004) |
+| Q3 Which acceptance metrics? | **Pass (with caveats)** | Volkswagen says "the industry-standard targets for this development phase are 700 charging cycles and a maximum capacity loss of 20 percent", but gives no test conditions such as temperature or C-rate (B005). The US carmakers' consortium USABC gives cell targets with conditions: 300 Wh/kg, 700 Wh/L, 1,000 DST cycles, a 10-minute fast charge to 80% at 30 °C, −30 to +65 °C; but these are generic EV targets, not specific to solid state (B007). USABC is a carmaker consortium, not a formal standards body |
+| Q4 Why are new electrolyte materials needed? | **Pass (mixed)** | Toyota says "the biggest challenge is durability": repeated charging and discharging causes cracks between the electrodes and the solid electrolyte, and it has worked with Idemitsu since 2013 on a crack-resistant electrolyte (B002). BMW's release says Solid Power will supply sulfide solid electrolyte to Samsung SDI (B009), but states no payment. At the same time, Volkswagen says the next step is to "perfect and scale the manufacturing processes" (B006). The buyer side names both materials and interfaces, and manufacturing |
+
+**Conductivity threshold: no buyer-side source found.** Only supplier-side numbers were found: Solid Power's argyrodite powder specs are above 5.0, 3.25 and 1.5 mS/cm at 25 °C (B010, investor material; which generation each value belongs to is inferred from column order). USABC's active-material targets set no electrolyte or conductivity target (B008). Under the rules, 10⁻³ S/cm stays a "research screening threshold".
+
+**The series article's three claims:**
+- **Cell-level threshold (700 cycles, at most 20% capacity loss):** primary source found, a Volkswagen release (B005); but it is "the industry-standard target for this development phase", not a formal acceptance specification, and has no test conditions.
+- **QuantumScape about two years from A sample to B1 sample:** needs correcting. Primary sources show A0 samples shipped in 2022 (B012) and B1 samples began shipping in Q3 2025 (B011), about 2.5–2.8 years; the B0 date was not verified.
+- **"A screened electrolyte was made, with conductivity far below the threshold":** primary source found, a Microsoft and PNNL preprint: the AI-screened Na₂LiYCl₆ measured 2.2×10⁻⁶ S/cm at 100 °C (B013), about three orders of magnitude below 10⁻³ S/cm. That the series article refers to this paper is an inference.
+
+**No primary source found:** a buyer-side conductivity threshold; test conditions for Volkswagen's 700-cycle target; a named buyer paying for solid-electrolyte material; QuantumScape's Q4 2022 shareholder letter (its investor sites returned 403; the SEC annual report was used instead). The academic benchmarks (Randau 2020; Bielefeld, Weber, Janek 2020) were not opened, and nothing was recorded from them.
+
+**What the rules give:**
+- Q1 and Q2 pass: solid-state electrolytes can serve as an investment premise.
+- Q3 passes: **"partnership talks with a battery maker" moves from defer to approve (limited scope)**, joint exploration only, with milestones set on buyer-side cell-level metrics: start from Volkswagen's 700 cycles with at most 20% capacity loss, and settle the test conditions in the talks. Note that these are cell-level metrics; this project's backtest only reaches conductivity, and getting from conductivity to cell-level cycling needs a partner's cell-engineering capability.
+- Q4 passes on its criterion, but the material limit the buyer names is **interface durability (cracking)**, not conductivity, while this module's backtest measures only conductivity. So the two approved small internal investments stay; screening is not expanded for the sake of higher conductivity; interface stability is the next gate that needs evidence.
+- 10⁻³ S/cm keeps the name "research screening threshold".
+
+The gate ends here; no further desk research follows.
