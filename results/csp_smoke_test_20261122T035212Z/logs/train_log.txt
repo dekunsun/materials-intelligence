@@ -1,0 +1,157 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+Global seed set to 42
+[2026-11-22 03:58:55,722][hydra.utils][INFO] - Instantiating <equicsp.pl_data.datamodule.CrystDataModule>
+[2026-11-22 03:59:01,077][hydra.utils][INFO] - Instantiating <equicsp.pl_modules.diffusion.CSPDiffusion>
+[2026-11-22 03:59:05,688][hydra.utils][INFO] - Passing scaler from datamodule to model <StandardScalerTorch(means: -1.0828367471694946, stds: 0.9596083164215088)>
+[2026-11-22 03:59:05,689][hydra.utils][INFO] - Adding callback <LearningRateMonitor>
+[2026-11-22 03:59:05,689][hydra.utils][INFO] - Adding callback <EarlyStopping>
+[2026-11-22 03:59:05,691][hydra.utils][INFO] - Adding callback <ModelCheckpoint>
+[2026-11-22 03:59:05,695][hydra.utils][INFO] - Instantiating <WandbLogger>
+[2026-11-22 03:59:05,725][hydra.utils][INFO] - W&B is now watching <{cfg.logging.wandb_watch.log}>!
+[2026-11-22 03:59:05,748][hydra.utils][INFO] - Instantiating the Trainer
+/workspace/bundle/equicsp_src/equicsp/common/data_utils.py:1118: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  X = torch.tensor(X, dtype=torch.float)
+/workspace/venv/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:360: UserWarning: Checkpoint directory /workspace/out/singlerun/2026-11-22/smoke_PEROV_s42 exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+[2026-11-22 03:59:05,767][hydra.utils][INFO] - Starting training!
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name            | Type                     | Params
+-------------------------------------------------------------
+0 | decoder         | CSPNet                   | 12.3 M
+1 | beta_scheduler  | BetaScheduler            | 0     
+2 | sigma_scheduler | SigmaScheduler           | 0     
+3 | time_embedding  | SinusoidalTimeEmbeddings | 0     
+-------------------------------------------------------------
+12.3 M    Trainable params
+0         Non-trainable params
+12.3 M    Total params
+49.142    Total estimated model params size (MB)
+
+                                                              /workspace/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:102: UserWarning: The dataloader, val dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 96 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Global seed set to 42
+/workspace/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:102: UserWarning: The dataloader, train dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 96 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+
+
+
+
+
+                                                           [A
+
+
+
+
+
+                                                           [A
+
+Action                             	|  Mean duration (s)	|Num calls      	|  Total time (s) 	|  Percentage %   	|
+--------------------------------------------------------------------------------------------------------------------------------------
+Total                              	|  -              	|_              	|  295.32         	|  100 %          	|
+--------------------------------------------------------------------------------------------------------------------------------------
+run_training_epoch                 	|  26.628         	|11             	|  292.91         	|  99.183         	|
+run_training_batch                 	|  0.063362       	|4000           	|  253.45         	|  85.82          	|
+training_step_and_backward         	|  0.062167       	|4000           	|  248.67         	|  84.201         	|
+model_forward                      	|  0.031054       	|4000           	|  124.22         	|  42.061         	|
+backward                           	|  0.030879       	|4000           	|  123.52         	|  41.824         	|
+training_step                      	|  0.030862       	|4000           	|  123.45         	|  41.801         	|
+optimizer_step_and_closure_0       	|  0.066493       	|1000           	|  66.493         	|  22.515         	|
+get_train_batch                    	|  0.0061909      	|4000           	|  24.764         	|  8.3853         	|
+evaluation_step_and_end            	|  0.050286       	|130            	|  6.5372         	|  2.2135         	|
+validation_step                    	|  0.050186       	|130            	|  6.5242         	|  2.2092         	|
+on_train_batch_end                 	|  8.338e-05      	|4000           	|  0.33352        	|  0.11293        	|
+on_validation_end                  	|  0.099007       	|3              	|  0.29702        	|  0.10057        	|
+cache_result                       	|  1.7197e-05     	|16460          	|  0.28306        	|  0.095848       	|
+on_batch_start                     	|  1.7481e-05     	|4000           	|  0.069924       	|  0.023677       	|
+on_batch_end                       	|  1.3882e-05     	|4000           	|  0.055529       	|  0.018803       	|
+on_train_batch_start               	|  1.3861e-05     	|4000           	|  0.055444       	|  0.018774       	|
+training_step_end                  	|  7.3884e-06     	|4000           	|  0.029553       	|  0.010007       	|
+on_after_backward                  	|  1.9878e-05     	|1000           	|  0.019878       	|  0.0067307      	|
+on_train_epoch_start               	|  0.0015774      	|11             	|  0.017351       	|  0.0058752      	|
+on_train_start                     	|  0.013049       	|1              	|  0.013049       	|  0.0044186      	|
+on_before_zero_grad                	|  1.2325e-05     	|1000           	|  0.012325       	|  0.0041735      	|
+on_validation_batch_end            	|  3.2611e-05     	|130            	|  0.0042395      	|  0.0014355      	|
+on_train_epoch_end                 	|  0.00016379     	|11             	|  0.0018017      	|  0.00061008     	|
+on_validation_batch_start          	|  1.3548e-05     	|130            	|  0.0017613      	|  0.00059638     	|
+on_validation_start                	|  0.00048249     	|3              	|  0.0014475      	|  0.00049013     	|
+validation_step_end                	|  6.5732e-06     	|130            	|  0.00085451     	|  0.00028935     	|
+on_train_end                       	|  0.00054096     	|1              	|  0.00054096     	|  0.00018318     	|
+on_epoch_start                     	|  1.2727e-05     	|14             	|  0.00017818     	|  6.0335e-05     	|
+on_epoch_end                       	|  1.1619e-05     	|14             	|  0.00016266     	|  5.508e-05      	|
+on_validation_epoch_end            	|  1.3013e-05     	|3              	|  3.9038e-05     	|  1.3219e-05     	|
+on_validation_epoch_start          	|  9.4353e-06     	|3              	|  2.8306e-05     	|  9.5847e-06     	|
+on_fit_start                       	|  2.0347e-05     	|1              	|  2.0347e-05     	|  6.8897e-06     	|
+on_before_accelerator_backend_setup	|  8.727e-06      	|1              	|  8.727e-06      	|  2.9551e-06     	|
+on_train_dataloader                	|  7.613e-06      	|1              	|  7.613e-06      	|  2.5778e-06     	|
+on_val_dataloader                  	|  6.274e-06      	|1              	|  6.274e-06      	|  2.1244e-06     	|
+
+
+[2026-11-22 04:04:01,270][hydra.utils][INFO] - Starting testing!
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/workspace/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:102: UserWarning: The dataloader, test dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 96 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+Action                             	|  Mean duration (s)	|Num calls      	|  Total time (s) 	|  Percentage %   	|
+---------------------------------------------------------------------------------------------------------------------------------------
+Total                              	|  -              	|_              	|  300.2          	|  100 %          	|
+---------------------------------------------------------------------------------------------------------------------------------------
+run_training_epoch                 	|  26.628         	|11             	|  292.91         	|  97.573         	|
+run_training_batch                 	|  0.063362       	|4000           	|  253.45         	|  84.428         	|
+training_step_and_backward         	|  0.062167       	|4000           	|  248.67         	|  82.835         	|
+model_forward                      	|  0.031054       	|4000           	|  124.22         	|  41.378         	|
+backward                           	|  0.030879       	|4000           	|  123.52         	|  41.146         	|
+training_step                      	|  0.030862       	|4000           	|  123.45         	|  41.123         	|
+optimizer_step_and_closure_0       	|  0.066493       	|1000           	|  66.493         	|  22.15          	|
+get_train_batch                    	|  0.0061909      	|4000           	|  24.764         	|  8.2492         	|
+evaluation_step_and_end            	|  0.067236       	|148            	|  9.9509         	|  3.3148         	|
+validation_step                    	|  0.050186       	|130            	|  6.5242         	|  2.1733         	|
+test_step                          	|  0.18954        	|18             	|  3.4116         	|  1.1365         	|
+on_train_batch_end                 	|  8.338e-05      	|4000           	|  0.33352        	|  0.1111         	|
+on_validation_end                  	|  0.099007       	|3              	|  0.29702        	|  0.098942       	|
+cache_result                       	|  1.7192e-05     	|16524          	|  0.28407        	|  0.094629       	|
+on_batch_start                     	|  1.7481e-05     	|4000           	|  0.069924       	|  0.023293       	|
+on_batch_end                       	|  1.3882e-05     	|4000           	|  0.055529       	|  0.018498       	|
+on_train_batch_start               	|  1.3861e-05     	|4000           	|  0.055444       	|  0.018469       	|
+training_step_end                  	|  7.3884e-06     	|4000           	|  0.029553       	|  0.0098447      	|
+on_after_backward                  	|  1.9878e-05     	|1000           	|  0.019878       	|  0.0066215      	|
+on_train_epoch_start               	|  0.0015774      	|11             	|  0.017351       	|  0.0057799      	|
+on_train_start                     	|  0.013049       	|1              	|  0.013049       	|  0.0043469      	|
+on_before_zero_grad                	|  1.2325e-05     	|1000           	|  0.012325       	|  0.0041058      	|
+on_validation_batch_end            	|  3.2611e-05     	|130            	|  0.0042395      	|  0.0014122      	|
+on_train_epoch_end                 	|  0.00016379     	|11             	|  0.0018017      	|  0.00060018     	|
+on_validation_batch_start          	|  1.3548e-05     	|130            	|  0.0017613      	|  0.0005867      	|
+on_validation_start                	|  0.00048249     	|3              	|  0.0014475      	|  0.00048218     	|
+validation_step_end                	|  6.5732e-06     	|130            	|  0.00085451     	|  0.00028465     	|
+on_test_batch_end                  	|  3.6436e-05     	|18             	|  0.00065585     	|  0.00021847     	|
+on_train_end                       	|  0.00054096     	|1              	|  0.00054096     	|  0.0001802      	|
+on_test_batch_start                	|  1.5252e-05     	|18             	|  0.00027454     	|  9.1454e-05     	|
+on_test_start                      	|  0.0002313      	|1              	|  0.0002313      	|  7.705e-05      	|
+on_test_end                        	|  0.00019572     	|1              	|  0.00019572     	|  6.5197e-05     	|
+on_epoch_start                     	|  1.2535e-05     	|15             	|  0.00018802     	|  6.2633e-05     	|
+on_epoch_end                       	|  1.1508e-05     	|15             	|  0.00017262     	|  5.7501e-05     	|
+test_step_end                      	|  8.1666e-06     	|18             	|  0.000147       	|  4.8967e-05     	|
+on_validation_epoch_end            	|  1.3013e-05     	|3              	|  3.9038e-05     	|  1.3004e-05     	|
+on_validation_epoch_start          	|  9.4353e-06     	|3              	|  2.8306e-05     	|  9.4292e-06     	|
+on_before_accelerator_backend_setup	|  1.3907e-05     	|2              	|  2.7814e-05     	|  9.2653e-06     	|
+on_fit_end                         	|  2.4982e-05     	|1              	|  2.4982e-05     	|  8.3219e-06     	|
+on_fit_start                       	|  2.0347e-05     	|1              	|  2.0347e-05     	|  6.7779e-06     	|
+on_test_epoch_end                  	|  1.4353e-05     	|1              	|  1.4353e-05     	|  4.7812e-06     	|
+on_test_epoch_start                	|  9.479e-06      	|1              	|  9.479e-06      	|  3.1576e-06     	|
+on_train_dataloader                	|  7.613e-06      	|1              	|  7.613e-06      	|  2.536e-06      	|
+on_val_dataloader                  	|  6.274e-06      	|1              	|  6.274e-06      	|  2.09e-06       	|
+on_test_dataloader                 	|  6.1e-06        	|1              	|  6.1e-06        	|  2.032e-06      	|
+
+
+--------------------------------------------------------------------------------
+DATALOADER:0 TEST RESULTS
+{'test_coord_loss': 0.7268761396408081,
+ 'test_lattice_loss': 0.15037783980369568,
+ 'test_loss': 1.6397833824157715,
+ 'test_loss_score': 0.7196780443191528}
+--------------------------------------------------------------------------------

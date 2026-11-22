@@ -1,0 +1,61 @@
+{
+  "run_id": "csp_smoke_test_20261122T035212Z",
+  "purpose": "1,000-step smoke test of the pre-registered EquiCSP recipe, to measure time per optimiser step and project the cost of the full runs (cost gate in src/csp/random_removal_control.py). Not an experimental result.",
+  "repo_commit": "52df35f4917e4cae505a4820ea1c4eb7bbe8a04d",
+  "repo_uncommitted_code_sha256": {
+    "src/csp/equicsp_train.py": "3b42b85eb0db57fc504260e820d79f65816a5eb94e0142800df4c585e79d53ce",
+    "src/csp/pod_setup.sh": "e90c3555cda7299ee27a622137069b0514150f2db35cee303e3d7904af43a35c",
+    "src/csp/make_pod_bundle.sh": "04865f01bb0b117dcae38d6d425c538e62cdf02a981e7a206e6214556b4b1ba6"
+  },
+  "equicsp_commit": "d7921c37260f05386fde021d29e0724f995ee9c3",
+  "arm": "PEROV",
+  "seed": 42,
+  "data_sha256": {
+    "test.csv": "eae63b298138226c07d429a802843effc9865e01896733d93e4fe33e54264759",
+    "test_ori.pt": "28f9ab45c5312188038d625aa82f5e4d7bd29f365a4c6e793c96585034a1a296",
+    "train.csv": "d5ed58f0920a732ce57ceb036b3a1a50ef4c3364e05318a6619ee5b1d58447b5",
+    "train_ori.pt": "4473dea2e8d2dd38e7728e289440d2425b7603de7f18849ee0ebfd57610493d2",
+    "val.csv": "06023b155add93ec440a29832ecd69de5d7e6f97c381d174175b04b1b801b8ac",
+    "val_ori.pt": "ecac035bf8b503d3453528feeb6279b65ab6fdd0851b14c6eab1edcc2123b51b"
+  },
+  "bundle_sha256": "ba20bb81aa2bc6a7d4fbb35ed7e09df95b47b8874cac6ee44e098ca0eaa4fcb2",
+  "hydra_overrides": [
+    "expname=smoke_PEROV_s42",
+    "data.root_path=/workspace/bundle/data/PEROV",
+    "data.datamodule.batch_size.train=64",
+    "train.pl_trainer.accumulate_grad_batches=4",
+    "train.random_seed=42",
+    "data.train_max_epochs=2000",
+    "+train.pl_trainer.max_steps=1000"
+  ],
+  "recipe_notes": "Effective batch 256 (64 x 4 accumulation), FP32, Adam lr 1e-3 with ReduceLROnPlateau, deterministic=True, validation every 5 epochs (upstream defaults). Only max_steps differs from the full-run recipe.",
+  "hardware": {
+    "provider": "RunPod",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA A40",
+    "gpu_memory_gb": 45.0,
+    "vcpus": 10,
+    "data_center": "CA-MTL-1",
+    "host_cuda": "13.2",
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "price_usd_per_hour": 0.59,
+    "gpu_memory_note": "nvidia-smi reports 46068 MiB; the API's gpu.memory field (55) is not GPU memory"
+  },
+  "software": {
+    "python": "3.8.20",
+    "torch": "1.9.0+cu111",
+    "torch_scatter": "2.0.9",
+    "torch_sparse": "0.6.12",
+    "torch_geometric": "2.2.0",
+    "pytorch_lightning": "1.3.8",
+    "full_list": "logs/pip_freeze.txt"
+  },
+  "pod": {
+    "id": "wrdnw6308svpz0",
+    "created_utc": "2026-11-22T03:52:12Z",
+    "terminated_utc": "2026-11-22T04:04:39Z",
+    "confirmed_no_pods_left": true,
+    "training_started_utc": "2026-11-22T03:58:53Z",
+    "training_finished_utc": "2026-11-22T04:04:06Z"
+  }
+}
