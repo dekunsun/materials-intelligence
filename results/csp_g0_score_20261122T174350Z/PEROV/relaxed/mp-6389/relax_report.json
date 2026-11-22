@@ -1,0 +1,209 @@
+{
+ "model": "orb_v3_conservative_inf_omat",
+ "fmax": 0.01,
+ "max_steps": 500,
+ "optimizer": "ASE FIRE + FrechetCellFilter",
+ "device": "cpu",
+ "candidates": [
+  {
+   "candidate": "equicsp_0007",
+   "energy_per_atom_eV": -7.351952362060547,
+   "max_force_eV_per_A": 0.00696,
+   "steps": 79,
+   "converged": true,
+   "error": null,
+   "seconds": 21.2,
+   "rank": 1
+  },
+  {
+   "candidate": "equicsp_0016",
+   "energy_per_atom_eV": -7.351939392089844,
+   "max_force_eV_per_A": 0.00823,
+   "steps": 121,
+   "converged": true,
+   "error": null,
+   "seconds": 27.7,
+   "rank": 2
+  },
+  {
+   "candidate": "equicsp_0006",
+   "energy_per_atom_eV": -7.351919555664063,
+   "max_force_eV_per_A": 0.00956,
+   "steps": 96,
+   "converged": true,
+   "error": null,
+   "seconds": 25.7,
+   "rank": 3
+  },
+  {
+   "candidate": "equicsp_0013",
+   "energy_per_atom_eV": -7.336607360839844,
+   "max_force_eV_per_A": 0.00655,
+   "steps": 428,
+   "converged": true,
+   "error": null,
+   "seconds": 87.1,
+   "rank": 4
+  },
+  {
+   "candidate": "equicsp_0011",
+   "energy_per_atom_eV": -7.322557830810547,
+   "max_force_eV_per_A": 0.00395,
+   "steps": 117,
+   "converged": true,
+   "error": null,
+   "seconds": 25.6,
+   "rank": 5
+  },
+  {
+   "candidate": "equicsp_0005",
+   "energy_per_atom_eV": -7.315235900878906,
+   "max_force_eV_per_A": 0.00674,
+   "steps": 354,
+   "converged": true,
+   "error": null,
+   "seconds": 91.5,
+   "rank": 6
+  },
+  {
+   "candidate": "equicsp_0015",
+   "energy_per_atom_eV": -7.2936256408691404,
+   "max_force_eV_per_A": 0.01014,
+   "steps": 469,
+   "converged": false,
+   "error": null,
+   "seconds": 100.6,
+   "rank": 7
+  },
+  {
+   "candidate": "equicsp_0019",
+   "energy_per_atom_eV": -7.2818756103515625,
+   "max_force_eV_per_A": 0.00615,
+   "steps": 213,
+   "converged": true,
+   "error": null,
+   "seconds": 35.7,
+   "rank": 8
+  },
+  {
+   "candidate": "equicsp_0010",
+   "energy_per_atom_eV": -7.275952911376953,
+   "max_force_eV_per_A": 0.00714,
+   "steps": 221,
+   "converged": true,
+   "error": null,
+   "seconds": 54.2,
+   "rank": 9
+  },
+  {
+   "candidate": "equicsp_0017",
+   "energy_per_atom_eV": -7.262507629394531,
+   "max_force_eV_per_A": 0.00197,
+   "steps": 373,
+   "converged": true,
+   "error": null,
+   "seconds": 65.6,
+   "rank": 10
+  },
+  {
+   "candidate": "equicsp_0014",
+   "energy_per_atom_eV": -7.257941436767578,
+   "max_force_eV_per_A": 0.00601,
+   "steps": 327,
+   "converged": true,
+   "error": null,
+   "seconds": 69.4,
+   "rank": 11
+  },
+  {
+   "candidate": "equicsp_0004",
+   "energy_per_atom_eV": -7.257392883300781,
+   "max_force_eV_per_A": 0.00412,
+   "steps": 239,
+   "converged": true,
+   "error": null,
+   "seconds": 61.0,
+   "rank": 12
+  },
+  {
+   "candidate": "equicsp_0009",
+   "energy_per_atom_eV": -7.249349212646484,
+   "max_force_eV_per_A": 0.02439,
+   "steps": 500,
+   "converged": false,
+   "error": null,
+   "seconds": 123.2,
+   "rank": 13
+  },
+  {
+   "candidate": "equicsp_0018",
+   "energy_per_atom_eV": -7.24898681640625,
+   "max_force_eV_per_A": 0.00493,
+   "steps": 158,
+   "converged": true,
+   "error": null,
+   "seconds": 28.6,
+   "rank": 14
+  },
+  {
+   "candidate": "equicsp_0003",
+   "energy_per_atom_eV": -7.245573425292969,
+   "max_force_eV_per_A": 0.00916,
+   "steps": 301,
+   "converged": true,
+   "error": null,
+   "seconds": 87.3,
+   "rank": 15
+  },
+  {
+   "candidate": "equicsp_0001",
+   "energy_per_atom_eV": -7.233537292480468,
+   "max_force_eV_per_A": 0.00808,
+   "steps": 217,
+   "converged": true,
+   "error": null,
+   "seconds": 62.2,
+   "rank": 16
+  },
+  {
+   "candidate": "equicsp_0008",
+   "energy_per_atom_eV": -7.221707153320312,
+   "max_force_eV_per_A": 0.00504,
+   "steps": 156,
+   "converged": true,
+   "error": null,
+   "seconds": 38.9,
+   "rank": 17
+  },
+  {
+   "candidate": "equicsp_0002",
+   "energy_per_atom_eV": -7.2156837463378904,
+   "max_force_eV_per_A": 0.00972,
+   "steps": 235,
+   "converged": true,
+   "error": null,
+   "seconds": 65.6,
+   "rank": 18
+  },
+  {
+   "candidate": "equicsp_0020",
+   "energy_per_atom_eV": -7.215007019042969,
+   "max_force_eV_per_A": 0.00637,
+   "steps": 229,
+   "converged": true,
+   "error": null,
+   "seconds": 34.1,
+   "rank": 19
+  },
+  {
+   "candidate": "equicsp_0012",
+   "energy_per_atom_eV": -7.184492492675782,
+   "max_force_eV_per_A": 0.00631,
+   "steps": 261,
+   "converged": true,
+   "error": null,
+   "seconds": 55.1,
+   "rank": 20
+  }
+ ]
+}

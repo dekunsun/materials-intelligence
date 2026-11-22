@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ba2ErSbO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.33197212
+_cell_length_b   4.51282740
+_cell_length_c   10.01484585
+_cell_angle_alpha   104.22012329
+_cell_angle_beta   103.58649445
+_cell_angle_gamma   89.80652618
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba2ErSbO6
+_chemical_formula_sum   'Ba2 Er1 Sb1 O6'
+_cell_volume   184.16784168
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.74138689  0.26806909  0.74073941  1
+  Ba  Ba1  1  0.37078080  0.90112913  0.00331225  1
+  Er  Er2  1  0.50038499  0.52635884  0.25758117  1
+  Sb  Sb3  1  0.12546408  0.65416813  0.50979728  1
+  O  O4  1  0.22598892  0.75466907  0.71216774  1
+  O  O5  1  0.51926517  0.04433394  0.29182079  1
+  O  O6  1  0.37348825  0.40036106  0.00134150  1
+  O  O7  1  0.63081515  0.65741968  0.51820695  1
+  O  O8  1  0.00094340  0.53047264  0.26463413  1
+  O  O9  1  0.13001128  0.15854844  0.51841676  1

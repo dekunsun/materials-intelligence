@@ -1,0 +1,131 @@
+2026-11-22T06:11:25Z monitor start pod=bfj416cdkq5fmi host=69.30.85.226:22055 cap=11h
+2026-11-22T06:11:26Z copied; last step record: {"ev": "step", "step": 340, "t": 110.86}
+2026-11-22T06:21:28Z copied; last step record: {"ev": "step", "step": 2172, "t": 712.269}
+2026-11-22T06:31:29Z copied; last step record: {"ev": "step", "step": 4037, "t": 1313.822}
+2026-11-22T06:41:31Z copied; last step record: {"ev": "step", "step": 5913, "t": 1915.293}
+2026-11-22T06:51:32Z copied; last step record: {"ev": "step", "step": 7807, "t": 2516.899}
+2026-11-22T07:01:34Z copied; last step record: {"ev": "step", "step": 9700, "t": 3118.448}
+2026-11-22T07:11:40Z copied; last step record: {"ev": "step", "step": 11629, "t": 3724.563}
+2026-11-22T07:21:41Z copied; last step record: {"ev": "step", "step": 13567, "t": 4325.644}
+2026-11-22T07:31:43Z copied; last step record: {"ev": "step", "step": 15568, "t": 4927.381}
+2026-11-22T07:41:44Z copied; last step record: {"ev": "step", "step": 17544, "t": 5529.03}
+2026-11-22T07:51:46Z copied; last step record: {"ev": "val_start", "step": 19474, "t": 6127.095}
+2026-11-22T08:01:48Z copied; last step record: {"ev": "val_start", "step": 21374, "t": 6730.228}
+2026-11-22T08:11:54Z copied; last step record: {"ev": "step", "step": 23270, "t": 7338.377}
+2026-11-22T08:21:55Z copied; last step record: {"ev": "step", "step": 25177, "t": 7940.097}
+2026-11-22T08:31:57Z copied; last step record: {"ev": "step", "step": 27136, "t": 8541.733}
+2026-11-22T08:41:59Z copied; last step record: {"ev": "step", "step": 29106, "t": 9143.562}
+2026-11-22T08:52:00Z copied; last step record: {"ev": "step", "step": 31080, "t": 9745.263}
+2026-11-22T09:02:02Z copied; last step record: {"ev": "step", "step": 33060, "t": 10347.19}
+2026-11-22T09:12:08Z copied; last step record: {"ev": "step", "step": 35058, "t": 10952.795}
+2026-11-22T09:22:10Z copied; last step record: {"ev": "step", "step": 37047, "t": 11554.468}
+2026-11-22T09:32:11Z copied; last step record: {"ev": "step", "step": 39008, "t": 12156.401}
+2026-11-22T09:42:13Z copied; last step record: {"ev": "step", "step": 40988, "t": 12758.058}
+2026-11-22T09:52:15Z copied; last step record: {"ev": "step", "step": 42980, "t": 13359.863}
+2026-11-22T10:02:17Z copied; last step record: {"ev": "step", "step": 44972, "t": 13961.591}
+2026-11-22T10:12:23Z copied; last step record: {"ev": "step", "step": 46932, "t": 14567.489}
+2026-11-22T10:22:25Z copied; last step record: {"ev": "step", "step": 48864, "t": 15169.327}
+2026-11-22T10:32:26Z copied; last step record: {"ev": "val_start", "step": 50824, "t": 15770.487}
+2026-11-22T10:42:28Z copied; last step record: {"ev": "step", "step": 52763, "t": 16373.217}
+2026-11-22T10:52:30Z copied; last step record: {"ev": "step", "step": 54732, "t": 16974.95}
+2026-11-22T11:02:32Z copied; last step record: {"ev": "step", "step": 56642, "t": 17576.769}
+2026-11-22T11:12:38Z copied; last step record: {"ev": "step", "step": 58544, "t": 18182.764}
+2026-11-22T11:22:40Z copied; last step record: {"ev": "step", "step": 60471, "t": 18784.756}
+2026-11-22T11:32:42Z copied; last step record: {"ev": "step", "step": 62469, "t": 19386.519}
+2026-11-22T11:42:43Z copied; last step record: {"ev": "step", "step": 64457, "t": 19988.421}
+2026-11-22T11:52:45Z copied; last step record: {"ev": "step", "step": 66412, "t": 20590.201}
+2026-11-22T12:02:47Z copied; last step record: {"ev": "step", "step": 68230, "t": 21192.291}
+2026-11-22T12:12:53Z copied; last step record: {"ev": "step", "step": 69965, "t": 21798.094}
+2026-11-22T12:22:55Z copied; last step record: {"ev": "step", "step": 71733, "t": 22399.846}
+2026-11-22T12:32:57Z copied; last step record: {"ev": "step", "step": 73400, "t": 23001.977}
+2026-11-22T12:42:59Z copied; last step record: {"ev": "step", "step": 75175, "t": 23603.835}
+2026-11-22T12:53:01Z copied; last step record: {"ev": "step", "step": 77000, "t": 24205.929}
+2026-11-22T13:03:03Z copied; last step record: {"ev": "step", "step": 78829, "t": 24807.916}
+2026-11-22T13:13:09Z copied; last step record: {"ev": "step", "step": 80753, "t": 25413.935}
+2026-11-22T13:23:11Z copied; last step record: {"ev": "step", "step": 82733, "t": 26015.684}
+2026-11-22T13:33:13Z copied; last step record: {"ev": "step", "step": 84648, "t": 26617.767}
+2026-11-22T13:43:15Z copied; last step record: {"ev": "step", "step": 86627, "t": 27219.796}
+2026-11-22T13:53:17Z copied; last step record: {"ev": "step", "step": 88583, "t": 27821.769}
+2026-11-22T14:03:19Z copied; last step record: {"ev": "step", "step": 90562, "t": 28424.0}
+2026-11-22T14:13:25Z copied; last step record: {"ev": "step", "step": 92545, "t": 29029.699}
+2026-11-22T14:23:27Z copied; last step record: {"ev": "step", "step": 94501, "t": 29631.826}
+2026-11-22T14:33:29Z copied; last step record: {"ev": "step", "step": 96450, "t": 30234.056}
+2026-11-22T14:43:31Z copied; last step record: {"ev": "step", "step": 98403, "t": 30836.038}
+2026-11-22T14:53:33Z copied; last step record: {"ev": "step", "step": 100355, "t": 31438.06}
+2026-11-22T15:03:35Z copied; last step record: {"ev": "step", "step": 102300, "t": 32040.244}
+2026-11-22T15:13:41Z copied; last step record: {"ev": "step", "step": 104229, "t": 32646.274}
+2026-11-22T15:23:44Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T15:23:44Z run finished: exit 0; final copy
+2026-11-22T15:23:51Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T15:33:53Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T15:33:53Z run finished: exit 0; final copy
+2026-11-22T15:34:00Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T15:44:02Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T15:44:02Z run finished: exit 0; final copy
+2026-11-22T15:44:09Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T15:54:11Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T15:54:11Z run finished: exit 0; final copy
+2026-11-22T15:54:19Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:04:21Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:04:21Z run finished: exit 0; final copy
+2026-11-22T16:04:28Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:14:34Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:14:34Z run finished: exit 0; final copy
+2026-11-22T16:14:41Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:24:43Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:24:43Z run finished: exit 0; final copy
+2026-11-22T16:24:50Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:34:52Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:34:52Z run finished: exit 0; final copy
+2026-11-22T16:35:00Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:45:02Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:45:02Z run finished: exit 0; final copy
+2026-11-22T16:45:09Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T16:55:11Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3887901306152344, "t": 33187.878}
+2026-11-22T16:55:11Z run finished: exit 0; final copy
+2026-11-22T16:55:18Z WARNING checkpoint listing differs: remote=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt] local=[49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=119-step=11399.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=219-step=20899.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/epoch=364-step=34674.ckpt
+49845633 ./singlerun/2026-11-22/PEROV_s42/last.ckpt]; pod kept until the next check or the cap
+2026-11-22T17:05:19Z time cap reached; final copy, then terminate
+2026-11-22T17:05:26Z DELETE pod bfj416cdkq5fmi -> HTTP 204
+2026-11-22T17:05:46Z pods left on account: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: string indices must be integers, not 'str'

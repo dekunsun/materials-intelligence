@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_BaPrMn2O6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.00871515
+_cell_length_b   4.02753592
+_cell_length_c   8.26108551
+_cell_angle_alpha   89.78630066
+_cell_angle_beta   90.36876678
+_cell_angle_gamma   90.63694763
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaPrMn2O6
+_chemical_formula_sum   'Ba1 Pr1 Mn2 O6'
+_cell_volume   133.36534689
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.58077174  0.48354366  0.00779147  1
+  Pr  Pr1  1  0.57930464  0.48348987  0.50755203  1
+  Mn  Mn2  1  0.08098603  0.98364311  0.25935656  1
+  Mn  Mn3  1  0.08048567  0.98370850  0.75687307  1
+  O  O4  1  0.58054584  0.98302221  0.28320467  1
+  O  O5  1  0.07928847  0.98327738  0.50928384  1
+  O  O6  1  0.08065362  0.48338732  0.28297541  1
+  O  O7  1  0.58046353  0.98394579  0.73449451  1
+  O  O8  1  0.07961586  0.48321545  0.73492551  1
+  O  O9  1  0.07955231  0.98409653  0.00846066  1

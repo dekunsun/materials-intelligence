@@ -1,0 +1,120 @@
+{
+ "what": "G0 runner-check training runs of the CSP random-removal control (pre-registered in src/csp/random_removal_control.py)",
+ "repo_commit": "5b874a197ac7f9c68860cb738302379bf3e1d7fb",
+ "uncommitted_code_sha256": {
+  "src/csp/pod_train.sh": "be447b6d4c34d2ab943c2dbb8aea13752ab0601bd6ad720ef5d900a5042a8051",
+  "src/csp/make_pod_bundle.sh": "a7c137ed1182c0f723cd0d9ed769ff3c4e736c0813e08df2409095fbbe7f606b"
+ },
+ "code_sha256": {
+  "src/csp/equicsp_train.py": "3b42b85eb0db57fc504260e820d79f65816a5eb94e0142800df4c585e79d53ce",
+  "src/csp/pod_setup.sh": "e90c3555cda7299ee27a622137069b0514150f2db35cee303e3d7904af43a35c",
+  "src/csp/requirements-equicsp.txt": "4fae357612149fe8f1c6f1636c4943314c2231fe6c28d67290e15972f52119c8"
+ },
+ "equicsp_commit": "d7921c37260f05386fde021d29e0724f995ee9c3",
+ "hydra_overrides": "expname=<ARM>_s42 data.root_path=<bundle>/data/<ARM> data.datamodule.batch_size.train=64 train.pl_trainer.accumulate_grad_batches=4 train.random_seed=42 data.train_max_epochs=2000 +train.pl_trainer.max_steps=106000",
+ "command": "bash src/csp/pod_train.sh <ARM> 42 106000",
+ "runs": {
+  "ABC2D6": {
+   "arm": "ABC2D6",
+   "seed": 42,
+   "max_steps": 106000,
+   "steps_done": 106000,
+   "exit_code": "exit 0",
+   "data_sha256": {
+    "test.csv": "eae63b298138226c07d429a802843effc9865e01896733d93e4fe33e54264759",
+    "test_ori.pt": "28f9ab45c5312188038d625aa82f5e4d7bd29f365a4c6e793c96585034a1a296",
+    "train.csv": "32cb95342078d654905ebbb9515f4d6e42e4baf64f25a45e8e9e05beb65013a5",
+    "train_ori.pt": "69d8c6615ccd9ab77cf67e42d89d7b9e36652c23ae4e5eb4348705fd721c107d",
+    "val.csv": "c85f0a32e3e2a57474426aa28407dd4cdee056e5de4647f566498d17d35e3003",
+    "val_ori.pt": "8b62eeccbd6a0fd0089a584f699c5edc8ee68ca86c6b01adc5671c0c99c43b53"
+   },
+   "bundle_sha256": "5022d22bb72f43be08645ba3821d39cf614d677d88396b23ac4a12ab2f52327f",
+   "pod": {
+    "id": "4x4a32ei3ij921",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA RTX A5000",
+    "vcpu": 9,
+    "price_per_hour_usd": 0.27,
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "created": "2026-11-22T05:55:36.708Z",
+    "terminated": "2026-11-22T16:58:39Z",
+    "hours_billed_estimate": 11.05,
+    "cost_estimate_usd": 2.98,
+    "note": "cost is price x time from the API's createdAt to the DELETE; not checked against billing (the key has no billing scope)",
+    "data_center": "EU-SE-1"
+   },
+   "training": {
+    "started": "2026-11-22T06:06:34+00:00",
+    "finished": "2026-11-22T15:42:54+00:00",
+    "train_seconds_incl_validation": 34553.227,
+    "seconds_per_step": 0.326,
+    "peak_gpu_mem_gib": 2.42,
+    "mean_gpu_util_pct": 61.9,
+    "idle_hours_after_training_before_delete": 1.26
+   },
+   "checkpoints": {
+    "validation_selected": "epoch=394-step=39499.ckpt",
+    "last": "last.ckpt",
+    "stored_at": "data/raw/csp_g0/ABC2D6_s42/ (gitignored)",
+    "sha256_file": "logs/ABC2D6/checkpoint_sha256.txt"
+   },
+   "end_of_run_test_on_validation_selected_checkpoint": {
+    "test_coord_loss": 0.3882961571216583,
+    "test_lattice_loss": 0.020776303485035896,
+    "test_loss": 0.8306089639663696,
+    "test_loss_score": 0.3794782757759094
+   }
+  },
+  "PEROV": {
+   "arm": "PEROV",
+   "seed": 42,
+   "max_steps": 106000,
+   "steps_done": 106000,
+   "exit_code": "exit 0",
+   "data_sha256": {
+    "test.csv": "eae63b298138226c07d429a802843effc9865e01896733d93e4fe33e54264759",
+    "test_ori.pt": "28f9ab45c5312188038d625aa82f5e4d7bd29f365a4c6e793c96585034a1a296",
+    "train.csv": "d5ed58f0920a732ce57ceb036b3a1a50ef4c3364e05318a6619ee5b1d58447b5",
+    "train_ori.pt": "4473dea2e8d2dd38e7728e289440d2425b7603de7f18849ee0ebfd57610493d2",
+    "val.csv": "06023b155add93ec440a29832ecd69de5d7e6f97c381d174175b04b1b801b8ac",
+    "val_ori.pt": "ecac035bf8b503d3453528feeb6279b65ab6fdd0851b14c6eab1edcc2123b51b"
+   },
+   "bundle_sha256": "a68a65dd70a70214e0bbd2af41be5b8510f34d5680efb7ced1ce6623bd3b0562",
+   "pod": {
+    "id": "bfj416cdkq5fmi",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA RTX A5000",
+    "vcpu": 9,
+    "price_per_hour_usd": 0.27,
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "created": "2026-11-22T06:02:46.521Z",
+    "terminated": "2026-11-22T17:05:26Z",
+    "hours_billed_estimate": 11.04,
+    "cost_estimate_usd": 2.98,
+    "note": "cost is price x time from the API's createdAt to the DELETE; not checked against billing (the key has no billing scope)",
+    "data_center": "CA-MTL-1"
+   },
+   "training": {
+    "started": "2026-11-22T06:09:18+00:00",
+    "finished": "2026-11-22T15:22:54+00:00",
+    "train_seconds_incl_validation": 33187.878,
+    "seconds_per_step": 0.3131,
+    "peak_gpu_mem_gib": 2.39,
+    "mean_gpu_util_pct": 61.5,
+    "idle_hours_after_training_before_delete": 1.71
+   },
+   "checkpoints": {
+    "validation_selected": "epoch=364-step=34674.ckpt",
+    "last": "last.ckpt",
+    "stored_at": "data/raw/csp_g0/PEROV_s42/ (gitignored)",
+    "sha256_file": "logs/PEROV/checkpoint_sha256.txt"
+   },
+   "end_of_run_test_on_validation_selected_checkpoint": {
+    "test_coord_loss": 0.4116760194301605,
+    "test_lattice_loss": 0.0219045951962471,
+    "test_loss": 0.8827950358390808,
+    "test_loss_score": 0.40192514657974243
+   }
+  }
+ }
+}

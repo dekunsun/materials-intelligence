@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_LiPr2OsO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.89030838
+_cell_length_b   5.72382498
+_cell_length_c   7.31607389
+_cell_angle_alpha   89.85481262
+_cell_angle_beta   108.24699402
+_cell_angle_gamma   103.12153625
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiPr2OsO6
+_chemical_formula_sum   'Li2 Pr4 Os2 O12'
+_cell_volume   266.14042576
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.40300679  0.99196714  0.33405444  1
+  Li  Li1  1  0.94531065  0.35913098  0.70281398  1
+  Pr  Pr2  1  0.45833489  0.46621490  0.06764746  1
+  Pr  Pr3  1  0.10446420  0.46164277  0.29597566  1
+  Pr  Pr4  1  0.26733720  0.91762096  0.78208309  1
+  Pr  Pr5  1  0.90276051  0.91747403  0.98731202  1
+  Os  Os6  1  0.82830113  0.85890156  0.43209597  1
+  Os  Os7  1  0.53690618  0.50128895  0.63772815  1
+  O  O8  1  0.23592010  0.48567355  0.64004332  1
+  O  O9  1  0.13147429  0.88782299  0.43533969  1
+  O  O10  1  0.19349641  0.71310931  0.04548992  1
+  O  O11  1  0.55457962  0.27109149  0.82492208  1
+  O  O12  1  0.18261963  0.20328116  0.04305108  1
+  O  O13  1  0.56915843  0.75308168  0.84529829  1
+  O  O14  1  0.88852870  0.05912184  0.66548210  1
+  O  O15  1  0.82136148  0.10123428  0.25748205  1
+  O  O16  1  0.48470804  0.30505395  0.41344246  1
+  O  O17  1  0.85740054  0.63184959  0.66392207  1
+  O  O18  1  0.50986218  0.71288198  0.40509790  1
+  O  O19  1  0.80341983  0.61520010  0.21338300  1

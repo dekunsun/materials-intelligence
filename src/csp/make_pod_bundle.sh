@@ -7,7 +7,7 @@
 set -euo pipefail
 ARM=${1:?arm name, e.g. PEROV}; OUT=${2:?output directory}
 B="$OUT/bundle"; rm -rf "$B"; mkdir -p "$B/src/csp" "$B/data/$ARM" "$B/equicsp_src"
-cp src/csp/pod_setup.sh src/csp/equicsp_train.py src/csp/requirements-equicsp.txt "$B/src/csp/"
+cp src/csp/pod_setup.sh src/csp/pod_train.sh src/csp/equicsp_train.py src/csp/requirements-equicsp.txt "$B/src/csp/"
 cp data/raw/equicsp_data/"$ARM"/* "$B/data/$ARM/"
 cp data/raw/equicsp_data/MANIFEST.json "$B/data/equicsp_data_MANIFEST.json"
 cp data/raw/csp_ablation/MANIFEST.json "$B/data/csp_ablation_MANIFEST.json"

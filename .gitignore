@@ -3,3 +3,7 @@ data/raw/
 __pycache__/
 *.pyc
 .DS_Store
+
+# throwaway SSH keys for rented pods must never be committed
+id_g0
+id_g0.pub

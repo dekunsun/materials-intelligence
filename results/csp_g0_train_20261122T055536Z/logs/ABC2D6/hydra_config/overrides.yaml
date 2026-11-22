@@ -1,0 +1,7 @@
+- expname=ABC2D6_s42
+- data.root_path=/workspace/bundle/data/ABC2D6
+- data.datamodule.batch_size.train=64
+- train.pl_trainer.accumulate_grad_batches=4
+- train.random_seed=42
+- data.train_max_epochs=2000
+- +train.pl_trainer.max_steps=106000

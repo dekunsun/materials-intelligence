@@ -1,0 +1,42 @@
+{
+  "run_id": "csp_speed_a5000_20261122T041156Z",
+  "purpose": "Same 1,000-step smoke test as results/csp_smoke_test_20261122T035212Z, on an RTX A5000, to compare speed and cost before the G0 runs. Not an experimental result.",
+  "repo_commit": "5b874a197ac7f9c68860cb738302379bf3e1d7fb",
+  "repo_uncommitted_code_sha256": {
+    "src/csp/pod_train.sh": "be447b6d4c34d2ab943c2dbb8aea13752ab0601bd6ad720ef5d900a5042a8051",
+    "src/csp/make_pod_bundle.sh": "a7c137ed1182c0f723cd0d9ed769ff3c4e736c0813e08df2409095fbbe7f606b"
+  },
+  "bundle_sha256": "21f8eb748baab0b246bd5e55b8fb6c08452bbdf583824680c83dcbed3d75d883",
+  "arm": "PEROV",
+  "seed": 42,
+  "max_steps": 1000,
+  "command": "bash src/csp/pod_train.sh PEROV 42 1000",
+  "hardware": {
+    "provider": "RunPod",
+    "cloud": "COMMUNITY",
+    "gpu": "NVIDIA RTX A5000",
+    "gpu_memory_mib_nvidia_smi": 24564,
+    "vcpus": 3,
+    "host_cuda": "12.4",
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "price_usd_per_hour": 0.16
+  },
+  "pod": {
+    "id": "q1ydp1fl86te9k",
+    "created_utc": "2026-11-22T04:11:56Z",
+    "terminated_utc": "2026-11-22T04:21:13Z",
+    "confirmed_no_pods_left": true
+  },
+  "measured": {
+    "all_in_seconds_per_step": 0.2892,
+    "steady_mean": 0.2798,
+    "steady_median": 0.278,
+    "steady_p90": 0.292,
+    "validation_pass_seconds": [
+      3.98,
+      4.04
+    ],
+    "mean_gpu_util_percent": 56.6,
+    "peak_gpu_mem_gib": 2.18
+  }
+}

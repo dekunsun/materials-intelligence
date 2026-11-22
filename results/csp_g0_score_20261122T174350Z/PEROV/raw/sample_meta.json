@@ -1,0 +1,97 @@
+{
+ "run_dir": "/Users/xtc/Downloads/materials-intelligence/data/raw/csp_g0/PEROV_s42",
+ "checkpoint": "epoch=364-step=34674.ckpt",
+ "checkpoint_sha256": "669b0b97b4cfd7c8c923ed1aed72abe10f2f380392cacda3f63d1e541f9b8c94",
+ "load_state_dict": {
+  "missing_keys": [],
+  "unexpected_keys": []
+ },
+ "seed": 42,
+ "step_lr": 5e-06,
+ "n_candidates": 20,
+ "diffusion_steps": 1000,
+ "device": "cpu",
+ "device_name": "Apple M3 Pro",
+ "torch_threads": 12,
+ "torch": "1.9.0",
+ "python": "3.8.20",
+ "targets": {
+  "mp-6231": {
+   "input": "Ba2Er1Sb1O6",
+   "n_atoms": 10,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 225.4
+  },
+  "mp-19093": {
+   "input": "Ba2U1Ni1O6",
+   "n_atoms": 10,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 226.0
+  },
+  "mp-19274": {
+   "input": "Ba1Pr1Mn2O6",
+   "n_atoms": 10,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 224.5
+  },
+  "mp-6389": {
+   "input": "Na2La4Ru2O12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 744.2
+  },
+  "mp-16307": {
+   "input": "Sr2Mg1Ir1O6",
+   "n_atoms": 10,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 221.0
+  },
+  "mp-557387": {
+   "input": "Sr4Tm2Nb2O12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 749.9
+  },
+  "mp-6603": {
+   "input": "Sr4Ce2Ir2O12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 740.9
+  },
+  "mp-1215245": {
+   "input": "Zr1Ti1Ni2H6",
+   "n_atoms": 10,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 222.4
+  },
+  "mp-10321": {
+   "input": "La4Zn2Rh2O12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 732.8
+  },
+  "mp-12449": {
+   "input": "Li2Pr4Os2O12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 732.8
+  },
+  "mp-556434": {
+   "input": "Ag2Bi2P4S12",
+   "n_atoms": 20,
+   "written": 20,
+   "failed": [],
+   "sample_seconds": 741.7
+  }
+ }
+}

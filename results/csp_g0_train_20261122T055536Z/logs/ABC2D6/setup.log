@@ -1,0 +1,208 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+downloading uv 0.13.9 x86_64-unknown-linux-gnu
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading cpython-3.8.20-linux-x86_64-gnu (download) (19.9MiB)
+ Downloaded cpython-3.8.20-linux-x86_64-gnu (download)
+Using CPython 3.8.20
+Creating virtual environment at: /workspace/venv
+Activate with: source /workspace/venv/bin/activate
+Using Python 3.8.20 environment at: /workspace/venv
+Resolved 2 packages in 94ms
+Downloading torch (1.9GiB)
+ Downloaded torch
+Prepared 2 packages in 17.01s
+Installed 2 packages in 485ms
+ + torch==1.9.0+cu111
+ + typing-extensions==4.13.2
+Using Python 3.8.20 environment at: /workspace/venv
+Resolved 4 packages in 596ms
+Downloading scipy (32.9MiB)
+Downloading numpy (16.5MiB)
+Downloading torch-sparse (3.6MiB)
+Downloading torch-scatter (9.9MiB)
+ Downloaded torch-sparse
+ Downloaded torch-scatter
+ Downloaded numpy
+ Downloaded scipy
+Prepared 4 packages in 437ms
+Installed 4 packages in 329ms
+ + numpy==1.24.4
+ + scipy==1.10.1
+ + torch-scatter==2.0.9
+ + torch-sparse==0.6.12
+Using Python 3.8.20 environment at: /workspace/venv
+Resolved 3 packages in 134ms
+Downloading cython (1.8MiB)
+ Downloaded cython
+Prepared 3 packages in 62ms
+Installed 3 packages in 58ms
+ + cython==0.29.37
+ + setuptools==59.5.0
+ + wheel==0.45.1
+Using Python 3.8.20 environment at: /workspace/venv
+Resolved 1 package in 89ms
+Prepared 1 package in 18ms
+Installed 1 package in 12ms
+ + pyyaml==5.4.1
+Using Python 3.8.20 environment at: /workspace/venv
+Resolved 109 packages in 1.94s
+   Building torch-geometric==2.2.0
+Downloading tensorboard-data-server (6.3MiB)
+Downloading plotly (9.2MiB)
+Downloading sympy (5.9MiB)
+Downloading ase (2.7MiB)
+Downloading numpy (15.0MiB)
+Downloading matplotlib (8.8MiB)
+Downloading pydantic (2.7MiB)
+Downloading aiohttp (1.2MiB)
+Downloading networkx (2.0MiB)
+Downloading fonttools (4.5MiB)
+Downloading wandb (2.0MiB)
+Downloading pandas (11.6MiB)
+Downloading kiwisolver (1.1MiB)
+Downloading cryptography (4.5MiB)
+Downloading pillow (4.3MiB)
+Downloading scikit-learn (9.3MiB)
+Downloading pymatgen (9.2MiB)
+Downloading tensorboard (5.3MiB)
+Downloading grpcio (5.7MiB)
+   Building antlr4-python3-runtime==4.8
+   Building p-tqdm==1.4.0
+   Building pathtools==0.1.2
+ Downloaded kiwisolver
+ Downloaded aiohttp
+ Downloaded networkx
+ Downloaded wandb
+   Building setproctitle==1.3.8
+ Downloaded pydantic
+ Downloaded ase
+ Downloaded pillow
+ Downloaded fonttools
+ Downloaded cryptography
+ Downloaded grpcio
+      Built p-tqdm==1.4.0
+ Downloaded tensorboard-data-server
+ Downloaded tensorboard
+ Downloaded sympy
+      Built antlr4-python3-runtime==4.8
+ Downloaded plotly
+ Downloaded scikit-learn
+ Downloaded matplotlib
+ Downloaded pymatgen
+      Built pathtools==0.1.2
+ Downloaded pandas
+ Downloaded numpy
+      Built torch-geometric==2.2.0
+      Built setproctitle==1.3.8
+Prepared 103 packages in 2.32s
+Uninstalled 1 package in 47ms
+Installed 103 packages in 553ms
+ + absl-py==2.3.1
+ + aiohappyeyeballs==2.4.4
+ + aiohttp==3.10.11
+ + aiosignal==1.3.1
+ + antlr4-python3-runtime==4.8
+ + appdirs==1.4.4
+ + ase==3.23.0
+ + async-timeout==5.0.1
+ + attrs==25.3.0
+ + certifi==2026.11.20
+ + cffi==1.17.1
+ + charset-normalizer==3.5.2
+ + click==8.1.8
+ + contourpy==1.1.1
+ + cryptography==47.0.0
+ + cycler==0.12.1
+ + dill==0.4.0
+ + docker-pycreds==0.4.0
+ + einops==0.6.1
+ + emmet-core==0.68.0
+ + filelock==3.16.1
+ + fonttools==4.57.0
+ + frozenlist==1.5.0
+ + fsspec==2025.3.0
+ + future==1.0.0
+ + gitdb==4.0.12
+ + gitpython==3.2.1
+ + google-auth==2.50.0
+ + google-auth-oauthlib==1.0.0
+ + grpcio==1.70.0
+ + hydra-core==1.1.0
+ + idna==3.15
+ + importlib-metadata==8.5.0
+ + importlib-resources==6.4.5
+ + jinja2==3.1.6
+ + joblib==1.4.2
+ + kiwisolver==1.4.7
+ + latexcodec==3.0.0
+ + markdown==3.7
+ + markupsafe==2.1.5
+ + matplotlib==3.7.2
+ + monty==2023.9.25
+ + mp-api==0.35.1
+ + mpmath==1.3.0
+ + msgpack==1.1.1
+ + multidict==6.1.0
+ + multiprocess==0.70.18
+ + narwhals==1.42.1
+ + networkx==3.1
+ - numpy==1.24.4
+ + numpy==1.21.6
+ + oauthlib==3.3.1
+ + omegaconf==2.1.0
+ + p-tqdm==1.4.0
+ + packaging==26.2
+ + palettable==3.3.3
+ + pandas==1.5.3
+ + pathos==0.3.4
+ + pathtools==0.1.2
+ + pillow==10.4.0
+ + plotly==7.1.0
+ + pox==0.3.6
+ + ppft==1.7.7
+ + propcache==0.2.0
+ + protobuf==4.25.9
+ + psutil==7.2.2
+ + pyasn1==0.6.5
+ + pyasn1-modules==0.4.2
+ + pybtex==0.26.1
+ + pycparser==2.23
+ + pydantic==1.10.27
+ + pydeprecate==0.3.0
+ + pymatgen==2023.8.10
+ + pyparsing==3.0.9
+ + python-dateutil==3.0.0
+ + python-dotenv==1.0.0
+ + pytorch-lightning==1.3.8
+ + pytz==2026.6
+ + requests==2.32.4
+ + requests-oauthlib==2.0.0
+ + ruamel-yaml==0.18.16
+ + ruamel-yaml-clib==0.2.8
+ + scikit-learn==1.2.2
+ + sentry-sdk==2.75.0
+ + setproctitle==1.3.8
+ + six==1.17.0
+ + smact==2.5.3
+ + smmap==5.0.3
+ + spglib==2.4.0
+ + sympy==1.13.3
+ + tabulate==0.9.0
+ + tensorboard==2.14.0
+ + tensorboard-data-server==0.7.2
+ + threadpoolctl==3.5.0
+ + torch-geometric==2.2.0
+ + torchmetrics==0.5.0
+ + tqdm==4.70.1
+ + tzdata==2026.6
+ + uncertainties==3.2.3
+ + urllib3==2.2.3
+ + wandb==0.15.12
+ + werkzeug==3.0.6
+ + yarl==1.15.2
+ + zipp==3.20.2
+torch 1.9.0+cu111 cuda 11.1 gpu NVIDIA RTX A5000 pl 1.3.8
