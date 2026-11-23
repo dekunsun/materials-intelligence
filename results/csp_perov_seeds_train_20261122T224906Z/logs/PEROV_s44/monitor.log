@@ -1,0 +1,171 @@
+2026-11-22T22:52:47Z monitor start pod=cqh2yg7i2rh9go host=194.68.245.133:22162 cap=11h
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T22:52:49Z copied; last step record: {"ev": "step", "step": 304, "t": 94.328}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T23:02:52Z copied; last step record: {"ev": "step", "step": 2217, "t": 696.708}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T23:12:55Z copied; last step record: {"ev": "step", "step": 4154, "t": 1299.631}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T23:22:58Z copied; last step record: {"ev": "step", "step": 6115, "t": 1902.513}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T23:33:01Z copied; last step record: {"ev": "step", "step": 8055, "t": 2505.799}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-22T23:43:05Z copied; last step record: {"ev": "val_start", "step": 9974, "t": 3108.471}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-22T23:53:16Z copied; last step record: {"ev": "step", "step": 11932, "t": 3721.715}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T00:03:20Z copied; last step record: {"ev": "step", "step": 13883, "t": 4324.134}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T00:13:23Z copied; last step record: {"ev": "step", "step": 15850, "t": 4927.765}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T00:23:27Z copied; last step record: {"ev": "step", "step": 17854, "t": 5531.288}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T00:33:31Z copied; last step record: {"ev": "step", "step": 19850, "t": 6134.888}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T00:43:34Z copied; last step record: {"ev": "step", "step": 21814, "t": 6738.542}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T00:53:46Z copied; last step record: {"ev": "step", "step": 23761, "t": 7351.117}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T01:03:49Z copied; last step record: {"ev": "step", "step": 25721, "t": 7954.384}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T01:13:53Z copied; last step record: {"ev": "step", "step": 27682, "t": 8557.898}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T01:23:56Z copied; last step record: {"ev": "step", "step": 29672, "t": 9161.439}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T01:34:00Z copied; last step record: {"ev": "step", "step": 31659, "t": 9765.545}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T01:44:04Z copied; last step record: {"ev": "step", "step": 33627, "t": 10369.482}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T01:54:16Z copied; last step record: {"ev": "val_start", "step": 35624, "t": 10980.204}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T02:04:20Z copied; last step record: {"ev": "step", "step": 37608, "t": 11585.124}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+2026-11-23T02:14:24Z copied; last step record: {"ev": "step", "step": 39615, "t": 12188.819}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T02:24:27Z copied; last step record: {"ev": "step", "step": 41588, "t": 12792.147}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T02:34:30Z copied; last step record: {"ev": "step", "step": 43588, "t": 13395.6}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T02:44:34Z copied; last step record: {"ev": "step", "step": 45574, "t": 13999.24}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+2026-11-23T02:54:46Z copied; last step record: {"ev": "step", "step": 47590, "t": 14611.156}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+2026-11-23T03:04:49Z copied; last step record: {"ev": "step", "step": 49583, "t": 15214.717}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T03:14:53Z copied; last step record: {"ev": "step", "step": 51569, "t": 15818.311}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T03:24:57Z copied; last step record: {"ev": "step", "step": 53551, "t": 16422.027}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T03:35:00Z copied; last step record: {"ev": "step", "step": 55541, "t": 17025.828}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T03:45:04Z copied; last step record: {"ev": "step", "step": 57499, "t": 17629.438}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T03:55:15Z copied; last step record: {"ev": "step", "step": 59520, "t": 18240.609}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:05:19Z copied; last step record: {"ev": "step", "step": 61502, "t": 18844.274}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:15:23Z copied; last step record: {"ev": "step", "step": 63494, "t": 19447.805}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:25:26Z copied; last step record: {"ev": "step", "step": 65494, "t": 20051.461}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:35:30Z copied; last step record: {"ev": "step", "step": 67459, "t": 20655.586}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:45:34Z copied; last step record: {"ev": "step", "step": 69439, "t": 21259.55}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T04:55:46Z copied; last step record: {"ev": "step", "step": 71455, "t": 21871.549}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T05:05:51Z copied; last step record: {"ev": "step", "step": 73465, "t": 22475.627}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T05:15:54Z copied; last step record: {"ev": "step", "step": 75469, "t": 23079.632}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T05:25:58Z copied; last step record: {"ev": "step", "step": 77449, "t": 23683.572}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T05:36:03Z copied; last step record: {"ev": "step", "step": 79436, "t": 24287.971}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T05:46:07Z copied; last step record: {"ev": "step", "step": 81421, "t": 24891.842}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T05:56:18Z copied; last step record: {"ev": "step", "step": 83424, "t": 25503.765}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T06:06:22Z copied; last step record: {"ev": "step", "step": 85419, "t": 26107.431}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+2026-11-23T06:16:26Z copied; last step record: {"ev": "val_start", "step": 87399, "t": 26708.52}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T06:26:31Z copied; last step record: {"ev": "step", "step": 89407, "t": 27315.709}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T06:36:35Z copied; last step record: {"ev": "step", "step": 91413, "t": 27919.543}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T06:46:39Z copied; last step record: {"ev": "step", "step": 93415, "t": 28523.568}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T06:56:50Z copied; last step record: {"ev": "step", "step": 95455, "t": 29135.397}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T07:06:54Z copied; last step record: {"ev": "step", "step": 97434, "t": 29739.596}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T07:16:59Z copied; last step record: {"ev": "step", "step": 99390, "t": 30343.81}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T07:27:03Z copied; last step record: {"ev": "step", "step": 101365, "t": 30947.593}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/train_log.txt: file changed as we read it
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T07:37:07Z copied; last step record: {"ev": "step", "step": 103340, "t": 31551.921}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+tar: PEROV_s44/steps.jsonl: file changed as we read it
+2026-11-23T07:47:11Z copied; last step record: {"ev": "step", "step": 105306, "t": 32156.118}
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T07:57:23Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.3999409675598145, "t": 32372.372}
+2026-11-23T07:57:23Z run finished: exit 0; final copy
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+2026-11-23T07:57:38Z all pod checkpoints copied, SHA-256 match:
+07bfba66389110e3ed0a3cfe66c27fa721a06773bf90da539cedb25adda20d56  ./singlerun/2026-11-22/PEROV_s44/epoch=494-step=47024.ckpt
+74ef55d1ec1bc37b222be8b696348e041ad13c5bca05874ba57fe1d3b3494045  ./singlerun/2026-11-22/PEROV_s44/last.ckpt
+2026-11-23T07:57:39Z DELETE pod cqh2yg7i2rh9go -> HTTP 204
+2026-11-23T07:57:59Z pods left on account: ['uhw9xa6xgb3p33']

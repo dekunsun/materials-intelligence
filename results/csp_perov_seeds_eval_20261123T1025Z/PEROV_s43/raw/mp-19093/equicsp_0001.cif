@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Ba2UNiO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.07793808
+_cell_length_b   4.07037878
+_cell_length_c   9.65997028
+_cell_angle_alpha   102.47285461
+_cell_angle_beta   102.09882355
+_cell_angle_gamma   91.20442200
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba2UNiO6
+_chemical_formula_sum   'Ba2 U1 Ni1 O6'
+_cell_volume   152.71209853
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.35434705  0.24216859  0.27738607  1
+  Ba  Ba1  1  0.15183070  0.03930233  0.86783379  1
+  U  U2  1  0.97508574  0.86271602  0.51578850  1
+  Ni  Ni3  1  0.74725866  0.63442469  0.06015170  1
+  O  O4  1  0.87327981  0.76171237  0.31284842  1
+  O  O5  1  0.99926811  0.38729107  0.56620175  1
+  O  O6  1  0.25447941  0.64098591  0.07610235  1
+  O  O7  1  0.49922928  0.88790643  0.56579375  1
+  O  O8  1  0.63637125  0.52271670  0.83661050  1
+  O  O9  1  0.75411743  0.14175966  0.07561821  1

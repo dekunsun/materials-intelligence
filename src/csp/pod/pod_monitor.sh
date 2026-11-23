@@ -3,12 +3,14 @@
 # when the run writes exit_code (or the time cap is reached) do a final full copy, then terminate
 # the pod and confirm it is gone. The API key is read from the Keychain and piped as a header only.
 # Needs: the throwaway key $POD_WORKDIR/id_g0; data under $POD_WORKDIR/<RUN>/.
-# Usage: pod_monitor.sh RUN POD_ID SSH_HOST SSH_PORT CREATED_EPOCH CAP_HOURS   (RUN = <ARM>_s<SEED>, e.g. PEROV_s43)
+# Usage: pod_monitor.sh RUN POD_ID SSH_HOST SSH_PORT CREATED_EPOCH CAP   (RUN = <ARM>_s<SEED>, e.g. PEROV_s43;
+#        CAP = hours, or H:MM, e.g. 11 or 11:50)
 # G0 used ARM in place of RUN with seed 42 fixed; results/csp_g0_train_20261122T055536Z was made that way.
 set -u
 RUN=$1; POD=$2; HOST=$3; PORT=$4; CREATED=$5; CAP_H=$6
 G=${POD_WORKDIR:?set POD_WORKDIR to a scratch folder outside the repository (it holds the throwaway SSH key and the copied outputs)}; D=$G/$RUN; mkdir -p "$D/pulled"
 LOG=$D/monitor.log
+IFS=: read -r CH CM <<< "$CAP_H"; CAP_S=$(( CH * 3600 + ${CM:-0} * 60 ))
 SSH="ssh -i $G/id_g0 -o UserKnownHostsFile=$D/known_hosts -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=30 -p $PORT root@$HOST"
 api() { security find-generic-password -s runpod-api-key -w | sed 's/^/Authorization: Bearer /' | curl -s -m 30 -H @- "$@"; }
 log() { echo "$(date -u +%FT%TZ) $*" >> "$LOG"; }
@@ -22,11 +24,11 @@ terminate() {
   log "pods left on account: $left"
   date -u +%FT%TZ > "$D/terminated_at.txt"
 }
-log "monitor start pod=$POD host=$HOST:$PORT cap=${CAP_H}h"
+log "monitor start pod=$POD host=$HOST:$PORT cap=$CAP_H (${CAP_S} s after creation)"
 i=0
 while true; do
   now=$(date +%s)
-  if [ $((now - CREATED)) -ge $((CAP_H * 3600)) ]; then
+  if [ $((now - CREATED)) -ge $CAP_S ]; then
     log "time cap reached; final copy, then terminate"; pull_all; terminate; exit 0
   fi
   if [ $((i % 6)) -eq 0 ]; then pull_all; else pull_logs; fi

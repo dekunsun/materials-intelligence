@@ -1,0 +1,12 @@
+material_id,ref_spacegroup,s42_fit,s42_consensus,s42_rank,s43_fit,s43_consensus,s43_rank,s44_fit,s44_consensus,s44_rank,consensus_seeds,fit_seeds
+mp-6231,225,False,False,,False,False,,False,False,,0,0
+mp-19093,225,False,False,,False,False,,False,False,,0,0
+mp-19274,123,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-6389,14,False,False,,False,False,,False,False,,0,0
+mp-16307,225,False,False,,True,False,1.0,False,False,,0,1
+mp-557387,34,True,False,1.0,True,False,1.0,False,False,,0,2
+mp-6603,14,False,False,,False,False,,False,False,,0,0
+mp-1215245,38,False,False,,True,True,1.0,True,True,1.0,2,2
+mp-10321,14,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-12449,14,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-556434,2,False,False,,False,False,,False,False,,0,0

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Sr2MgIrO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.22609997
+_cell_length_b   7.54132509
+_cell_length_c   4.29082012
+_cell_angle_alpha   104.45325470
+_cell_angle_beta   89.76824188
+_cell_angle_gamma   106.36342621
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2MgIrO6
+_chemical_formula_sum   'Sr2 Mg1 Ir1 O6'
+_cell_volume   126.73469137
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.69935584  0.24231142  0.39214900  1
+  Sr  Sr1  1  0.19850531  0.24230412  0.89093703  1
+  Mg  Mg2  1  0.44392923  0.73636478  0.63547778  1
+  Ir  Ir3  1  0.95219016  0.74503386  0.14390638  1
+  O  O4  1  0.58728278  0.02585157  0.77889377  1
+  O  O5  1  0.81190062  0.46851403  0.00419595  1
+  O  O6  1  0.44724154  0.74177414  0.13841778  1
+  O  O7  1  0.08570080  0.01987963  0.27671728  1
+  O  O8  1  0.30419755  0.45610830  0.49644023  1
+  O  O9  1  0.94795918  0.74196035  0.63931066  1

@@ -1,0 +1,12 @@
+material_id,n_files,n_read,fit,consensus,first_match_rank,ref_spacegroup
+mp-6231,20,20,False,False,,225
+mp-19093,20,20,False,False,,225
+mp-19274,20,20,True,True,1.0,123
+mp-6389,20,20,False,False,,14
+mp-16307,20,20,False,False,,225
+mp-557387,20,20,True,False,3.0,34
+mp-6603,20,20,False,False,,14
+mp-1215245,20,20,False,False,,38
+mp-10321,20,20,True,True,4.0,14
+mp-12449,20,20,True,False,17.0,14
+mp-556434,20,20,False,False,,2
