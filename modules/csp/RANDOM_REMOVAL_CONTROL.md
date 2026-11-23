@@ -90,12 +90,18 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
 - 下载论文的公开发布（commit `631c765`）和 MP-20 划分文件（DiffCSP commit `7121d15`）。MP-20 三个文件的 SHA-256 和论文审计文件里记录的完全一致。
 - 生成 R1–R3 的移除名单，每组训练集剩 24,317 个、验证集剩 8,150 个，和 PEROV 一样。三组随机部分两两重叠 62–74 个，和独立抽样的期望值（约 66 个）相符。
 
+- 1,000 步冒烟测试（A40），然后按预算训练。全部在 RunPod A5000 Secure 上训练，在本机 CPU 上生成、弛豫、打分。
+- **G0 通过**（`results/csp_g0_score_20261122T174350Z/`）：ABC2D6 和 PEROV（seed 42）的 consensus 是 8 和 3，和论文相同。fit 比论文低（8 对 10，4 对 7），原因未查清，所以组间只比较我们自己的数。
+- **PEROV seed 43、44**（`results/csp_perov_seeds_train_20261122T224906Z/`、`results/csp_perov_seeds_eval_20261123T1025Z/`）：三个 seed 的 consensus 是 3、4、4，平均 3.67，"没有复现"规则不适用。
+- 2026-11-23，在任何 R 组结果出来之前：
+  - 重新独立核对了 R1–R3 的数据（`tests/check_csp_r_data.py`）。删除列表可以用预注册的种子逐字节重抽出来，大小和 PEROV 相同，测试集相同。
+  - 训练包和 PEROV 的逐个文件比较过，只有 4 个训练、验证数据文件不同。
+  - 把判定规则写成脚本 `src/csp/r_decision.py`，用 `tests/check_csp_decision.py` 检查了每个阈值两侧的情况，并在 R 组结果出来之前 commit。
+
 **未完成。**
 
-- 没有跑任何训练。
-- 每次训练的时长和花费还不知道：论文用一张 V100 16GB，没给时长。
-- 下一步：用 EquiCSP 的上游代码（[EmperorJia/EquiCSP](https://github.com/EmperorJia/EquiCSP)，MIT）在租用的 GPU 上跑 1,000 步冒烟测试，按测出的时间报告 7–9 次训练的总花费，**等批准后再跑**。
-- 评估沿用论文的指标代码（[CSPBenchMetrics](https://github.com/usccolumbia/CSPBenchMetrics)）和 20 个候选的流程，到时再固定版本。
+- R1–R3 正在训练（2026-11-23 18:07 起，三台 A5000 Secure；`results/csp_r_train_20261123T1807Z/`）。
+- 然后用相同的设置生成、弛豫、打分，再用 `r_decision.py` 判定。PEROV 合计 11，所以三个 R 的 consensus：都 ≥ 5 且合计 ≥ 20 是"模板特有"，合计 ≤ 14 是"数据量"，其他是"无法判断"。
 
 ## 5. 局限
 
@@ -109,6 +115,8 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
 - `src/csp/fetch_csp_ablation.py`：下载并核对哈希。
 - `src/csp/random_removal_control.py`：现有结果的配对比较、预登记规则、划分生成。
 - `results/csp_random_control_20261121T223433Z/`：`config.json`、`amendments.json`、`existing_arms.json`、`existing_arms_paired.csv`、`splits.json`、`splits/`、溯源记录。
+- `src/csp/r_decision.py`：按预注册规则判定；`tests/check_csp_decision.py`、`tests/check_csp_r_data.py`：判定规则和 R 组数据的检查。
+- `src/csp/pod/`：创建、启动、监控、删除 pod 的脚本。
 
 ---
 
@@ -206,12 +214,23 @@ The original rules (commit `4220c46`) stay as they are. The amendment is saved s
 - Downloaded the paper's release (commit `631c765`) and the MP-20 split files (DiffCSP commit `7121d15`). The SHA-256 of all three MP-20 files matches the hashes recorded in the paper's audit file.
 - Built the R1–R3 removal lists. Each leaves 24,317 training and 8,150 validation structures, the same as PEROV. The random parts of the three draws overlap pairwise by 62–74 structures, in line with the about 66 expected from independent draws.
 
+- A 1,000-step smoke test (A40), then the budgeted training runs. All training ran on RunPod A5000 Secure. Sampling, relaxation and scoring ran on the Mac's CPU.
+- **G0 passed** (`results/csp_g0_score_20261122T174350Z/`).
+  - ABC2D6 and PEROV (seed 42) gave consensus 8 and 3, the same as the paper.
+  - Fit is lower than the paper's (8 vs 10, 4 vs 7), for reasons not yet established, so arms are compared only on our own numbers.
+- **PEROV seeds 43 and 44** (`results/csp_perov_seeds_train_20261122T224906Z/`, `results/csp_perov_seeds_eval_20261123T1025Z/`). Consensus over the three seeds is 3, 4 and 4, a mean of 3.67, so not_reproduced does not apply.
+- On 2026-11-23, before any R result existed:
+  - The R1–R3 data was checked again independently (`tests/check_csp_r_data.py`). The removal lists reproduce byte for byte from the pre-registered seeds, sizes match PEROV, and the test split is the same.
+  - The pod bundles were compared file by file with PEROV's. Only the 4 train and validation data files differ.
+  - The decision rules were written as `src/csp/r_decision.py` and checked on both sides of every threshold by `tests/check_csp_decision.py`. Both were committed before any R result existed.
+
 **Not done.**
 
-- No training has been run.
-- The time and cost per training run are unknown. The paper used one V100 16GB and gives no duration.
-- Next step: a 1,000-step smoke test on a rented GPU with EquiCSP's upstream code ([EmperorJia/EquiCSP](https://github.com/EmperorJia/EquiCSP), MIT). From the measured time, report the total cost of the 7–9 runs, and **wait for approval before running them**.
-- Evaluation will use the paper's metric code ([CSPBenchMetrics](https://github.com/usccolumbia/CSPBenchMetrics)) and its 20-candidate protocol; versions will be pinned at that step.
+- R1–R3 are training: three A5000 Secure pods since 2026-11-23 18:07 (`results/csp_r_train_20261123T1807Z/`).
+- They will then be sampled, relaxed and scored with the same settings, and decided by `r_decision.py`. PEROV sums to 11, so for the three R consensus counts:
+  - all ≥ 5 and a sum ≥ 20 is template_specific;
+  - a sum ≤ 14 is data_amount;
+  - anything else is inconclusive.
 
 ## 5. Limits
 
@@ -225,3 +244,5 @@ The original rules (commit `4220c46`) stay as they are. The amendment is saved s
 - `src/csp/fetch_csp_ablation.py`: downloads and checks hashes.
 - `src/csp/random_removal_control.py`: paired comparison of the existing results, pre-registered rules, split generation.
 - `results/csp_random_control_20261121T223433Z/`: `config.json`, `amendments.json`, `existing_arms.json`, `existing_arms_paired.csv`, `splits.json`, `splits/`, provenance record.
+- `src/csp/r_decision.py`: applies the pre-registered rules. `tests/check_csp_decision.py` and `tests/check_csp_r_data.py` check the rules and the R data.
+- `src/csp/pod/`: scripts that create, launch, monitor and delete the pods.

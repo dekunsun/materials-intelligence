@@ -1,0 +1,53 @@
+{
+ "what": "Launch record of the R1-R3 training runs of the CSP random-removal control (written while training ran)",
+ "approval": "2026-11-23: owner approved A5000 Secure, $0.30/h ceiling, 3 pods, 12 h worst case each (about $10.80)",
+ "recipe": "same as PEROV seeds 42-44: src/csp/pod_train.sh <ARM> <SEED> 106000 (microbatch 64 x 4, FP32, validation-selected checkpoint)",
+ "caps": {
+  "mac_monitor": "11:50 after creation (pod_monitor.sh)",
+  "mac_watchdog_s": 42900,
+  "pod_backstop_s": 43200
+ },
+ "pods": {
+  "R1_s42": {
+   "pod_id": "un7ctjs10apuiv",
+   "name": "csp-r1-s42",
+   "created_at": "2026-11-23T18:07:18.475Z",
+   "cloud": "SECURE",
+   "gpu": "NVIDIA RTX A5000",
+   "vcpu": 9,
+   "cost_per_hour": 0.27,
+   "data_center": "EU-SE-1",
+   "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
+  },
+  "R2_s43": {
+   "pod_id": "s0k69ejakkxmen",
+   "name": "csp-r2-s43",
+   "created_at": "2026-11-23T18:26:52.661Z",
+   "cloud": "SECURE",
+   "gpu": "NVIDIA RTX A5000",
+   "vcpu": 9,
+   "cost_per_hour": 0.27,
+   "data_center": "EU-SE-1",
+   "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
+  },
+  "R3_s44": {
+   "pod_id": "0o2tm8fes0kd52",
+   "name": "csp-r3-s44",
+   "created_at": "2026-11-23T18:39:20.839Z",
+   "cloud": "SECURE",
+   "gpu": "NVIDIA RTX A5000",
+   "vcpu": 9,
+   "cost_per_hour": 0.27,
+   "data_center": "EU-SE-1",
+   "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
+  }
+ },
+ "events": [
+  "18:07 UTC: R1 created on the first try; R2 and R3 failed 10 tries each (no A5000 Secure capacity), nothing created",
+  "R2 and R3 retried with src/csp/pod/create_and_guard.sh, which starts the watchdog as soon as a pod exists",
+  "18:23 UTC: the owner reported a $6.67 balance, enough for R1 and R2 but not all three in the worst case; R3's retry was paused (no R3 pod existed)",
+  "18:26 UTC: R2 created",
+  "After the owner topped up, R3's retry resumed; 18:39 UTC: R3 created",
+  "The top-up amount was not checked: the API key's scope is Pods only"
+ ]
+}

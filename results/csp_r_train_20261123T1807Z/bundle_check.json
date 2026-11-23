@@ -1,0 +1,45 @@
+{
+ "what": "R1-R3 pod bundles (src/csp/make_pod_bundle.sh), compared file by file with the PEROV bundle used for seeds 42-44",
+ "perov_bundle_sha256": "a68a65dd70a70214e0bbd2af41be5b8510f34d5680efb7ced1ce6623bd3b0562",
+ "bundles": {
+  "R1_s42": {
+   "sha256": "5c393a1fd05ad23d28026d97b24878c26d0dd8ecbd88c4edc1f138fa49d21cae",
+   "files": 68,
+   "same_file_list_as_PEROV": true,
+   "non_data_files_differing_from_PEROV": [],
+   "data_files_equal_local_data_raw": true,
+   "data_files_differing_from_PEROV": [
+    "train.csv",
+    "train_ori.pt",
+    "val.csv",
+    "val_ori.pt"
+   ]
+  },
+  "R2_s43": {
+   "sha256": "749ed88e6ea013b54a23815399d749769aefff5f79aaa612122d8df4644784fa",
+   "files": 68,
+   "same_file_list_as_PEROV": true,
+   "non_data_files_differing_from_PEROV": [],
+   "data_files_equal_local_data_raw": true,
+   "data_files_differing_from_PEROV": [
+    "train.csv",
+    "train_ori.pt",
+    "val.csv",
+    "val_ori.pt"
+   ]
+  },
+  "R3_s44": {
+   "sha256": "fc5583f43b36d0dda1335da4be104a91930595af190c3b3b0244da370c4995ec",
+   "files": 68,
+   "same_file_list_as_PEROV": true,
+   "non_data_files_differing_from_PEROV": [],
+   "data_files_equal_local_data_raw": true,
+   "data_files_differing_from_PEROV": [
+    "train.csv",
+    "train_ori.pt",
+    "val.csv",
+    "val_ori.pt"
+   ]
+  }
+ }
+}
