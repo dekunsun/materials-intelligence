@@ -1,6 +1,6 @@
 # 芯片散热模块：钱该花在发现新的高导热材料，还是把已知材料装上芯片？
 
-> 草稿 · 2026-11-21 · 内部。运行记录：`results/thermal_20261121T174521Z/`（配置、环境、输入哈希、逐模型逐材料得分、和排行榜的比对、分析结果、每一步的来历记录 `provenance_*.json`、图）。之前两次运行已作废，原因见"审查后的修正"。
+> 2026-11-21。运行记录：`results/thermal_20261121T174521Z/`（配置、环境、输入哈希、逐模型逐材料得分、和排行榜的比对、分析结果、每一步的来历记录 `provenance_*.json`、图）。之前两次运行已作废，原因见"审查后的修正"。
 
 ## 商业问题
 
@@ -186,7 +186,7 @@ cd materials-intelligence
 
 ### Chip cooling module: should the money go to discovering new high-thermal-conductivity materials, or to putting known materials on chips?
 
-> Draft · 2026-11-21 · Internal. Run record: `results/thermal_20261121T174521Z/` (config, environment, input hashes, per-model per-material scores, comparison with the leaderboard, analysis results, a provenance record for each step `provenance_*.json`, figures). Two earlier runs were superseded; the reasons are in "Fixes after review".
+> 2026-11-21. Run record: `results/thermal_20261121T174521Z/` (config, environment, input hashes, per-model per-material scores, comparison with the leaderboard, analysis results, a provenance record for each step `provenance_*.json`, figures). Two earlier runs were superseded; the reasons are in "Fixes after review".
 
 ### Business question
 

@@ -1,6 +1,6 @@
 # 固态电池模块：找到一个过线的电解质，要做多少次实验？
 
-> 草稿 · 2026-11-21 · 内部。运行记录：`results/battery_20261121T080824Z/`（配置、环境、输入哈希、每次实验活动的选择序列、逐次得分、汇总）。事后补做的按系列分组检验：`results/battery_grouped0.3_20261121T164150Z/` 和 `results/battery_grouped1_20261121T164402Z/`。
+> 2026-11-21。运行记录：`results/battery_20261121T080824Z/`（配置、环境、输入哈希、每次实验活动的选择序列、逐次得分、汇总）。事后补做的按系列分组检验：`results/battery_grouped0.3_20261121T164150Z/` 和 `results/battery_grouped1_20261121T164402Z/`。
 
 ## 商业问题
 
@@ -197,7 +197,7 @@ cd materials-intelligence
 
 **Solid-state battery module: how many experiments does it take to find an electrolyte above threshold?**
 
-> Draft · 2026-11-21 · Internal. Run record: `results/battery_20261121T080824Z/` (config, environment, input hashes, the selection sequence of each campaign, per-experiment scores, summary). Grouped-by-series tests added afterwards: `results/battery_grouped0.3_20261121T164150Z/` and `results/battery_grouped1_20261121T164402Z/`.
+> 2026-11-21. Run record: `results/battery_20261121T080824Z/` (config, environment, input hashes, the selection sequence of each campaign, per-experiment scores, summary). Grouped-by-series tests added afterwards: `results/battery_grouped0.3_20261121T164150Z/` and `results/battery_grouped1_20261121T164402Z/`.
 
 ### Business question
 

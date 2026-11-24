@@ -1,8 +1,8 @@
-<!-- Exported from Claude Docs on 2026-11-24 (doc rev 11). The doc is the working copy; this file is a snapshot. -->
+<!-- Exported from Claude Docs on 2026-11-24 (doc rev 14). The doc is the working copy; this file is a snapshot. -->
 
 # Investment Decision Memo 01：固态电解质与芯片散热
 
-2026-11-21 · Dekun Sun · 内部草稿
+2026-11-21 · Dekun Sun
 
 建议批准电池上的两笔小投入（整理已有实测数据、进入新化学家族时的探索性样本），暂缓强化学习选材和电池厂合作，把芯片散热降为观察。散热的问题是真的，但买家一侧的一手来源都指向冷却架构，而不是新材料。
 
@@ -16,7 +16,7 @@
 2. **芯片散热：在 103 个简单二元化合物上，较好的模型对高导热候选的排序高度一致，但这不证明真实的材料发现问题已经解决。** DFT 参考值和实验测量之间、材料和器件之间都还有差距。商业证据关卡回答了谁有这个问题、问题有多大、用什么验收；但"为什么需要新材料"没有一手依据。
 3. **组合：近期只批准成本低、能马上检验的投入，其余每笔都配一个可检查的继续条件。** 下一步进入稳定性筛选与 CSP 模块；电池的商业证据关卡放在任何电池厂对话之前。
 
-这是内部的练习备忘录，只用公开数据，所有建议都是推断。
+这是一份练习备忘录，只用公开数据，所有建议都是推断。
 
 ## 1. 科学证据：两个回测各证明到哪一步
 
@@ -122,7 +122,7 @@ Approve two small investments in solid-state electrolytes (curating existing mea
 2. **Chip cooling: on 103 simple binary compounds, the better models rank high-conductivity candidates almost identically, but this does not show that real materials discovery is solved.** Gaps remain between the DFT reference and measurement, and between material and device. The commercial evidence gate established who has the problem, how large it is and how buyers accept a solution; it found no primary evidence for why a new material is needed.
 3. **Portfolio: approve only low-cost investments that can be checked quickly; give every other item a checkable condition to continue.** Next is the stability screening and CSP module; the battery commercial evidence gate comes before any conversation with a battery maker.
 
-This is an internal practice memo built on public data only. Every recommendation is an inference.
+This is a practice memo built on public data only. Every recommendation is an inference.
 
 ### 1. Scientific evidence: how far each backtest goes
 

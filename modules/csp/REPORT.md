@@ -1,6 +1,6 @@
 # 稳定性筛选与 CSP 模块：AI 生成了大量晶体结构，哪些值得花钱验证？
 
-> 草稿 · 2026-11-21 · 内部。运行记录：`results/csp_screening_20261121T192919Z/`（配置、来历记录、和排行榜的比对、逐模型指标、预算曲线、边界分析、图）。第一次运行在审查后作废，见"审查后的修正"。
+> 2026-11-21。运行记录：`results/csp_screening_20261121T192919Z/`（配置、来历记录、和排行榜的比对、逐模型指标、预算曲线、边界分析、图）。第一次运行在审查后作废，见"审查后的修正"。
 >
 > 本模块分两部分：D2A 稳定性筛选（输入是已有候选结构，问是否稳定）；D2B 晶体结构预测的可信度（输入是化学组成，问原子怎么排）。两者不能混为一谈：一个好的稳定性分类器，不说明生成模型能预测未知结构。
 
@@ -179,7 +179,7 @@ cd materials-intelligence
 
 ### Stability screening and CSP module: AI has generated a large number of crystal structures. Which ones are worth paying to validate?
 
-> Draft · 2026-11-21 · Internal. Run record: `results/csp_screening_20261121T192919Z/` (configuration, provenance record, comparison with the leaderboard, per-model metrics, budget curves, boundary analysis, figures). The first run was superseded after review; see "Corrections after review".
+> 2026-11-21. Run record: `results/csp_screening_20261121T192919Z/` (configuration, provenance record, comparison with the leaderboard, per-model metrics, budget curves, boundary analysis, figures). The first run was superseded after review; see "Corrections after review".
 >
 > This module has two parts. D2A is stability screening: the input is existing candidate structures, and the question is whether they are stable. D2B is the trustworthiness of crystal structure prediction: the input is a chemical composition, and the question is how the atoms are arranged. The two must not be conflated: a good stability classifier does not show that a generative model can predict unknown structures.
 

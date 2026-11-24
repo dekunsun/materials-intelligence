@@ -1,4 +1,4 @@
-<!-- Exported from Claude Docs on 2026-11-24 (doc rev 13). The doc is the working copy; this file is a snapshot. -->
+<!-- Exported from Claude Docs on 2026-11-24 (doc rev 15). The doc is the working copy; this file is a snapshot. -->
 
 # Investment Decision Memo v2：三个模块、三笔候选投入
 
@@ -22,7 +22,7 @@
 
 > **更新（2026-11-24，CSP 随机移除对照之后）：** 对照的规则在任何训练之前提交到 git（commit `4220c46`、`36067ae`），判定脚本在任何随机组结果出来之前 commit（`57970a3`）。结果：在 11 个 1:1:2:6 目标上，去掉 1,268 个钙钛矿框架结构时弛豫后 consensus 是 3、4、4，随机去掉同样数量时是 8、8、8。按事先定好的规则，结论是“模板特有”：**原型依赖在对照后仍成立**。所以第 3 节长期科学价值表里，“补做随机移除对照和多种子重训”改为**已完成**，继续条件已满足，下一步是离已知原型更远的测试集；“更大规模的晶体筛选”仍暂缓，理由更充分。范围：只有 11 个目标、一个模型（EquiCSP），每组 3 次训练（ABC2D6 组 1 次），没有说明是哪些结构起作用。GPU 花费约 $19（估算）。详见 `results/csp_r_eval_20261124T0335Z/report.md`。
 
-这是内部的练习备忘录，只用公开数据，所有建议都是推断，不代表 DeepMind 的计划。
+这是一份练习备忘录，只用公开数据，所有建议都是推断，不代表 DeepMind 的计划。
 
 ## 1. 科学证据：三个模块，同一套标准
 
@@ -125,7 +125,7 @@ This memo answers the review's test scenario: of three candidate investments, wh
 
 > **Update (24 November 2026, after the CSP random-removal control):** the control's rules were committed to git before any training (commits `4220c46`, `36067ae`), and the decision script before any random-arm result existed (`57970a3`). Result: on the 11 targets of type 1:1:2:6, relaxed consensus is 3, 4 and 4 with the 1,268 perovskite-framework structures removed, and 8, 8 and 8 with the same number removed at random. Under the pre-set rules the outcome is template_specific: **prototype dependence survives the control**. So in Section 3's long-term table, "add the random-removal control and repeated seeds" is now **done**; its continue condition is met, and the next step is a test set further from known prototypes. "Larger-scale crystal screening" stays deferred, on firmer grounds. Scope: only 11 targets, one model (EquiCSP), 3 runs per arm (1 for ABC2D6), and nothing about which structures matter. GPU cost was about $19 (estimate). See `results/csp_r_eval_20261124T0335Z/report.md`.
 
-This is an internal practice memo built on public data only. Every recommendation is an inference and does not represent DeepMind's plans.
+This is a practice memo built on public data only. Every recommendation is an inference and does not represent DeepMind's plans.
 
 ### 1. Scientific evidence: three modules, one standard
 
