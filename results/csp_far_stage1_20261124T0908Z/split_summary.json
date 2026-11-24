@@ -1,0 +1,116 @@
+{
+ "what": "WBM split for the far-from-training stability test (no model metrics)",
+ "reference": {
+  "mp_snapshot_rows": 154718,
+  "extra_reference_rows": 0
+ },
+ "reference_chemical_systems": 49906,
+ "reference_frameworks": 15120,
+ "cells": {
+  "full": {
+   "chemical_extrapolation": {
+    "n": 114879,
+    "stable": 20282,
+    "stable_share": 0.1766,
+    "frameworks": 806,
+    "frameworks_with_stable": 509,
+    "n_elements_mix": {
+     "2": 0.0105,
+     "3": 0.7436,
+     "4": 0.2402,
+     "5": 0.0058
+    }
+   },
+   "double_extrapolation": {
+    "n": 653,
+    "stable": 120,
+    "stable_share": 0.1838,
+    "frameworks": 51,
+    "frameworks_with_stable": 25,
+    "n_elements_mix": {
+     "2": 0.0276,
+     "3": 0.8315,
+     "4": 0.1409
+    }
+   },
+   "interpolation": {
+    "n": 140322,
+    "stable": 23517,
+    "stable_share": 0.1676,
+    "frameworks": 1232,
+    "frameworks_with_stable": 781,
+    "n_elements_mix": {
+     "2": 0.2208,
+     "3": 0.7344,
+     "4": 0.0444,
+     "5": 0.0005
+    }
+   },
+   "structural_extrapolation": {
+    "n": 1109,
+    "stable": 173,
+    "stable_share": 0.156,
+    "frameworks": 74,
+    "frameworks_with_stable": 37,
+    "n_elements_mix": {
+     "2": 0.1605,
+     "3": 0.826,
+     "4": 0.0135
+    }
+   }
+  },
+  "unique_prototypes": {
+   "chemical_extrapolation": {
+    "n": 102072,
+    "stable": 16540,
+    "stable_share": 0.162,
+    "frameworks": 795,
+    "frameworks_with_stable": 490,
+    "n_elements_mix": {
+     "2": 0.0104,
+     "3": 0.7472,
+     "4": 0.2366,
+     "5": 0.0058
+    }
+   },
+   "double_extrapolation": {
+    "n": 514,
+    "stable": 78,
+    "stable_share": 0.1518,
+    "frameworks": 47,
+    "frameworks_with_stable": 21,
+    "n_elements_mix": {
+     "2": 0.0253,
+     "3": 0.8541,
+     "4": 0.1206
+    }
+   },
+   "interpolation": {
+    "n": 112162,
+    "stable": 16658,
+    "stable_share": 0.1485,
+    "frameworks": 1206,
+    "frameworks_with_stable": 725,
+    "n_elements_mix": {
+     "2": 0.2132,
+     "3": 0.7464,
+     "4": 0.0398,
+     "5": 0.0005
+    }
+   },
+   "structural_extrapolation": {
+    "n": 740,
+    "stable": 98,
+    "stable_share": 0.1324,
+    "frameworks": 71,
+    "frameworks_with_stable": 29,
+    "n_elements_mix": {
+     "2": 0.1432,
+     "3": 0.8446,
+     "4": 0.0122
+    }
+   }
+  }
+ },
+ "split_sha256": "fe764a345e8ad1c9292034272d6a207ae375373a0930317b6903a09f5c6dab0a"
+}

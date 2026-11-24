@@ -1,0 +1,101 @@
+{
+ "what": "Stage 1 (WBM) of the far-from-training stability test; pre-registered in modules/csp/FAR_FROM_TRAINING_TEST.md",
+ "pre_registration_commit": "ffdb574 (pushed to GitHub before this run)",
+ "started": "2026-11-24T09:08:19Z",
+ "finished": "2026-11-24T09:10:16Z",
+ "machine": "Apple M3 Pro, CPU only, no paid compute",
+ "commands": [
+  "python -I src/csp/far_split.py results/csp_far_stage1_20261124T0908Z",
+  "python -I src/csp/far_decide.py results/csp_far_stage1_20261124T0908Z",
+  "python -I src/csp/far_sensitivity.py results/csp_far_stage1_20261124T0908Z (descriptive, written after the decision)"
+ ],
+ "code_sha256": {
+  "src/csp/far_split.py": "25482c3ec7cbd81409f90c8ead91b03e4d02c9f008d3af755038655634447cc1",
+  "src/csp/far_decide.py": "94c622e705570c7ed71b9efe14f2025fa299be6ce9bea24b43807e66dd50c68b",
+  "src/csp/far_sensitivity.py": "1d712318938c1f0e99ea20fcfb45e573ad364f52ed64e0c3f91b86b44ed45400",
+  "src/csp/discovery_metrics.py": "0cb73210a63119b1b844c25ce0a2706a61dc8d878ae5837c3bf35c1e68447c56",
+  "src/csp/run_screening.py": "00390ab95b1212e5d23beea194ba378e3bbc930ba2e22d3eef902ee07758dda5"
+ },
+ "code_unchanged_since_pre_registration": true,
+ "inputs": {
+  "wbm_summary": "adbdd8b24086d4888195d8894c77f6d5fb29ce33bbb5d7d3898b4d79e964dc54",
+  "mp_energies": "f1d083a56cacb02cdcb556830f58216890f84503c6a19e1c53bf92939aaedb8e",
+  "mp2023_material_ids": "a58c16bd741aec6d8446438e8603c0e072b85ab0783a0ba9c27d30285d586338",
+  "model_metrics": "2b151933a3911a5a72776121abeb762a0ad9da54f29dacac33eca0c23601ae91",
+  "predictions": {
+   "EquiformerV3+DeNS-MP": {
+    "file": "EquiformerV3_DeNS-MP.csv.gz",
+    "sha256": "2ec83e5dfd89591158107ee38cd6d9e97b7eb7dbb63274f221e62b9e198eb825"
+   },
+   "DPA-4.0.1-Pro-MPtrj": {
+    "file": "DPA-4.0.1-Pro-MPtrj.csv.gz",
+    "sha256": "66de43d3eeecff0fcd454371da570beaa3e3a2c4ac60f17f2221594b6da3581c"
+   },
+   "DPA-4.0-Pro-MPtrj": {
+    "file": "DPA-4.0-Pro-MPtrj.csv.gz",
+    "sha256": "a89446c27409571a8b32cd66f9d6dec936a0d32d26091fbce8d45f48693b10a2"
+   },
+   "MatRIS-10M-MP": {
+    "file": "MatRIS-10M-MP.csv.gz",
+    "sha256": "503c76758613aad3a013e6c723f28ceea8ce732a9a049b976ce2d8a4f52d7070"
+   },
+   "eSEN-30M-MP": {
+    "file": "eSEN-30M-MP.csv.gz",
+    "sha256": "c88d0be3887c6423a9dcdd10a7c1558d60f12b0c91033ace2b3d63695c9ba133"
+   },
+   "eqV2 S DeNS": {
+    "file": "eqV2_S_DeNS.csv.gz",
+    "sha256": "bce95bddfafcfa1d8b031451ec73c6277085be26dd199518ff21b79424265ed3"
+   },
+   "MatRIS v0.5.0 MPtrj": {
+    "file": "MatRIS_v0.5.0_MPtrj.csv.gz",
+    "sha256": "37d3e2a03746f37fecbbb0de5345e70649aaaf7d05c1184785bee81ec246a942"
+   },
+   "DPA-3.1-MPtrj": {
+    "file": "DPA-3.1-MPtrj.csv.gz",
+    "sha256": "5d10424bd8862560d7c5f4969772289db9d3b443e4b97d4280da10f33a4c9960"
+   },
+   "AlphaNet-v1-MPtrj": {
+    "file": "AlphaNet-v1-MPtrj.csv.gz",
+    "sha256": "653d5f97f8d2897cbff5c0f3a45245a7b7b297f0b2266c9249243aa4ce6a550f"
+   },
+   "Eqnorm MPtrj": {
+    "file": "Eqnorm_MPtrj.csv.gz",
+    "sha256": "41630d48ec3b49bc94bbf0d392dda6356ea74b77def25ffd29d4130fddbd7707"
+   },
+   "Wrenformer": {
+    "file": "Wrenformer.csv.gz",
+    "sha256": "c7963d6fe64d67b79b7a11a2c7b3b42bc5b6943dc939475db90b328bad523dfa"
+   },
+   "CHGNet": {
+    "file": "CHGNet.csv.gz",
+    "sha256": "b04ce3b031827fcd532e22058d06dc77fb4705ce8b12aea54652a14504e41f16"
+   },
+   "MACE-MP-0": {
+    "file": "MACE-MP-0.csv.gz",
+    "sha256": "527c62dcdc7a726bc069848bf3e44f53d3f70860396ea3b7efcf6cca3ea26144"
+   },
+   "Voronoi RF": {
+    "file": "Voronoi_RF.csv.gz",
+    "sha256": "3c29f747ca42f43bf6a1ecab7ae673e7ab43545c8b0668737ad8874309bbef6b"
+   }
+  },
+  "mptrj_extxyz_zip": {
+   "md5": "7f433171e4e5f2ef9304dccd42d5488f",
+   "note": "used only to list material ids"
+  }
+ },
+ "mptrj_check": {
+  "mptrj_materials": 145923,
+  "not_in_mp2023_snapshot": 1085,
+  "share": 0.0074,
+  "threshold": 0.01,
+  "consequence": "reference = MP 2023 snapshot alone (pre-registered rule)"
+ },
+ "outcomes": {
+  "structural_extrapolation": "holds",
+  "chemical_extrapolation": "holds",
+  "double_extrapolation": "holds"
+ },
+ "d10": "unchanged: Stage 1 alone does not change D10 (pre-registered)"
+}

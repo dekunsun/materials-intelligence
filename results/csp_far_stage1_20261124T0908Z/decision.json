@@ -1,0 +1,83 @@
+{
+ "what": "Far-from-training stability test, Stage 1 (WBM): pre-registered decision (src/csp/far_decide.py)",
+ "decision_models": [
+  "EquiformerV3+DeNS-MP",
+  "DPA-4.0.1-Pro-MPtrj",
+  "DPA-4.0-Pro-MPtrj",
+  "MatRIS-10M-MP",
+  "eSEN-30M-MP",
+  "eqV2 S DeNS",
+  "MatRIS v0.5.0 MPtrj",
+  "DPA-3.1-MPtrj",
+  "AlphaNet-v1-MPtrj",
+  "Eqnorm MPtrj"
+ ],
+ "lead_model": "EquiformerV3+DeNS-MP",
+ "baseline": "Wrenformer",
+ "inputs": {
+  "split_sha256": "fe764a345e8ad1c9292034272d6a207ae375373a0930317b6903a09f5c6dab0a",
+  "model_metrics_sha256": "2b151933a3911a5a72776121abeb762a0ad9da54f29dacac33eca0c23601ae91"
+ },
+ "thresholds": {
+  "min_stable": 50,
+  "min_frameworks_with_stable": 20,
+  "r_fail_upper": 0.5,
+  "r_hold_lower": 0.8,
+  "d_margin": 0.1
+ },
+ "cells": {
+  "structural_extrapolation": {
+   "n": 1109,
+   "stable": 173,
+   "frameworks_with_stable": 37,
+   "median_r": 0.9443945059806769,
+   "median_r_95": [
+    0.8668039335932429,
+    1.0355043063822829
+   ],
+   "d_lead_minus_baseline": 0.5524636463942821,
+   "d_95": [
+    0.4473396732653448,
+    0.658084013007368
+   ],
+   "outcome": "holds"
+  },
+  "chemical_extrapolation": {
+   "n": 114879,
+   "stable": 20282,
+   "frameworks_with_stable": 509,
+   "median_r": 1.0736849987947203,
+   "median_r_95": [
+    1.0396727651329831,
+    1.0997487262202656
+   ],
+   "d_lead_minus_baseline": 0.46157630694572926,
+   "d_95": [
+    0.42500457604685626,
+    0.5057232459084735
+   ],
+   "outcome": "holds"
+  },
+  "double_extrapolation": {
+   "n": 653,
+   "stable": 120,
+   "frameworks_with_stable": 25,
+   "median_r": 1.1678650340838757,
+   "median_r_95": [
+    1.0408832410199758,
+    1.2180065131409579
+   ],
+   "d_lead_minus_baseline": 0.49005628517823646,
+   "d_95": [
+    0.30104288587320394,
+    0.6923850879370562
+   ],
+   "outcome": "holds"
+  }
+ },
+ "d10_stage1": {
+  "cell": "structural_extrapolation",
+  "outcome": "holds",
+  "note": "Stage 1 alone does not change D10 (pre-registered); it updates the evidence only."
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "what": "Descriptive sensitivity checks, Stage 1 (src/csp/far_sensitivity.py); never change the decision",
+ "variants": {
+  "primary": {
+   "structural_extrapolation": {
+    "n": 1109,
+    "stable": 173,
+    "median_r": 0.9443945059806769,
+    "d": 0.5524636463942821
+   },
+   "chemical_extrapolation": {
+    "n": 114879,
+    "stable": 20282,
+    "median_r": 1.0736849987947203,
+    "d": 0.46157630694572926
+   },
+   "double_extrapolation": {
+    "n": 653,
+    "stable": 120,
+    "median_r": 1.1678650340838757,
+    "d": 0.49005628517823646
+   }
+  },
+  "unique_pool": {
+   "structural_extrapolation": {
+    "n": 740,
+    "stable": 98,
+    "median_r": 0.9241746868762539,
+    "d": 0.5692669591200967
+   },
+   "chemical_extrapolation": {
+    "n": 102072,
+    "stable": 16540,
+    "median_r": 1.0133769500644871,
+    "d": 0.4668972852897284
+   },
+   "double_extrapolation": {
+    "n": 514,
+    "stable": 78,
+    "median_r": 1.1082501013431,
+    "d": 0.45342272406492595
+   }
+  },
+  "relaxed_S2": {
+   "structural_extrapolation": {
+    "n": 1768,
+    "stable": 154,
+    "median_r": 0.9190211967590962,
+    "d": 0.5405944736799755
+   },
+   "chemical_extrapolation": {
+    "n": 114330,
+    "stable": 20250,
+    "median_r": 1.0733733983603537,
+    "d": 0.46177708884479707
+   },
+   "double_extrapolation": {
+    "n": 1202,
+    "stable": 152,
+    "median_r": 1.1171433738203895,
+    "d": 0.42928571428571427
+   }
+  },
+  "S1": {
+   "structural_extrapolation": {
+    "n": 3686,
+    "stable": 551,
+    "median_r": 1.0499267353153328,
+    "d": 0.5519342622039911
+   },
+   "chemical_extrapolation": {
+    "n": 113652,
+    "stable": 20042,
+    "median_r": 1.0740150471093943,
+    "d": 0.460859002009504
+   },
+   "double_extrapolation": {
+    "n": 1880,
+    "stable": 360,
+    "median_r": 1.123003406206988,
+    "d": 0.5016081871345028
+   }
+  }
+ },
+ "chemsys_clusters": {
+  "structural_extrapolation": {
+   "median_r_95": [
+    0.8800042143120564,
+    1.0113214044140764
+   ],
+   "d_95": [
+    0.4802542105865832,
+    0.6382189700195011
+   ]
+  },
+  "chemical_extrapolation": {
+   "median_r_95": [
+    1.0601877874002223,
+    1.0836626060593468
+   ],
+   "d_95": [
+    0.4514921973574395,
+    0.47086042611499695
+   ]
+  },
+  "double_extrapolation": {
+   "median_r_95": [
+    1.091462620386349,
+    1.2172983224120946
+   ],
+   "d_95": [
+    0.3713567155924191,
+    0.6000852108637792
+   ]
+  }
+ },
+ "leave_one_framework_out_structural": {
+  "frameworks": 37,
+  "median_r_min_max": [
+   0.9221606444082697,
+   0.979252719205717
+  ],
+  "d_min_max": [
+   0.5316570881226053,
+   0.5840072667604312
+  ],
+  "framework_whose_removal_lowers_r_most": "mC16_12_abehi"
+ },
+ "other_models_r_primary": {
+  "CHGNet": {
+   "structural_extrapolation": 0.767,
+   "chemical_extrapolation": 1.137,
+   "double_extrapolation": 1.36
+  },
+  "MACE-MP-0": {
+   "structural_extrapolation": 0.9,
+   "chemical_extrapolation": 1.088,
+   "double_extrapolation": 1.285
+  },
+  "Voronoi RF": {
+   "structural_extrapolation": 0.19,
+   "chemical_extrapolation": 1.41,
+   "double_extrapolation": 1.784
+  },
+  "Wrenformer": {
+   "structural_extrapolation": 0.582,
+   "chemical_extrapolation": 1.465,
+   "double_extrapolation": 1.526
+  }
+ }
+}

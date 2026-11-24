@@ -1,6 +1,8 @@
 # 稳定性筛选的外推检验（设计稿，尚未运行）
 
-> 状态（2026-11-24）：只有设计，没有跑任何模型，也没有在本文定义的格子里算任何模型指标。本文定稿后、算任何分组指标之前，会把本文、划分脚本和判定脚本提交到 git，作为预登记。第二阶段要下载外部数据、在本机 CPU 上跑模型，开始前单独确认，并另写一份第二阶段的预登记。
+> 状态（2026-11-24）：本文在运行前提交（commit `ffdb574`）。**第一阶段已完成：三个外推格都“成立”**，结果见 `results/csp_far_stage1_20261124T0908Z/report.md`；D10 按规则不变。第二阶段尚未开始。以下是运行前的原文。
+>
+> 原状态：只有设计，没有跑任何模型，也没有在本文定义的格子里算任何模型指标。本文定稿后、算任何分组指标之前，会把本文、划分脚本和判定脚本提交到 git，作为预登记。第二阶段要下载外部数据、在本机 CPU 上跑模型，开始前单独确认，并另写一份第二阶段的预登记。
 
 ## 1. 问题
 
@@ -119,7 +121,9 @@ D10 由**结构外推格**判定。双重外推格和化学外推格用同样的
 
 # Extrapolation test for stability screening (design, not yet run)
 
-> Status (2026-11-24): design only. No model has been run, and no model metric has been computed in the cells this document defines. Once the text is settled, and before any per-cell metric is computed, this document, the split script and the decision script will be committed to git as the pre-registration. Stage 2 needs an external download and CPU runs on the Mac; it will be confirmed separately and get its own pre-registration.
+> Status (2026-11-24): this document was committed before the run (commit `ffdb574`). **Stage 1 is done: all three extrapolation cells hold**; see `results/csp_far_stage1_20261124T0908Z/report.md`. D10 is unchanged by rule. Stage 2 has not started. The original text follows.
+>
+> Original status: design only. No model has been run, and no model metric has been computed in the cells this document defines. Once the text is settled, and before any per-cell metric is computed, this document, the split script and the decision script will be committed to git as the pre-registration. Stage 2 needs an external download and CPU runs on the Mac; it will be confirmed separately and get its own pre-registration.
 
 ## 1. Question
 
