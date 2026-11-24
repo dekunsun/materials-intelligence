@@ -111,6 +111,11 @@ AI 能一次产出几十万个候选晶体结构，但每验证一个都要花�
     - 没有在训练集之外的独立数据库上检验。
 - **结论。** 现有证据支持"在当前基准上，生成模型没有超过模板方法"，不支持"生成模型不能产生新结构"。决定这个结论站不站得住的，是随机移除对照和多种子重训。
 - **2026-11-21 更新：对照已预登记，还没训练。** 论文公开的逐目标结果里，ABC2D6 组和 PEROV 组的训练方案完全相同：PEROV 多去掉 1,268 个钙钛矿框架结构，一致恢复丢了 5 个、一个没多。这排除了检查点选择的影响，但排除不了数据变少和单次训练的波动。规则、划分和花费关卡见 [RANDOM_REMOVAL_CONTROL.md](RANDOM_REMOVAL_CONTROL.md)。训练是付费计算，花费要先用冒烟测试测出来。
+- **2026-11-24 更新：对照已完成，结论是“模板特有”。** 按预登记规则，每组训练 3 个种子，全部用我们自己的流程：
+    - 去掉 1,268 个钙钛矿框架结构（PEROV）：11 个目标的弛豫后 consensus 是 3、4、4；
+    - 随机去掉同样数量（R1–R3）：是 8、8、8，和只去掉 ABC2D6 家族时的 8 一样。
+    - 所以在这个设置下，PEROV 的下降不能用“数据变少”解释，PEROV 组和随机组也不再是只训练一次。判定脚本在任何 R 组结果出来之前就 commit 了。
+    - 范围：只有 11 个目标、一个模型（EquiCSP）、每组 3 次训练（ABC2D6 组 1 次）。它没有说明框架里哪些结构起作用。详见 [`results/csp_r_eval_20261124T0335Z/report.md`](../../results/csp_r_eval_20261124T0335Z/report.md)。
 
 **和 D2A 合起来看。** D2A 的候选来自对已知结构做元素替换，按筛选时的信息判断，新结构类型只占 2%；D2B 说明在真正要预测新结构时，生成模型还没有超过模板。所以"AI 能发现新结构"这个卖点，目前缺的是**离已知原型更远**的测试证据，而不是更高的排行榜分数。
 
@@ -285,6 +290,11 @@ This part runs no experiments; it audits one benchmark paper and one review. All
     - It was not tested on an independent database outside the training set.
 - **Conclusion.** The current evidence supports "on current benchmarks, generative models do not outperform template methods". It does not support "generative models cannot produce new structures". What decides whether this conclusion holds is a random-removal control and multi-seed retraining.
 - **Update 2026-11-21: the control is pre-registered; no training yet.** In the paper's released per-target results, the ABC2D6 and PEROV arms use exactly the same recipe: PEROV removes a further 1,268 perovskite-framework structures and loses 5 consensus recoveries while gaining none. That rules out checkpoint selection, but not less data or single-run noise. Rules, splits and the cost gate are in [RANDOM_REMOVAL_CONTROL.md](RANDOM_REMOVAL_CONTROL.md). Training is paid compute, and its cost has to be measured with a smoke test first.
+- **Update 2026-11-24: the control is done, and the outcome is template_specific.** Following the pre-registered rules, each arm was trained on 3 seeds, all with our own pipeline:
+    - with the 1,268 perovskite-framework structures removed (PEROV), relaxed consensus on the 11 targets is 3, 4 and 4;
+    - with the same number removed at random (R1–R3), it is 8, 8 and 8, the same as the 8 with only the ABC2D6 family removed.
+    - So in this setup, PEROV's drop is not explained by less data, and the PEROV and random arms are no longer single runs. The decision script was committed before any R result existed.
+    - Scope: only 11 targets, one model (EquiCSP), and 3 runs per arm (1 for ABC2D6). It does not show which framework structures matter. See [`results/csp_r_eval_20261124T0335Z/report.md`](../../results/csp_r_eval_20261124T0335Z/report.md).
 
 **Taken together with D2A.** D2A's candidates come from element substitution on known structures; judged by screening-time information, new structure types make up only 2%. D2B shows that when new structures really have to be predicted, generative models do not yet outperform templates. So what the selling point "AI can discover new structures" currently lacks is test evidence **further from known prototypes**, not higher leaderboard scores.
 

@@ -4,7 +4,7 @@
 
 中文在上，[English below](#english-version)。
 
-> 状态：v0.1，2026-11-21。由外向内的分析，只用公开资料，不代表 Google DeepMind 或任何公司的实际计划。所有建议都是推断，并在文中标出；没有核实的数字标为未核实。
+> 状态：v0.2，2026-11-24。由外向内的分析，只用公开资料，不代表 Google DeepMind 或任何公司的实际计划。所有建议都是推断，并在文中标出；没有核实的数字标为未核实。
 
 ## 这个项目做什么
 
@@ -20,7 +20,7 @@
 |---|---|---|---|
 | 固态电池电解质 | 把 OBELiX 的 499 个实测组成当离线实验室，比较六种选材策略需要的实验次数 | 已知化学家族里，先验实测数据省下的实验远多于算法之间的差别；把同一掺杂系列整个留出后，机器学习只比"先测硫化物"的经验规则多省 3–4 次实验；迁移到新家族对硫化物有效、对氧化物无效 | [modules/battery/REPORT.md](modules/battery/REPORT.md) |
 | 芯片散热 | 重新计分 Matbench Discovery 上 62 个模型的 κ_SRME，加经验规则基线和 7 个材料的实测对照 | 在 103 个简单二元化合物上，较好的模型对高导热候选的排序几乎一致，但测试集太容易，不能说明发现问题已解决；DFT 参考值对 7 个材料里的 6 个比实测低 10–27% | [modules/thermal/REPORT.md](modules/thermal/REPORT.md) |
-| 稳定性筛选与 CSP | 重新计分 73 个模型的稳定性预测，按"给定验证预算挑哪些结构"来读；审计一篇 CSP 基准论文 | 1% 预算下 48 个模型挑到至少 95% DFT 稳定的结构（随机 15.5%）；超出模型有把握的候选后，模型之间差别很大；CSP 基准上生成模型没有超过模板方法 | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
+| 稳定性筛选与 CSP | 重新计分 73 个模型的稳定性预测，按"给定验证预算挑哪些结构"来读；审计一篇 CSP 基准论文 | 1% 预算下 48 个模型挑到至少 95% DFT 稳定的结构（随机 15.5%）；超出模型有把握的候选后，模型之间差别很大；CSP 基准上生成模型没有超过模板方法；我们补做的同等规模随机移除对照（预登记，每组 3 个训练种子）支持原型依赖：随机去掉时 consensus 是 8、8、8，去掉钙钛矿框架时是 3、4、4 | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
 
 两个重新计分的模块都和官方排行榜逐个对上（κ_SRME：62 个模型；稳定性：146 组指标），并有逐材料、逐结构对照官方逻辑的测试。
 
@@ -39,7 +39,7 @@
 - **基线不只是随机。** 包括领域经验规则或老一代模型。
 - **独立审查。** 每个模块跑完都请独立代理审查代码和结论，修正记录在各报告末尾；作废的运行以 `superseded_` 开头保留。
 - **来历记录。** 每次运行记录输入文件哈希、代码哈希、包版本、种子，以及 git commit。
-- **复现层级写清楚。** 区分"重新计分""重新推理""重新训练"；本项目只到重新计分，没有重算声子或结构弛豫。
+- **复现层级写清楚。** 区分"重新计分""重新推理""重新训练"。三个模块都只到重新计分，没有重算声子；只有 CSP 随机移除对照重新训练了 EquiCSP（7 次完整训练在 RunPod A5000 上，另有 1 次 1,000 步冒烟测试在 A40 上），并在本机用 ORB-v3 生成和弛豫候选结构。
 
 ## 投资组合看板
 
@@ -72,9 +72,12 @@ python3.12 -m venv .venv
 .venv/bin/python src/csp/run_screening.py
 .venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
 
-# CSP 随机移除对照（只生成划分；训练是付费计算，见 modules/csp/RANDOM_REMOVAL_CONTROL.md）
+# CSP 随机移除对照：下载、生成划分（训练是付费 GPU 计算，步骤见 modules/csp/RANDOM_REMOVAL_CONTROL.md 和 src/csp/pod/）
 .venv/bin/python -I src/csp/fetch_csp_ablation.py
 .venv/bin/python -I src/csp/random_removal_control.py
+# 训练后：生成、弛豫、打分，再按预登记规则判定
+REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/<run_id> R1_s42 R2_s43 R3_s44
+.venv/bin/python -I src/csp/r_decision.py results/<run_id> results/<run_id>
 
 # 对照官方实现
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
@@ -105,6 +108,10 @@ PRODUCT_PLAN.md 最初的落地方案（2026-11-20），保留作为记录
 | [OBELiX](https://github.com/NRC-Mila/OBELiX)（commit `4eaac88`） | 实测离子电导率 | CC BY 4.0 |
 | [Matbench Discovery](https://github.com/janosh/matbench-discovery)（commit `6d587c1`） | WBM 测试集、各模型的公开预测、κ_SRME 参考值 | 代码 MIT；数据见上游仓库 |
 | Materials Project（经 Matbench Discovery 下载） | 结构类型标签、2023 年快照的编号 | 见上游说明 |
+| [CSP 基准论文的公开发布](https://github.com/usccolumbia/benchmark_deep_csp)（commit `631c765`） | 消融的删除名单、逐目标结果、11 个目标的参考结构 | MIT |
+| [DiffCSP](https://github.com/jiaor17/DiffCSP)（commit `7121d15`）的 MP-20 划分 | 训练、验证、测试划分 | 仓库 MIT；MP-20 来自 Materials Project |
+| [EquiCSP](https://github.com/EmperorJia/EquiCSP) | 训练和生成的代码（在 pod 上和本机运行，不在本仓库） | MIT |
+| [ORB-v3](https://github.com/orbital-materials/orb-models)（orb-models 0.5.5） | 候选结构的弛豫和能量排序 | Apache-2.0 |
 | 文献和公司公开材料 | 实测值、需求侧证据 | 只记录事实和出处链接，见 `data/*/literature_sources.csv`；关卡文件里的原文引用都不超过 25 词 |
 
 本仓库不重新分发任何原始数据。
@@ -122,7 +129,7 @@ PRODUCT_PLAN.md 最初的落地方案（2026-11-20），保留作为记录
 
 ## English version
 
-> Status: v0.1, 21 November 2026. An outside-in analysis using public information only; it does not represent the plans of Google DeepMind or any company. Every recommendation is an inference and is marked as such; unverified numbers are marked unverified.
+> Status: v0.2, 24 November 2026. An outside-in analysis using public information only; it does not represent the plans of Google DeepMind or any company. Every recommendation is an inference and is marked as such; unverified numbers are marked unverified.
 
 ### What this project does
 
@@ -138,7 +145,7 @@ The approach has three layers: the market layer gives buyers' thresholds; the te
 |---|---|---|---|
 | Solid-state electrolytes | Used 499 measured OBELiX compositions as an offline lab and compared how many experiments six selection policies need | In known chemical families, prior measured data saves far more experiments than the differences between algorithms; with whole doping series held out, ML saves only 3–4 more experiments than a "test sulfides first" rule; transfer to a new family works for sulfides and fails for oxides | [modules/battery/REPORT.md](modules/battery/REPORT.md) |
 | Chip cooling | Re-scored 62 models on Matbench Discovery's κ_SRME, with a rule-of-thumb baseline and measured values for 7 materials | On 103 simple binary compounds, the better models rank high-conductivity candidates almost identically, but the test set is too easy to show that discovery is solved; the DFT reference is 10–27% below measurement for 6 of 7 materials | [modules/thermal/REPORT.md](modules/thermal/REPORT.md) |
-| Stability screening & CSP | Re-scored the stability predictions of 73 models, read as "which structures to pick for a given validation budget"; audited one CSP benchmark paper | At a 1% budget, 48 models pick at least 95% DFT-stable structures (random: 15.5%); past the candidates a model is confident about, models differ a lot; on the CSP benchmark, generative models do not beat a template method | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
+| Stability screening & CSP | Re-scored the stability predictions of 73 models, read as "which structures to pick for a given validation budget"; audited one CSP benchmark paper | At a 1% budget, 48 models pick at least 95% DFT-stable structures (random: 15.5%); past the candidates a model is confident about, models differ a lot; on the CSP benchmark, generative models do not beat a template method; our pre-registered, size-matched random-removal control (3 training seeds per arm) supports prototype dependence: consensus 8, 8, 8 with random removal vs 3, 4, 4 with the perovskite frameworks removed | [modules/csp/REPORT.md](modules/csp/REPORT.md) |
 
 Both re-scoring modules match the official leaderboard value by value (κ_SRME: 62 models; stability: 146 metric sets), with tests that compare against the official logic per material and per structure.
 
@@ -157,7 +164,7 @@ Every module follows the same rules:
 - **Baselines beyond random.** They include a domain rule of thumb or older models.
 - **Independent review.** After each module ran, an independent agent reviewed the code and the conclusions; the fixes are recorded at the end of each report, and superseded runs are kept with a `superseded_` prefix.
 - **Provenance.** Each run records input-file hashes, code hashes, package versions, seeds and the git commit.
-- **Stated reproduction level.** "Re-score", "re-infer" and "retrain" are kept apart; this project only re-scores and does not recompute phonons or structure relaxations.
+- **Stated reproduction level.** "Re-score", "re-infer" and "retrain" are kept apart. The three modules only re-score and do not recompute phonons. Only the CSP random-removal control retrains EquiCSP (7 full runs on RunPod A5000s, plus one 1,000-step smoke test on an A40), then samples and relaxes candidates with ORB-v3 on a Mac.
 
 ### Portfolio board
 
@@ -190,9 +197,12 @@ python3.12 -m venv .venv
 .venv/bin/python src/csp/run_screening.py
 .venv/bin/python src/csp/analyze_boundaries.py results/<run_id>
 
-# CSP random-removal control (builds the splits only; training is paid compute, see modules/csp/RANDOM_REMOVAL_CONTROL.md)
+# CSP random-removal control: download and build the splits (training is paid GPU compute; see modules/csp/RANDOM_REMOVAL_CONTROL.md and src/csp/pod/)
 .venv/bin/python -I src/csp/fetch_csp_ablation.py
 .venv/bin/python -I src/csp/random_removal_control.py
+# after training: sample, relax and score, then apply the pre-registered rules
+REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/<run_id> R1_s42 R2_s43 R3_s44
+.venv/bin/python -I src/csp/r_decision.py results/<run_id> results/<run_id>
 
 # Checks against the official implementation
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
@@ -223,6 +233,10 @@ PRODUCT_PLAN.md the original build plan (20 November 2026), kept as a record
 | [OBELiX](https://github.com/NRC-Mila/OBELiX) (commit `4eaac88`) | Measured ionic conductivity | CC BY 4.0 |
 | [Matbench Discovery](https://github.com/janosh/matbench-discovery) (commit `6d587c1`) | WBM test set, published model predictions, κ_SRME reference values | Code MIT; data: see upstream repository |
 | Materials Project (downloaded via Matbench Discovery) | Structure-type labels, IDs of the 2023 snapshot | See upstream notes |
+| [The CSP benchmark paper's release](https://github.com/usccolumbia/benchmark_deep_csp) (commit `631c765`) | Ablation removal lists, per-target results, reference structures of the 11 targets | MIT |
+| MP-20 splits from [DiffCSP](https://github.com/jiaor17/DiffCSP) (commit `7121d15`) | Train, validation and test splits | Repository MIT; MP-20 derives from Materials Project |
+| [EquiCSP](https://github.com/EmperorJia/EquiCSP) | Training and sampling code (run on the pods and the Mac, not in this repository) | MIT |
+| [ORB-v3](https://github.com/orbital-materials/orb-models) (orb-models 0.5.5) | Relaxation and energy ranking of candidates | Apache-2.0 |
 | Literature and companies' public material | Measured values, demand-side evidence | Only facts and source links are recorded, in `data/*/literature_sources.csv`; quotes in the gate files are under 25 words |
 
 This repository does not redistribute any raw data.
