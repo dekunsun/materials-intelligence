@@ -1,5 +1,5 @@
 {
- "run_dir": "/Users/xtc/Downloads/materials-intelligence/data/raw/csp_g0/PEROV_s44",
+ "run_dir": "<repo>/data/raw/csp_g0/PEROV_s44",
  "checkpoint": "epoch=494-step=47024.ckpt",
  "checkpoint_sha256": "07bfba66389110e3ed0a3cfe66c27fa721a06773bf90da539cedb25adda20d56",
  "load_state_dict": {

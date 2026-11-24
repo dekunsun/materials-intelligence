@@ -1,5 +1,5 @@
 {
- "run_dir": "/Users/xtc/Downloads/materials-intelligence/data/raw/csp_g0/R3_s44",
+ "run_dir": "<repo>/data/raw/csp_g0/R3_s44",
  "checkpoint": "epoch=399-step=37999.ckpt",
  "checkpoint_sha256": "d595ae02c485b5c95e389f19a3b4a80f3b7631e03b8041c8c0c62b318a8f020c",
  "load_state_dict": {
