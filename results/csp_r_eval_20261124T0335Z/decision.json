@@ -1,0 +1,137 @@
+{
+ "what": "Pre-registered decision of the CSP random-removal control (src/csp/r_decision.py)",
+ "primary": "consensus on relaxed candidates",
+ "inputs": {
+  "PEROV_s42/score_relaxed.csv": {
+   "path": "results/csp_g0_score_20261122T174350Z/PEROV/score_relaxed.csv",
+   "sha256": "8d56f0b05f765ff3a77dac61c97f852bab34e837e9ad1a86dd6d2d6955294cc6"
+  },
+  "PEROV_s43/score_relaxed.csv": {
+   "path": "results/csp_perov_seeds_eval_20261123T1025Z/PEROV_s43/score_relaxed.csv",
+   "sha256": "f42f92e43ec08183f4a0e8f87f5bacf51d0ca026f6dc8cc5c2ee49405a08caaa"
+  },
+  "PEROV_s44/score_relaxed.csv": {
+   "path": "results/csp_perov_seeds_eval_20261123T1025Z/PEROV_s44/score_relaxed.csv",
+   "sha256": "672559bcfe5256fe12ea2af307a7690cfbb6239a039a3a913187b315d7b024ff"
+  },
+  "R1_s42/score_relaxed.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R1_s42/score_relaxed.csv",
+   "sha256": "c3c35fce5260a9abb75d528a44828665ddd75955014c4973d61a14e80ca9fb93"
+  },
+  "R2_s43/score_relaxed.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R2_s43/score_relaxed.csv",
+   "sha256": "863da2311441aa6b55b40234a03d945d9d4dded6786844a4952887b4ae2f8650"
+  },
+  "R3_s44/score_relaxed.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R3_s44/score_relaxed.csv",
+   "sha256": "c3c35fce5260a9abb75d528a44828665ddd75955014c4973d61a14e80ca9fb93"
+  },
+  "PEROV_s42/score_raw.csv": {
+   "path": "results/csp_g0_score_20261122T174350Z/PEROV/score_raw.csv",
+   "sha256": "64ae45e7bce76410af48fcd0c5a7a0671837bf08709186e5480d77e1a32b17e1"
+  },
+  "PEROV_s43/score_raw.csv": {
+   "path": "results/csp_perov_seeds_eval_20261123T1025Z/PEROV_s43/score_raw.csv",
+   "sha256": "054514fd3767ad05e6137f55fe5caffe9210d7d56c4d81402c185aca607090d5"
+  },
+  "PEROV_s44/score_raw.csv": {
+   "path": "results/csp_perov_seeds_eval_20261123T1025Z/PEROV_s44/score_raw.csv",
+   "sha256": "4399055e839cf64814f7a5e41fba31d66c6e3fd2d3cad0344955c00f27787574"
+  },
+  "R1_s42/score_raw.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R1_s42/score_raw.csv",
+   "sha256": "4d5a3bdce137cd94fba6537e7a10bf0e1d52693c629ff6ae0182e6b3a7e9f85c"
+  },
+  "R2_s43/score_raw.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R2_s43/score_raw.csv",
+   "sha256": "863da2311441aa6b55b40234a03d945d9d4dded6786844a4952887b4ae2f8650"
+  },
+  "R3_s44/score_raw.csv": {
+   "path": "results/csp_r_eval_20261124T0335Z/R3_s44/score_raw.csv",
+   "sha256": "c59256831ec6ac5b3ee58d3d8ed3561034e1280fb01501abb3613b3ec3790246"
+  }
+ },
+ "runs": {
+  "PEROV_s42": {
+   "relaxed_consensus": 3,
+   "relaxed_fit": 4,
+   "raw_consensus": 3,
+   "raw_fit": 4
+  },
+  "PEROV_s43": {
+   "relaxed_consensus": 4,
+   "relaxed_fit": 6,
+   "raw_consensus": 3,
+   "raw_fit": 4
+  },
+  "PEROV_s44": {
+   "relaxed_consensus": 4,
+   "relaxed_fit": 4,
+   "raw_consensus": 2,
+   "raw_fit": 4
+  },
+  "R1_s42": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 8,
+   "raw_fit": 8
+  },
+  "R2_s43": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 8,
+   "raw_fit": 8
+  },
+  "R3_s44": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 7,
+   "raw_fit": 8
+  }
+ },
+ "decision": {
+  "outcome": "template_specific",
+  "mean_PEROV": "11/3",
+  "mean_R": "8",
+  "mean_R_minus_PEROV": "13/3",
+  "mean_R_minus_PEROV_float": 4.333,
+  "checks": {
+   "G0_runner": true,
+   "not_reproduced": false,
+   "every_R_beats_every_PEROV": true,
+   "mean_diff_ge_3": true,
+   "mean_diff_le_1": false
+  }
+ },
+ "sensitivity_raw_not_deciding": {
+  "outcome": "template_specific",
+  "mean_PEROV": "8/3",
+  "mean_R": "23/3",
+  "mean_R_minus_PEROV": "5",
+  "mean_R_minus_PEROV_float": 5.0,
+  "checks": {
+   "G0_runner": true,
+   "not_reproduced": false,
+   "every_R_beats_every_PEROV": true,
+   "mean_diff_ge_3": true,
+   "mean_diff_le_1": false
+  }
+ },
+ "secondary_fit_relaxed_not_deciding": {
+  "PEROV": [
+   4,
+   6,
+   4
+  ],
+  "R": [
+   8,
+   8,
+   8
+  ],
+  "mean_R_minus_PEROV": 3.333
+ },
+ "permutation_p_one_sided_not_deciding": {
+  "relaxed_consensus": "1/20",
+  "note": "3 vs 3 runs: the smallest possible value is 1/20 = 0.05 (pre-registration note)"
+ }
+}

@@ -1,0 +1,61 @@
+2026-11-23T18:18:48Z monitor start pod=un7ctjs10apuiv host=194.68.245.154:22164 cap=11:50 (42600 s after creation)
+2026-11-23T18:18:51Z copied; last step record: {"ev": "step", "step": 301, "t": 89.289}
+2026-11-23T18:28:54Z copied; last step record: {"ev": "step", "step": 2307, "t": 691.614}
+2026-11-23T18:38:57Z copied; last step record: {"ev": "step", "step": 4306, "t": 1294.652}
+2026-11-23T18:49:00Z copied; last step record: {"ev": "step", "step": 6327, "t": 1897.379}
+2026-11-23T18:59:03Z copied; last step record: {"ev": "step", "step": 8353, "t": 2500.413}
+2026-11-23T19:09:06Z copied; last step record: {"ev": "step", "step": 10380, "t": 3103.416}
+2026-11-23T19:19:17Z copied; last step record: {"ev": "step", "step": 12403, "t": 3715.537}
+2026-11-23T19:29:21Z copied; last step record: {"ev": "step", "step": 14345, "t": 4318.275}
+2026-11-23T19:39:24Z copied; last step record: {"ev": "step", "step": 16321, "t": 4921.646}
+2026-11-23T19:49:27Z copied; last step record: {"ev": "step", "step": 18310, "t": 5524.73}
+2026-11-23T19:59:30Z copied; last step record: {"ev": "step", "step": 20313, "t": 6127.955}
+2026-11-23T20:09:34Z copied; last step record: {"ev": "val_start", "step": 22324, "t": 6729.161}
+2026-11-23T20:19:45Z copied; last step record: {"ev": "step", "step": 24372, "t": 7343.252}
+2026-11-23T20:29:48Z copied; last step record: {"ev": "step", "step": 26382, "t": 7946.307}
+2026-11-23T20:39:51Z copied; last step record: {"ev": "step", "step": 28404, "t": 8549.661}
+2026-11-23T20:49:55Z copied; last step record: {"ev": "step", "step": 30413, "t": 9152.948}
+2026-11-23T20:59:58Z copied; last step record: {"ev": "step", "step": 32432, "t": 9756.726}
+2026-11-23T21:10:02Z copied; last step record: {"ev": "step", "step": 34426, "t": 10360.062}
+2026-11-23T21:20:13Z copied; last step record: {"ev": "step", "step": 36474, "t": 10971.59}
+2026-11-23T21:30:16Z copied; last step record: {"ev": "step", "step": 38481, "t": 11575.068}
+2026-11-23T21:40:20Z copied; last step record: {"ev": "step", "step": 40491, "t": 12178.28}
+2026-11-23T21:50:23Z copied; last step record: {"ev": "step", "step": 42511, "t": 12781.845}
+2026-11-23T22:00:27Z copied; last step record: {"ev": "step", "step": 44537, "t": 13385.233}
+2026-11-23T22:10:30Z copied; last step record: {"ev": "step", "step": 46550, "t": 13988.822}
+2026-11-23T22:20:42Z copied; last step record: {"ev": "step", "step": 48599, "t": 14600.213}
+2026-11-23T22:30:45Z copied; last step record: {"ev": "step", "step": 50613, "t": 15203.808}
+2026-11-23T22:40:49Z copied; last step record: {"ev": "step", "step": 52632, "t": 15807.431}
+2026-11-23T22:50:53Z copied; last step record: {"ev": "step", "step": 54634, "t": 16411.297}
+2026-11-23T23:00:57Z copied; last step record: {"ev": "step", "step": 56662, "t": 17015.343}
+2026-11-23T23:11:01Z copied; last step record: {"ev": "step", "step": 58680, "t": 17618.978}
+2026-11-23T23:21:13Z copied; last step record: {"ev": "step", "step": 60726, "t": 18231.714}
+2026-11-23T23:31:17Z copied; last step record: {"ev": "step", "step": 62718, "t": 18835.301}
+2026-11-23T23:41:20Z copied; last step record: {"ev": "step", "step": 64738, "t": 19439.093}
+2026-11-23T23:51:24Z copied; last step record: {"ev": "step", "step": 66762, "t": 20042.53}
+2026-11-24T00:01:28Z copied; last step record: {"ev": "step", "step": 68779, "t": 20646.451}
+2026-11-24T00:11:32Z copied; last step record: {"ev": "step", "step": 70793, "t": 21250.563}
+2026-11-24T00:21:45Z copied; last step record: {"ev": "step", "step": 72854, "t": 21863.497}
+2026-11-24T00:31:49Z copied; last step record: {"ev": "step", "step": 74881, "t": 22467.326}
+2026-11-24T00:41:53Z copied; last step record: {"ev": "step", "step": 76912, "t": 23071.128}
+2026-11-24T00:51:56Z copied; last step record: {"ev": "step", "step": 78924, "t": 23675.016}
+2026-11-24T01:02:00Z copied; last step record: {"ev": "step", "step": 80917, "t": 24278.748}
+2026-11-24T01:12:04Z copied; last step record: {"ev": "step", "step": 82895, "t": 24882.647}
+2026-11-24T01:22:16Z copied; last step record: {"ev": "step", "step": 84875, "t": 25494.791}
+2026-11-24T01:32:20Z copied; last step record: {"ev": "step", "step": 86841, "t": 26098.696}
+2026-11-24T01:42:27Z copied; last step record: {"ev": "val_start", "step": 88824, "t": 26703.855}
+2026-11-24T01:52:33Z copied; last step record: {"ev": "step", "step": 90835, "t": 27310.599}
+2026-11-24T02:02:41Z copied; last step record: {"ev": "step", "step": 92853, "t": 27918.236}
+2026-11-24T02:12:45Z copied; last step record: {"ev": "step", "step": 94854, "t": 28523.651}
+2026-11-24T02:22:59Z copied; last step record: {"ev": "val_start", "step": 96899, "t": 29136.277}
+2026-11-24T02:33:03Z copied; last step record: {"ev": "step", "step": 98895, "t": 29741.377}
+2026-11-24T02:43:11Z copied; last step record: {"ev": "step", "step": 100910, "t": 30348.657}
+2026-11-24T02:53:15Z copied; last step record: {"ev": "step", "step": 102910, "t": 30953.599}
+2026-11-24T03:03:21Z copied; last step record: {"ev": "step", "step": 104917, "t": 31559.151}
+2026-11-24T03:13:25Z copied; last step record: {"ev": "train_end", "step": 106000, "peak_gpu_mem_gib": 2.519381046295166, "t": 31888.484}
+2026-11-24T03:13:25Z run finished: exit 0; final copy
+2026-11-24T03:13:40Z all pod checkpoints copied, SHA-256 match:
+467f1fdafe37e42390c7b334ad9b3471be6dd7f3004a2eb73ef14ab3400492b0  ./singlerun/2026-11-23/R1_s42/last.ckpt
+9a934b1cf6b7a3f3a6a02de2e278e1c15feb44f0dfa4d3da91016978cdb5464f  ./singlerun/2026-11-23/R1_s42/epoch=384-step=36574.ckpt
+2026-11-24T03:13:41Z DELETE pod un7ctjs10apuiv -> HTTP 204
+2026-11-24T03:14:01Z pods left on account: ['0o2tm8fes0kd52', 's0k69ejakkxmen']

@@ -1,0 +1,12 @@
+material_id,PEROV_s42_consensus,PEROV_s42_fit,PEROV_s42_rank,PEROV_s43_consensus,PEROV_s43_fit,PEROV_s43_rank,PEROV_s44_consensus,PEROV_s44_fit,PEROV_s44_rank,R1_s42_consensus,R1_s42_fit,R1_s42_rank,R2_s43_consensus,R2_s43_fit,R2_s43_rank,R3_s44_consensus,R3_s44_fit,R3_s44_rank,PEROV_consensus_runs,R_consensus_runs
+mp-6231,False,False,,False,False,,False,False,,True,True,1.0,True,True,1.0,True,True,1.0,0,3
+mp-19093,False,False,,False,False,,False,False,,True,True,1.0,True,True,1.0,True,True,1.0,0,3
+mp-19274,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-6389,False,False,,False,False,,False,False,,True,True,1.0,False,False,,True,True,1.0,0,2
+mp-16307,False,False,,False,True,1.0,False,False,,True,True,1.0,True,True,1.0,True,True,1.0,0,3
+mp-557387,False,True,1.0,False,True,1.0,False,False,,False,False,,False,False,,False,False,,0,0
+mp-6603,False,False,,False,False,,False,False,,True,True,1.0,True,True,1.0,True,True,1.0,0,3
+mp-1215245,False,False,,True,True,1.0,True,True,1.0,False,False,,True,True,1.0,False,False,,2,1
+mp-10321,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-12449,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,True,True,1.0,3,3
+mp-556434,False,False,,False,False,,False,False,,False,False,,False,False,,False,False,,0,0

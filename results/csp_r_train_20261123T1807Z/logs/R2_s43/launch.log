@@ -1,0 +1,16 @@
+749ed88e6ea013b54a23815399d749769aefff5f79aaa612122d8df4644784fa  bundle.tgz
+setup_exit=0
+ + urllib3==2.2.3
+ + wandb==0.15.12
+ + werkzeug==3.0.6
+ + yarl==1.15.2
+ + zipp==3.20.2
+torch 1.9.0+cu111 cuda 11.1 gpu NVIDIA RTX A5000 pl 1.3.8
+96
+NVIDIA RTX A5000, 595.112.07, 24564 MiB
+/workspace/venv/lib/python3.8/site-packages/pytorch_lightning/trainer/data_loading.py:102: UserWarning: The dataloader, train dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 96 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+
+
+{"ev": "step", "step": 248, "t": 77.256}
+backstop=running

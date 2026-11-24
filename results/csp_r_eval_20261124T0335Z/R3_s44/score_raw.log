@@ -1,0 +1,12 @@
+{'material_id': 'mp-6231', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 225}
+{'material_id': 'mp-19093', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 225}
+{'material_id': 'mp-19274', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 123}
+{'material_id': 'mp-6389', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': False, 'first_match_rank': 7, 'ref_spacegroup': 14}
+{'material_id': 'mp-16307', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 225}
+{'material_id': 'mp-557387', 'n_files': 20, 'n_read': 20, 'fit': False, 'consensus': False, 'first_match_rank': None, 'ref_spacegroup': 34}
+{'material_id': 'mp-6603', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 14}
+{'material_id': 'mp-1215245', 'n_files': 20, 'n_read': 20, 'fit': False, 'consensus': False, 'first_match_rank': None, 'ref_spacegroup': 38}
+{'material_id': 'mp-10321', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 1, 'ref_spacegroup': 14}
+{'material_id': 'mp-12449', 'n_files': 20, 'n_read': 20, 'fit': True, 'consensus': True, 'first_match_rank': 9, 'ref_spacegroup': 14}
+{'material_id': 'mp-556434', 'n_files': 20, 'n_read': 20, 'fit': False, 'consensus': False, 'first_match_rank': None, 'ref_spacegroup': 2}
+fit 8 / 11, consensus 7 / 11

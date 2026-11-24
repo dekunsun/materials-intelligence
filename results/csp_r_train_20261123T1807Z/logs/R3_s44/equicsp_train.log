@@ -1,0 +1,11 @@
+[2026-11-23 18:42:45,187][hydra.utils][INFO] - Instantiating <equicsp.pl_data.datamodule.CrystDataModule>
+[2026-11-23 18:42:51,150][hydra.utils][INFO] - Instantiating <equicsp.pl_modules.diffusion.CSPDiffusion>
+[2026-11-23 18:42:57,008][hydra.utils][INFO] - Passing scaler from datamodule to model <StandardScalerTorch(means: -1.1503815650939941, stds: 1.0018200874328613)>
+[2026-11-23 18:42:57,009][hydra.utils][INFO] - Adding callback <LearningRateMonitor>
+[2026-11-23 18:42:57,010][hydra.utils][INFO] - Adding callback <EarlyStopping>
+[2026-11-23 18:42:57,011][hydra.utils][INFO] - Adding callback <ModelCheckpoint>
+[2026-11-23 18:42:57,015][hydra.utils][INFO] - Instantiating <WandbLogger>
+[2026-11-23 18:42:57,052][hydra.utils][INFO] - W&B is now watching <{cfg.logging.wandb_watch.log}>!
+[2026-11-23 18:42:57,073][hydra.utils][INFO] - Instantiating the Trainer
+[2026-11-23 18:42:57,095][hydra.utils][INFO] - Starting training!
+[2026-11-24 04:05:42,549][hydra.utils][INFO] - Starting testing!

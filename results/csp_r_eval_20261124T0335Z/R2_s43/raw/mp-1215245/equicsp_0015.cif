@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_ZrTi(NiH3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.53020620
+_cell_length_b   6.09783030
+_cell_length_c   2.86759162
+_cell_angle_alpha   89.17282867
+_cell_angle_beta   89.08322906
+_cell_angle_gamma   97.28327942
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   ZrTi(NiH3)2
+_chemical_formula_sum   'Zr1 Ti1 Ni2 H6'
+_cell_volume   78.55554257
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr  Zr0  1  0.65302843  0.76694143  0.22901580  1
+  Ti  Ti1  1  0.33882308  0.12616293  0.73031402  1
+  Ni  Ni2  1  0.13094629  0.67949909  0.73031944  1
+  Ni  Ni3  1  0.86629504  0.20696515  0.22956012  1
+  H  H4  1  0.73909944  0.01915460  0.73095787  1
+  H  H5  1  0.23718344  0.89789516  0.23053968  1
+  H  H6  1  0.95734340  0.54760295  0.23007946  1
+  H  H7  1  0.45941177  0.55097908  0.73116148  1
+  H  H8  1  0.03613630  0.31837609  0.73039901  1
+  H  H9  1  0.51929343  0.28941247  0.22991864  1

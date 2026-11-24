@@ -1,0 +1,241 @@
+{
+ "what": "Sampling, relaxation and scoring of the R1-R3 random-removal arms, and the pre-registered decision of the CSP random-removal control",
+ "pre_registration": "src/csp/random_removal_control.py (rules), order fixed by amendment A1; analysis fixed in src/csp/r_decision.py, committed in 57970a3 before any R1-R3 candidate existed",
+ "decision": {
+  "outcome": "template_specific",
+  "mean_PEROV": "11/3",
+  "mean_R": "8",
+  "mean_R_minus_PEROV": "13/3",
+  "mean_R_minus_PEROV_float": 4.333,
+  "checks": {
+   "G0_runner": true,
+   "not_reproduced": false,
+   "every_R_beats_every_PEROV": true,
+   "mean_diff_ge_3": true,
+   "mean_diff_le_1": false
+  }
+ },
+ "runs": {
+  "PEROV_s42": {
+   "relaxed_consensus": 3,
+   "relaxed_fit": 4,
+   "raw_consensus": 3,
+   "raw_fit": 4
+  },
+  "PEROV_s43": {
+   "relaxed_consensus": 4,
+   "relaxed_fit": 6,
+   "raw_consensus": 3,
+   "raw_fit": 4
+  },
+  "PEROV_s44": {
+   "relaxed_consensus": 4,
+   "relaxed_fit": 4,
+   "raw_consensus": 2,
+   "raw_fit": 4
+  },
+  "R1_s42": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 8,
+   "raw_fit": 8
+  },
+  "R2_s43": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 8,
+   "raw_fit": 8
+  },
+  "R3_s44": {
+   "relaxed_consensus": 8,
+   "relaxed_fit": 8,
+   "raw_consensus": 7,
+   "raw_fit": 8
+  }
+ },
+ "not_deciding": {
+  "sensitivity_raw_not_deciding": {
+   "outcome": "template_specific",
+   "mean_PEROV": "8/3",
+   "mean_R": "23/3",
+   "mean_R_minus_PEROV": "5",
+   "mean_R_minus_PEROV_float": 5.0,
+   "checks": {
+    "G0_runner": true,
+    "not_reproduced": false,
+    "every_R_beats_every_PEROV": true,
+    "mean_diff_ge_3": true,
+    "mean_diff_le_1": false
+   }
+  },
+  "secondary_fit_relaxed_not_deciding": {
+   "PEROV": [
+    4,
+    6,
+    4
+   ],
+   "R": [
+    8,
+    8,
+    8
+   ],
+   "mean_R_minus_PEROV": 3.333
+  },
+  "permutation_p_one_sided_not_deciding": {
+   "relaxed_consensus": "1/20",
+   "note": "3 vs 3 runs: the smallest possible value is 1/20 = 0.05 (pre-registration note)"
+  }
+ },
+ "command": [
+  "REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/csp_r_eval_20261124T0335Z R1_s42 R2_s43",
+  "REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/csp_r_eval_20261124T0335Z R3_s44 (started while R1/R2 were still sampling)",
+  ".venv/bin/python -I src/csp/r_decision.py results/csp_r_eval_20261124T0335Z results/csp_r_eval_20261124T0335Z"
+ ],
+ "started": {
+  "R1_s42,R2_s43": "2026-11-24T03:35:41Z",
+  "R3_s44": "2026-11-24T04:10:58Z"
+ },
+ "finished": {
+  "R1_s42,R2_s43": "2026-11-24T05:53:26Z",
+  "R3_s44": "2026-11-24T06:22:31Z"
+ },
+ "machine": "Apple M3 Pro, 12 cores, CPU only, no paid compute",
+ "repo_commit": "57970a3",
+ "code_sha256": {
+  "src/csp/g0/sample.py": "9b9868bc27e2d134956c13712cf12337a967474d79fd583308bd10e973956d66",
+  "src/csp/g0/relax.py": "410eb121658049b8c4b31d010e3c3eb8520fbb2603b9153444037d483d508fed",
+  "src/csp/g0/score.py": "c7f1d36f7ca86765a2ecbb2104c1cc2cb3d8047e4e65e541de5e84e9f02324f9",
+  "src/csp/g0/run_eval.sh": "ff049816bedf22c3da178c1fbe70d30a84f7b421579792e2d27a56a25b39eeff",
+  "src/csp/r_decision.py": "b3aba0d722810efff8db6a6b577764cb26580ed1a0e9937dc815a9c3a1791e0b"
+ },
+ "code_same_as_PEROV_seed_eval": true,
+ "training_run": "results/csp_r_train_20261123T1807Z/",
+ "sampling": {
+  "R1_s42": {
+   "checkpoint": "epoch=384-step=36574.ckpt",
+   "checkpoint_sha256": "9a934b1cf6b7a3f3a6a02de2e278e1c15feb44f0dfa4d3da91016978cdb5464f",
+   "load_state_dict": {
+    "missing_keys": [],
+    "unexpected_keys": []
+   },
+   "seed": 42,
+   "step_lr": 5e-06,
+   "diffusion_steps": 1000,
+   "device": "cpu",
+   "device_name": "Apple M3 Pro",
+   "torch": "1.9.0",
+   "python": "3.8.20",
+   "torch_threads": 12,
+   "n_candidates_per_target": 20,
+   "written": 220,
+   "failed": 0,
+   "sample_seconds_sum": 5860
+  },
+  "R2_s43": {
+   "checkpoint": "epoch=469-step=44649.ckpt",
+   "checkpoint_sha256": "b82bd6eb6118089aa3e20365354591347f4f873ff9b8ae5bf79d96a5937a17e6",
+   "load_state_dict": {
+    "missing_keys": [],
+    "unexpected_keys": []
+   },
+   "seed": 43,
+   "step_lr": 5e-06,
+   "diffusion_steps": 1000,
+   "device": "cpu",
+   "device_name": "Apple M3 Pro",
+   "torch": "1.9.0",
+   "python": "3.8.20",
+   "torch_threads": 12,
+   "n_candidates_per_target": 20,
+   "written": 220,
+   "failed": 0,
+   "sample_seconds_sum": 5855
+  },
+  "R3_s44": {
+   "checkpoint": "epoch=399-step=37999.ckpt",
+   "checkpoint_sha256": "d595ae02c485b5c95e389f19a3b4a80f3b7631e03b8041c8c0c62b318a8f020c",
+   "load_state_dict": {
+    "missing_keys": [],
+    "unexpected_keys": []
+   },
+   "seed": 44,
+   "step_lr": 5e-06,
+   "diffusion_steps": 1000,
+   "device": "cpu",
+   "device_name": "Apple M3 Pro",
+   "torch": "1.9.0",
+   "python": "3.8.20",
+   "torch_threads": 12,
+   "n_candidates_per_target": 20,
+   "written": 220,
+   "failed": 0,
+   "sample_seconds_sum": 6708
+  }
+ },
+ "sampling_seeding": "torch, numpy and random reseeded with the run's training seed before each target (amendment A1)",
+ "relaxation": {
+  "R1_s42": {
+   "candidates": 220,
+   "max_force_le_0.01": 206,
+   "hit_500_steps": 10,
+   "errors": 0,
+   "cpu_seconds_sum": 6248
+  },
+  "R2_s43": {
+   "candidates": 220,
+   "max_force_le_0.01": 213,
+   "hit_500_steps": 8,
+   "errors": 0,
+   "cpu_seconds_sum": 5662
+  },
+  "R3_s44": {
+   "candidates": 220,
+   "max_force_le_0.01": 205,
+   "hit_500_steps": 7,
+   "errors": 0,
+   "cpu_seconds_sum": 2811
+  }
+ },
+ "relaxation_settings": {
+  "model": "orb_v3_conservative_inf_omat",
+  "orb_models": "0.5.5",
+  "precision": "float32-highest",
+  "optimizer": "ASE FIRE + FrechetCellFilter",
+  "fmax_eV_per_A": 0.01,
+  "max_steps": 500,
+  "ranking": "ORB-v3 energy per atom, ascending; all 20 exported",
+  "device": "cpu"
+ },
+ "scoring": {
+  "matcher": "pymatgen StructureMatcher(ltol=0.2, stol=0.3, angle_tol=5, primitive_cell=True, scale=True, attempt_supercell=False)",
+  "reference": "primitive cell of each T180 reference CIF (tolerance 0.01)",
+  "fit": "any of the 20 matches",
+  "consensus": "a matching candidate also has the reference space group (SpacegroupAnalyzer symprec 0.1)",
+  "pymatgen": "2026.10.31",
+  "scorer_check": "on the paper's released candidates (ablation_top20_predictions.zip, sha256 0a6ada26...) this scorer gives fit 10 / consensus 8 (ABC2D6) and fit 7 / consensus 3 (PEROV), equal to the paper per target",
+  "reference_cif_sha256": {
+   "mp-10321.cif": "a986243cb48d2d5271763b603635541fc4bd5cdfacbd059ed5216325bf224eb3",
+   "mp-1215245.cif": "56c4c86a896cf2f3399594d2976c0cc53bf3cb9893c2da5cadf0c33fde92082d",
+   "mp-12449.cif": "87fc553f8a7c609e013af7b16078ced4a66de6b8aabbc32c4f3a9a33a55f9672",
+   "mp-16307.cif": "eddfdceda3efb79262f8f39767247c501ad3d7465e05d1ffd73b86f3bb5876fd",
+   "mp-19093.cif": "071f4eaae77177242bb858f243f10ec81cc569b6c30a6add91267e6586737458",
+   "mp-19274.cif": "c74ffeca3050088fa6828b97d75cc56766430d5cfbf269fa5a49e543f5342d5d",
+   "mp-556434.cif": "e9a79b601866e4316e6583d278cfa68374ad2b523413c6e49c6a4b76ebf10ca5",
+   "mp-557387.cif": "03034c38fe950d1f8fb08750bb8e23069c15ff91fe42d28fdba7aa14450bbc47",
+   "mp-6231.cif": "c04333aaf3d867b09498a93bb23acd2e20e3b5838bb1ace1f7f087ca5a7a1a68",
+   "mp-6389.cif": "a739916b831e42426cc7e0b03dcae9256aafc5b60391c8d441b44227a093f523",
+   "mp-6603.cif": "a3e96620873fa08642ab634d2a724062f90f2da014a60c21c5accbf293e6ef5f"
+  }
+ },
+ "leakage_check_2026-11-24": "none of the 11 target IDs, and no structure with the same reduced formula as a target, is in train or val of ABC2D6, PEROV, R1, R2 or R3 (pandas + pymatgen reduced_formula on pretty_formula); R and PEROV have the same row counts (train 24,317, val 8,150)",
+ "not_stated_by_paper_so_chosen_here": [
+  "ORB-v3 variant (inferred from the released candidates by src/csp/g0/orb_variant_check.py, not confirmed)",
+  "optimiser and cell filter",
+  "how many candidates were generated before keeping the 20 lowest-energy ones (we generate exactly 20)",
+  "sampling device (ours: CPU)"
+ ],
+ "not_verified": [
+  "the byte-for-byte reproducibility check was not repeated (G0 checked one target on seed 42 only)",
+  "the ORB-v3 variant is inferred, not confirmed"
+ ]
+}

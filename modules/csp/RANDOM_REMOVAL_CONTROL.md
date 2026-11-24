@@ -1,6 +1,6 @@
 # CSP 随机移除对照（预登记）
 
-> 状态（2026-11-21）：规则已写好，划分已生成并记录哈希，**还没有跑任何训练**。训练要租 GPU，属于付费计算：先跑一次冒烟测试测出每步时间，报告总花费，等批准后再跑。
+> 状态（2026-11-24）：核心 7 次训练全部完成。**按预注册规则，结论是“模板特有”**：弛豫后 consensus，PEROV 是 3、4、4，随机删除组 R1–R3 是 8、8、8（`results/csp_r_eval_20261124T0335Z/`）。结论的范围见那份报告和第 5 节。
 
 ## 1. 问题
 
@@ -98,15 +98,21 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
   - 训练包和 PEROV 的逐个文件比较过，只有 4 个训练、验证数据文件不同。
   - 把判定规则写成脚本 `src/csp/r_decision.py`，用 `tests/check_csp_decision.py` 检查了每个阈值两侧的情况，并在 R 组结果出来之前 commit。
 
+- **R1–R3**（`results/csp_r_train_20261123T1807Z/`、`results/csp_r_eval_20261124T0335Z/`）：三次训练都完成（三台 A5000 Secure，估计约 $7.50）。弛豫后 consensus 是 8、8、8。`r_decision.py`（没有改动）给出 **template_specific**：每个 R 都高于每个 PEROV，平均差 13/3 ≈ 4.33 ≥ 3。
+  - 未弛豫的敏感性检查给出同样的结论（差值 5）。精确置换 p = 1/20，是 3 对 3 能得到的最小值，不参与判定。
+  - 差别集中在 5 个目标（mp-6231、mp-19093、mp-16307、mp-6603、mp-6389）：R 组基本都能恢复，PEROV 组三个 seed 一次也没有。
+  - 另外查过数据泄漏：五组的训练集和验证集都不含 11 个目标，也不含和目标化学式相同的结构。
+
 **未完成。**
 
-- R1–R3 正在训练（2026-11-23 18:07 起，三台 A5000 Secure；`results/csp_r_train_20261123T1807Z/`）。
-- 然后用相同的设置生成、弛豫、打分，再用 `r_decision.py` 判定。PEROV 合计 11，所以三个 R 的 consensus：都 ≥ 5 且合计 ≥ 20 是"模板特有"，合计 ≤ 14 是"数据量"，其他是"无法判断"。
+- 可选的 ABC2D6 seed 43、44（测不丢模板时的训练波动）没有跑。它们不会改变这次的判定，要不要跑需要单独决定，而且是付费运行。
+- 逐字节可重复性检查只在 G0 做过一次（seed 42 的一个目标）。
 
 ## 5. 局限
 
 - 随机抽样没有在成分或元素数上和钙钛矿结构配对。对照只能区分"这批结构"和"同样数量的任意结构"，分不了更细。
 - 只有 11 个目标，一个目标就是 9 个百分点。
+- 每组只有 3 次训练，ABC2D6 组只有 1 次。结论没有说明是钙钛矿框架里的哪些结构起作用，也没有说明模型怎么用到它们。
 - 只有一个模型（EquiCSP）和一个家族（钙钛矿框架）。
 - 论文的结论能不能推广到更大、离已知原型更远的测试集，这个对照回答不了。
 
@@ -124,7 +130,7 @@ Wei et al.（[arXiv:2609.26502](https://arxiv.org/abs/2609.26502) v2）去掉训
 
 # CSP random-removal control (pre-registered)
 
-> Status (2026-11-21): the rules are written and the splits are built and hashed. **No training has been run.** Training needs a rented GPU, which is paid compute. The next step is one smoke test to measure time per step and report the total cost. Nothing else runs until that cost is approved.
+> Status (2026-11-24): all 7 core training runs are done. **Under the pre-registered rules, the outcome is template_specific.** Relaxed consensus is 3, 4 and 4 for PEROV and 8, 8 and 8 for the random-removal arms R1–R3 (`results/csp_r_eval_20261124T0335Z/`). For the scope of this conclusion, see that report and section 5.
 
 ## 1. Question
 
@@ -224,18 +230,21 @@ The original rules (commit `4220c46`) stay as they are. The amendment is saved s
   - The pod bundles were compared file by file with PEROV's. Only the 4 train and validation data files differ.
   - The decision rules were written as `src/csp/r_decision.py` and checked on both sides of every threshold by `tests/check_csp_decision.py`. Both were committed before any R result existed.
 
+- **R1–R3** (`results/csp_r_train_20261123T1807Z/`, `results/csp_r_eval_20261124T0335Z/`). All three trained to completion on three A5000 Secure pods, at an estimated $7.50. Relaxed consensus is 8, 8 and 8. `r_decision.py` (unchanged) gives **template_specific**: every R beats every PEROV run, and the mean difference is 13/3 ≈ 4.33 ≥ 3.
+  - The unrelaxed sensitivity check gives the same outcome (difference 5). The exact permutation p is 1/20, the smallest 3 vs 3 can give; it does not decide anything.
+  - The difference sits in 5 targets (mp-6231, mp-19093, mp-16307, mp-6603, mp-6389). The R arm recovers them almost every time; PEROV never does, on any seed.
+  - Leakage was also checked. In none of the five arms do train or val contain the 11 targets, or any structure with the same reduced formula as a target.
+
 **Not done.**
 
-- R1–R3 are training: three A5000 Secure pods since 2026-11-23 18:07 (`results/csp_r_train_20261123T1807Z/`).
-- They will then be sampled, relaxed and scored with the same settings, and decided by `r_decision.py`. PEROV sums to 11, so for the three R consensus counts:
-  - all ≥ 5 and a sum ≥ 20 is template_specific;
-  - a sum ≤ 14 is data_amount;
-  - anything else is inconclusive.
+- The optional ABC2D6 seeds 43 and 44 (training variation without the template loss) were not run. They would not change this decision. Whether to run them is a separate decision, and they are paid runs.
+- The byte-for-byte reproducibility check was done once only, in G0 (one target on seed 42).
 
 ## 5. Limits
 
 - The random draws are not matched to the perovskite structures on composition or number of elements. The control can tell "these structures" from "the same number of any structures", nothing finer.
 - There are only 11 targets; one target is 9 percentage points.
+- Each arm has only 3 training runs, and the ABC2D6 arm has 1. The result does not say which perovskite-framework structures matter, or how the model uses them.
 - One model (EquiCSP) and one family (perovskite frameworks).
 - The control cannot say whether the paper's conclusion carries over to a larger test set further from known prototypes.
 

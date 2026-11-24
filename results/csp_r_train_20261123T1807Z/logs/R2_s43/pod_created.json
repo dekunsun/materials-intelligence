@@ -1,0 +1,47 @@
+{
+ "actions": [
+  "stop",
+  "restart",
+  "terminate"
+ ],
+ "args": "",
+ "cloud": "SECURE",
+ "cost": 0.27,
+ "createdAt": "2026-11-23T18:26:52.661Z",
+ "cudaVersion": "13.2",
+ "dataCenterId": "EU-SE-1",
+ "disk": 40,
+ "env": {},
+ "globalNetworking": {
+  "enabled": false
+ },
+ "gpu": {
+  "count": 1,
+  "id": "NVIDIA RTX A5000",
+  "memory": 50,
+  "vcpuCount": 9
+ },
+ "id": "s0k69ejakkxmen",
+ "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+ "locked": false,
+ "mounts": {},
+ "name": "csp-r2-s43",
+ "ports": [
+  "22/tcp"
+ ],
+ "registry": null,
+ "runtime": null,
+ "ssh": {
+  "direct": null,
+  "proxy": {
+   "command": "ssh s0k69ejakkxmen-644125d3@ssh.runpod.io",
+   "host": "ssh.runpod.io",
+   "port": 22,
+   "username": "s0k69ejakkxmen-644125d3"
+  }
+ },
+ "startedAt": "2026-11-23T18:26:52.656Z",
+ "status": "RUNNING",
+ "tags": [],
+ "template": null
+}

@@ -1,0 +1,153 @@
+{
+ "what": "R1-R3 training runs of the CSP random-removal control (pre-registered in src/csp/random_removal_control.py)",
+ "repo_commit": "57970a3 (analysis and pod wrapper committed while training ran; pod scripts unchanged since 98c79d9)",
+ "command": "bash src/csp/pod_train.sh <ARM> <SEED> 106000 (started by src/csp/pod/launch.sh)",
+ "approved_budget": "owner-approved 2026-11-23: A5000 Secure, ceiling $0.30/h, 3 pods, worst case 12 h each",
+ "launch_record": "launch_record.json",
+ "bundle_check": "bundle_check.json",
+ "val_loss_note": "each R arm has its own validation set (drawn with its train split), so validation losses are not comparable across arms or with PEROV",
+ "runs": {
+  "R1_s42": {
+   "arm": "R1",
+   "seed": 42,
+   "max_steps": 106000,
+   "steps_done": 106000,
+   "exit_code": "exit 0",
+   "pod": {
+    "id": "un7ctjs10apuiv",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA RTX A5000",
+    "vcpu": 9,
+    "price_per_hour_usd": 0.27,
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "data_center": "EU-SE-1",
+    "created": "2026-11-23T18:07:18.475Z",
+    "terminated": "2026-11-24T03:14:01Z",
+    "hours_billed_estimate": 9.11,
+    "cost_estimate_usd": 2.46,
+    "note": "cost is price x time from the API's createdAt to the DELETE; not checked against billing (the key has no billing scope)"
+   },
+   "training": {
+    "started": "2026-11-23T18:17:09Z",
+    "finished": "2026-11-24T03:09:00Z",
+    "train_seconds_incl_validation": 31888.484,
+    "seconds_per_step": 0.3008,
+    "peak_gpu_mem_gib": 2.52,
+    "mean_gpu_util_pct": 65.0,
+    "mean_gpu_util_method": "mean of nvidia-smi samples (15 s) between started_at and finished_at",
+    "idle_hours_after_training_before_delete": 0.08
+   },
+   "checkpoints": {
+    "validation_selected": "epoch=384-step=36574.ckpt",
+    "best_val_loss_in_progress_bar": 0.845,
+    "last": "last.ckpt",
+    "stored_at": "data/raw/csp_g0/R1_s42/ (gitignored)",
+    "sha256_file": "logs/R1_s42/checkpoint_sha256.txt",
+    "hash_check": "monitor.log: every pod checkpoint matched the Mac copy by SHA-256 before the DELETE"
+   },
+   "end_of_run_test_on_validation_selected_checkpoint": {
+    "test_coord_loss": 0.40854230523109436,
+    "test_lattice_loss": 0.020537780597805977,
+    "test_loss": 0.8643344640731812,
+    "test_loss_score": 0.39805352687835693
+   }
+  },
+  "R2_s43": {
+   "arm": "R2",
+   "seed": 43,
+   "max_steps": 106000,
+   "steps_done": 106000,
+   "exit_code": "exit 0",
+   "pod": {
+    "id": "s0k69ejakkxmen",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA RTX A5000",
+    "vcpu": 9,
+    "price_per_hour_usd": 0.27,
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "data_center": "EU-SE-1",
+    "created": "2026-11-23T18:26:52.661Z",
+    "terminated": "2026-11-24T03:35:22Z",
+    "hours_billed_estimate": 9.14,
+    "cost_estimate_usd": 2.47,
+    "note": "cost is price x time from the API's createdAt to the DELETE; not checked against billing (the key has no billing scope)"
+   },
+   "training": {
+    "started": "2026-11-23T18:28:01Z",
+    "finished": "2026-11-24T03:27:05Z",
+    "train_seconds_incl_validation": 32319.623,
+    "seconds_per_step": 0.3049,
+    "peak_gpu_mem_gib": 2.42,
+    "mean_gpu_util_pct": 63.9,
+    "mean_gpu_util_method": "mean of nvidia-smi samples (15 s) between started_at and finished_at",
+    "idle_hours_after_training_before_delete": 0.14
+   },
+   "checkpoints": {
+    "validation_selected": "epoch=469-step=44649.ckpt",
+    "best_val_loss_in_progress_bar": 0.856,
+    "last": "last.ckpt",
+    "stored_at": "data/raw/csp_g0/R2_s43/ (gitignored)",
+    "sha256_file": "logs/R2_s43/checkpoint_sha256.txt",
+    "hash_check": "monitor.log: every pod checkpoint matched the Mac copy by SHA-256 before the DELETE"
+   },
+   "end_of_run_test_on_validation_selected_checkpoint": {
+    "test_coord_loss": 0.401582807302475,
+    "test_lattice_loss": 0.02265145443379879,
+    "test_loss": 0.8599628210067749,
+    "test_loss_score": 0.3918188810348511
+   }
+  },
+  "R3_s44": {
+   "arm": "R3",
+   "seed": 44,
+   "max_steps": 106000,
+   "steps_done": 106000,
+   "exit_code": "exit 0",
+   "pod": {
+    "id": "0o2tm8fes0kd52",
+    "cloud": "SECURE",
+    "gpu": "NVIDIA RTX A5000",
+    "vcpu": 9,
+    "price_per_hour_usd": 0.27,
+    "image": "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
+    "data_center": "EU-SE-1",
+    "created": "2026-11-23T18:39:20.839Z",
+    "terminated": "2026-11-24T04:09:54Z",
+    "hours_billed_estimate": 9.51,
+    "cost_estimate_usd": 2.57,
+    "note": "cost is price x time from the API's createdAt to the DELETE; not checked against billing (the key has no billing scope)"
+   },
+   "training": {
+    "started": "2026-11-23T18:42:43Z",
+    "finished": "2026-11-24T04:05:51Z",
+    "train_seconds_incl_validation": 33763.129,
+    "seconds_per_step": 0.3185,
+    "peak_gpu_mem_gib": 2.43,
+    "mean_gpu_util_pct": 62.8,
+    "mean_gpu_util_method": "mean of nvidia-smi samples (15 s) between started_at and finished_at",
+    "idle_hours_after_training_before_delete": 0.07
+   },
+   "checkpoints": {
+    "validation_selected": "epoch=399-step=37999.ckpt",
+    "best_val_loss_in_progress_bar": 0.847,
+    "last": "last.ckpt",
+    "stored_at": "data/raw/csp_g0/R3_s44/ (gitignored)",
+    "sha256_file": "logs/R3_s44/checkpoint_sha256.txt",
+    "hash_check": "monitor.log: every pod checkpoint matched the Mac copy by SHA-256 before the DELETE"
+   },
+   "end_of_run_test_on_validation_selected_checkpoint": {
+    "test_coord_loss": 0.41030600666999817,
+    "test_lattice_loss": 0.02152162604033947,
+    "test_loss": 0.8662972450256348,
+    "test_loss_score": 0.39789360761642456
+   }
+  }
+ },
+ "cost_total_estimate_usd": 7.5,
+ "clean_up": {
+  "pods_and_queued_pods_after_last_delete": "GET /v2/pods and /v2/queued-pods both empty (2026-11-24 ~04:15 UTC)",
+  "watchdogs": "stopped by hand after each pod's DELETE; none fired",
+  "pod_side_backstop": "never fired; still unverified",
+  "throwaway_ssh_private_key": "deleted"
+ }
+}

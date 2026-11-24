@@ -1,0 +1,9 @@
+/Users/xtc/Downloads/materials-intelligence/data/raw/orb_venv/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/Users/xtc/Downloads/materials-intelligence/data/raw/orb_venv/lib/python3.11/site-packages/orb_models/utils.py:30: UserWarning: Setting global torch default dtype to torch.float32.
+  warnings.warn(f"Setting global torch default dtype to {torch_dtype}.")
+/Users/xtc/Downloads/materials-intelligence/data/raw/orb_venv/lib/python3.11/site-packages/orb_models/utils.py:32: UserWarning: Consider passing 'precision=float32-high' for significantly higher (>2x) model throughput if high precision is not required.
+  warnings.warn(
+mp-1215245 18/20 converged, 677 s
+mp-19274 20/20 converged, 321 s
+mp-6389 20/20 converged, 484 s

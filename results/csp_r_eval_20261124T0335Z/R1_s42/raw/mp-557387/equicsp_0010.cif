@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_Sr2TmNbO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.85443020
+_cell_length_b   8.27557373
+_cell_length_c   5.89173698
+_cell_angle_alpha   90.55178833
+_cell_angle_beta   89.07593536
+_cell_angle_gamma   90.01475525
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Sr2TmNbO6
+_chemical_formula_sum   'Sr4 Tm2 Nb2 O12'
+_cell_volume   285.39704262
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sr  Sr0  1  0.91239786  0.87223226  0.15746227  1
+  Sr  Sr1  1  0.34011522  0.37222841  0.65615922  1
+  Sr  Sr2  1  0.41106287  0.87059474  0.67132038  1
+  Sr  Sr3  1  0.84067214  0.37219441  0.17130621  1
+  Tm  Tm4  1  0.87672228  0.12198429  0.66439813  1
+  Tm  Tm5  1  0.37662041  0.62215817  0.16430777  1
+  Nb  Nb6  1  0.37630114  0.12216001  0.16438121  1
+  Nb  Nb7  1  0.87645197  0.62175143  0.66485685  1
+  O  O8  1  0.59928221  0.58109027  0.46565741  1
+  O  O9  1  0.17623065  0.08116624  0.88838923  1
+  O  O10  1  0.39443094  0.36069024  0.09039578  1
+  O  O11  1  0.15351239  0.66008449  0.86317050  1
+  O  O12  1  0.07698728  0.58199096  0.38847566  1
+  O  O13  1  0.85673314  0.86056608  0.59084690  1
+  O  O14  1  0.10079376  0.16076475  0.36323637  1
+  O  O15  1  0.89441299  0.38238856  0.73909700  1
+  O  O16  1  0.57797313  0.16014975  0.44014171  1
+  O  O17  1  0.67722762  0.66000205  0.94288683  1
+  O  O18  1  0.35772026  0.88295388  0.23936732  1
+  O  O19  1  0.65233940  0.08114022  0.96457636  1
