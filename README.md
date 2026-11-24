@@ -32,6 +32,10 @@
 
 ![稳定性筛选结果](results/csp_screening_20261121T192919Z/screening_summary.png)
 
+**CSP 随机移除对照。** 去掉钙钛矿框架的那一组，三个训练种子各恢复 3、4、4 个目标；随机去掉同样数量的那一组，每个种子都是 8 个。按预登记的规则，结论是“模板特有”。设计和范围见 [modules/csp/RANDOM_REMOVAL_CONTROL.md](modules/csp/RANDOM_REMOVAL_CONTROL.md)，结果见 [results/csp_r_eval_20261124T0335Z/report.md](results/csp_r_eval_20261124T0335Z/report.md)。
+
+![CSP 随机移除对照：逐目标结果](results/csp_r_eval_20261124T0335Z/per_target_consensus.png)
+
 ## 证据规则
 
 每个模块都按同一套规则做：
@@ -39,7 +43,7 @@
 - **基线不只是随机。** 包括领域经验规则或老一代模型。
 - **独立审查。** 每个模块跑完都请独立代理审查代码和结论，修正记录在各报告末尾；作废的运行以 `superseded_` 开头保留。
 - **来历记录。** 每次运行记录输入文件哈希、代码哈希、包版本、种子，以及 git commit。
-- **复现层级写清楚。** 区分"重新计分""重新推理""重新训练"。三个模块都只到重新计分，没有重算声子；只有 CSP 随机移除对照重新训练了 EquiCSP（7 次完整训练在 RunPod A5000 上，另有 1 次 1,000 步冒烟测试在 A40 上），并在本机用 ORB-v3 生成和弛豫候选结构。
+- **复现层级写清楚。** 区分"重新计分""重新推理""重新训练"。三个模块都只到重新计分，没有重算声子；只有 CSP 随机移除对照重新训练了 EquiCSP（7 次完整训练在 RunPod A5000 上，另有 2 次 1,000 步的测试，分别在 A40 和 A5000 上），并在本机用 ORB-v3 生成和弛豫候选结构。
 
 ## 投资组合看板
 
@@ -78,6 +82,7 @@ python3.12 -m venv .venv
 # 训练后：生成、弛豫、打分，再按预登记规则判定
 REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/<run_id> R1_s42 R2_s43 R3_s44
 .venv/bin/python -I src/csp/r_decision.py results/<run_id> results/<run_id>
+.venv/bin/python -I src/csp/plot_r_control.py results/<run_id>
 
 # 对照官方实现
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
@@ -97,7 +102,7 @@ modules/        三个模块的报告和两个商业证据关卡（中文在上�
 src/            每个模块的下载、运行、分析和画图脚本
 results/        每次运行的配置、来历记录、原始输出和图
 tests/          逐材料、逐结构对照官方计分逻辑的检查
-memo/           决策备忘录的索引
+memo/           决策备忘录（从 Claude Docs 导出的 Markdown 快照）和索引
 PRODUCT_PLAN.md 最初的落地方案（2026-11-20），保留作为记录
 ```
 
@@ -157,6 +162,10 @@ Both re-scoring modules match the official leaderboard value by value (κ_SRME: 
 
 ![Stability screening results](results/csp_screening_20261121T192919Z/screening_summary.png)
 
+**CSP random-removal control.** With the perovskite frameworks removed, the three training seeds recover 3, 4 and 4 targets; with the same number of structures removed at random, every seed recovers 8. Under the pre-registered rules the outcome is template_specific. Design and scope: [modules/csp/RANDOM_REMOVAL_CONTROL.md](modules/csp/RANDOM_REMOVAL_CONTROL.md); results: [results/csp_r_eval_20261124T0335Z/report.md](results/csp_r_eval_20261124T0335Z/report.md).
+
+![CSP random-removal control: per-target results](results/csp_r_eval_20261124T0335Z/per_target_consensus.png)
+
 ### Evidence rules
 
 Every module follows the same rules:
@@ -164,7 +173,7 @@ Every module follows the same rules:
 - **Baselines beyond random.** They include a domain rule of thumb or older models.
 - **Independent review.** After each module ran, an independent agent reviewed the code and the conclusions; the fixes are recorded at the end of each report, and superseded runs are kept with a `superseded_` prefix.
 - **Provenance.** Each run records input-file hashes, code hashes, package versions, seeds and the git commit.
-- **Stated reproduction level.** "Re-score", "re-infer" and "retrain" are kept apart. The three modules only re-score and do not recompute phonons. Only the CSP random-removal control retrains EquiCSP (7 full runs on RunPod A5000s, plus one 1,000-step smoke test on an A40), then samples and relaxes candidates with ORB-v3 on a Mac.
+- **Stated reproduction level.** "Re-score", "re-infer" and "retrain" are kept apart. The three modules only re-score and do not recompute phonons. Only the CSP random-removal control retrains EquiCSP (7 full runs on RunPod A5000s, plus two 1,000-step test runs, on an A40 and an A5000), then samples and relaxes candidates with ORB-v3 on a Mac.
 
 ### Portfolio board
 
@@ -203,6 +212,7 @@ python3.12 -m venv .venv
 # after training: sample, relax and score, then apply the pre-registered rules
 REFS=data/raw/csp_ablation/T180_refs bash src/csp/g0/run_eval.sh results/<run_id> R1_s42 R2_s43 R3_s44
 .venv/bin/python -I src/csp/r_decision.py results/<run_id> results/<run_id>
+.venv/bin/python -I src/csp/plot_r_control.py results/<run_id>
 
 # Checks against the official implementation
 .venv/bin/python tests/check_thermal_official_port.py data/raw/kappa/<commit> results/<thermal_run_id>
@@ -222,7 +232,7 @@ modules/        reports for the three modules and the two commercial evidence ga
 src/            download, run, analysis and plotting scripts per module
 results/        per-run configuration, provenance, raw outputs and figures
 tests/          per-material and per-structure checks against the official scoring logic
-memo/           index of the decision memos
+memo/           decision memos (Markdown snapshots exported from Claude Docs) and their index
 PRODUCT_PLAN.md the original build plan (20 November 2026), kept as a record
 ```
 

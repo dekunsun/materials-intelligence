@@ -1,4 +1,4 @@
-<!-- Exported from Claude Docs on 2026-11-24 (doc rev 14). The doc is the working copy; this file is a snapshot. -->
+<!-- Exported from Claude Docs on 2026-11-24. -->
 
 # Investment Decision Memo 01：固态电解质与芯片散热
 

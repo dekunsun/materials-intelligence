@@ -75,6 +75,7 @@
 
 - `decision.json`：判定结果、每条规则的检查、不参与判定的几项、所有输入打分表的路径和 SHA-256
 - `per_target_all_runs.csv`：六次运行每个目标的 consensus、fit、排名
+- `per_target_consensus.png`：逐目标的图，由 `src/csp/plot_r_control.py` 画出（2026-11-24 补充）
 - `config.json`：判定、各次运行的汇总、代码和 checkpoint 的哈希、各项设置、泄漏检查
 - `R1_s42/`、`R2_s43/`、`R3_s44/`：`raw/`（220 个候选和 `sample_meta.json`）、`relaxed/`（弛豫、排序后的候选和每个目标的 `relax_report.json`）、`score_relaxed.csv`、`score_raw.csv` 和各步日志
 - `run_R1R2.log`、`run_R3.log`、`started_at`、`started_R3_at`、`finished_R1R2_at`、`finished_R3_at`
@@ -187,6 +188,7 @@ The same as G0:
 
 - `decision.json`: the decision, each rule's check, the items that do not decide, and the path and SHA-256 of every input score file
 - `per_target_all_runs.csv`: consensus, fit and rank per target for all six runs
+- `per_target_consensus.png`: the per-target figure, drawn by `src/csp/plot_r_control.py` (added 2026-11-24)
 - `config.json`: the decision, per-run summaries, code and checkpoint hashes, all settings, and the leakage check
 - `R1_s42/`, `R2_s43/` and `R3_s44/`, each with:
   - `raw/`: the 220 candidates and `sample_meta.json`

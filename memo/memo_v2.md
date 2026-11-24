@@ -1,4 +1,4 @@
-<!-- Exported from Claude Docs on 2026-11-24 (doc rev 15). The doc is the working copy; this file is a snapshot. -->
+<!-- Exported from Claude Docs on 2026-11-24. -->
 
 # Investment Decision Memo v2：三个模块、三笔候选投入
 
