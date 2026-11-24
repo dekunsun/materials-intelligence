@@ -14,6 +14,7 @@
 
 - r 是外推格的归一化分数（NRp，随机为 0、全对为 1）除以插值参照的 NRp；1 表示没有下降。
 - **D10 不变。** 预登记写明：只有第一阶段时，只更新证据，不改决定。
+- **运行后发现框架键有一个漏洞。** 事后修正后三格仍然成立，但结构外推格的 r 降到 0.908 [0.813, 1.034]，接近门槛。见“运行后发现的问题”。
 
 ## 读法
 
@@ -42,6 +43,23 @@
 - **事先看过的东西：** D2A 已经算过按原型标签（S1）分组的模型指标，显示前 10 名召回率低 1–4 个百分点；本次结构格子是那一组的子集。这一点在设计里写明了。
 - **和 CSP 随机移除对照放在一起看**（观察，不是结论）：生成模型恢复结构，强烈依赖训练集里的框架；能量模型判断稳定性，在这种温和的“框架陌生”上几乎不掉。两者任务不同、“远”的程度也不同，不能直接比较。
 
+## 运行后发现的问题（2026-11-24，事后修正）
+
+**预登记的框架键有一个漏洞，会让结构外推格混进一些已知框架。** AFLOW 式标签里的 Wyckoff 字母，是在“按元素分组”的前提下，从几种等价的原点选择里挑一种来规范化的。`far_split.py` 去掉了元素分组，却沿用了已经规范化过的字母，所以同一个框架只要元素分组不同，就可能得到不同的字母，被判成“陌生”。这会让结果偏向“成立”。
+
+**修正：** 去掉元素分组之后，在空间群所有等价的原点选择上重新规范化字母（用 Matbench Discovery 标签器自带的对照表），MP 和 WBM 两边同样处理（`src/csp/far_posthoc_canonical.py`）。1,762 个原先“框架陌生”的结构里，有 398 个其实是已知框架；原先“已知”的一个也没有变。
+
+| 修正后的格子 | 候选 / 稳定 / 含稳定的框架 | r 中位数 [95% 区间] | d [95% 区间] | 按同样规则 |
+|---|---|---|---|---|
+| 结构外推 | 920 / 129 / 30 | 0.908 [0.813, 1.034] | 0.573 [0.458, 0.687] | 成立 |
+| 化学外推 | 115,088 / 20,300 / — | 1.074 [1.041, 1.102] | 0.462 [0.420, 0.506] | 成立 |
+| 双重外推 | 444 / 102 / 20 | 1.181 [1.056, 1.236] | 0.477 [0.247, 0.713] | 成立 |
+
+- 修正后结论不变，但结构外推格离门槛更近：r 的区间下限 0.813，只比 0.8 高一点。逐个去掉 30 个框架，r 在 0.88–0.96 之间；按化学体系整群，区间是 [0.84, 0.99]。
+- 修正后结构外推格里，前 10 名的 r 在 0.84–1.03 之间；Wrenformer 降到 0.46，CHGNet 0.79，MACE-MP-0 0.94。
+- **以预登记的结果为准，修正版是事后分析。** 两个都写在这里，读者可以自己比较。第二阶段的框架键会直接用修正后的规范化。
+- 文件：`posthoc_canonical_framework/`（修正后的划分、判定、逐模型结果、敏感性检查）。
+
 ## 运行情况
 
 - 判定代码和预登记时的版本逐字节相同（`config.json` 里 `code_unchanged_since_pre_registration: true`）。
@@ -56,6 +74,7 @@
 - `per_model_cells.csv`：每个模型在每个外推格的 NRp、插值参照 NRp 和 r
 - `sensitivity.json`：敏感性检查
 - `config.json`：代码和输入的哈希、命令、MPtrj 核对、时间
+- `posthoc_canonical_framework/`：事后修正框架键之后的同一套分析
 
 ## 下一步（按依赖顺序）
 
@@ -79,6 +98,7 @@ Date: 2026-11-24 (UTC). Everything ran on the Mac's CPU in a few minutes, with n
 
 - r is the extrapolation cell's normalised score (NRp: 0 for random, 1 for perfect) divided by the interpolation reference's NRp; 1 means no drop.
 - **D10 does not change.** The pre-registration says Stage 1 alone updates the evidence only.
+- **A flaw in the framework key was found after the run.** After a post-hoc correction all three cells still hold, but the structural cell's r falls to 0.908 [0.813, 1.034], close to the threshold. See "A problem found after the run".
 
 ## Reading it
 
@@ -107,6 +127,23 @@ The outcome depends neither on one definition nor on one framework. See `sensiti
 - **Seen beforehand:** D2A had already computed model metrics by prototype label (S1), showing the top 10's recall 1–4 points lower; this run's structural cell is a subset of that group. The design says so.
 - **Read next to the CSP random-removal control** (an observation, not a conclusion): the generative model's structure recovery depends strongly on frameworks in its training set, while energy models' stability judgements barely drop on this mild kind of "unfamiliar framework". The tasks differ, and so does how far "far" is, so the two cannot be compared directly.
 
+## A problem found after the run (2026-11-24, post-hoc correction)
+
+**The pre-registered framework key had a flaw that lets some known frameworks into the structural cell.** The Wyckoff letters in an AFLOW-style label are canonicalised by picking one of several equivalent origin choices, given the grouping of sites into elements. `far_split.py` dropped the element grouping but kept the letters as canonicalised under it. So the same framework with a different element grouping can end up with different letters and be judged "unfamiliar". That biases the result towards "holds".
+
+**Fix:** after dropping the element grouping, re-canonicalise the letters over all equivalent origin choices of the space group (using the table Matbench Discovery's labeller ships with), on both the MP and WBM sides (`src/csp/far_posthoc_canonical.py`). Of the 1,762 structures that were "unfamiliar framework", 398 are in fact known frameworks; none that was "known" changed.
+
+| Corrected cell | Candidates / stable / frameworks with a stable one | Median r [95% interval] | d [95% interval] | Under the same rules |
+|---|---|---|---|---|
+| Structural extrapolation | 920 / 129 / 30 | 0.908 [0.813, 1.034] | 0.573 [0.458, 0.687] | Holds |
+| Chemical extrapolation | 115,088 / 20,300 / — | 1.074 [1.041, 1.102] | 0.462 [0.420, 0.506] | Holds |
+| Double extrapolation | 444 / 102 / 20 | 1.181 [1.056, 1.236] | 0.477 [0.247, 0.713] | Holds |
+
+- The outcome is unchanged after the correction, but the structural cell is closer to the threshold: the lower bound of r is 0.813, just above 0.8. Leaving out each of the 30 frameworks gives r of 0.88–0.96; clustering by chemical system gives [0.84, 0.99].
+- In the corrected structural cell, the top 10 models' r ranges from 0.84 to 1.03; Wrenformer falls to 0.46, CHGNet is 0.79 and MACE-MP-0 0.94.
+- **The pre-registered result is the one of record; the correction is a post-hoc analysis.** Both are shown here so readers can compare. Stage 2 will use the corrected canonicalisation for its framework key from the start.
+- Files: `posthoc_canonical_framework/` (corrected split, decision, per-model results and sensitivity checks).
+
 ## Run health
 
 - The decision code is byte-identical to the pre-registered version (`code_unchanged_since_pre_registration: true` in `config.json`).
@@ -121,6 +158,7 @@ The outcome depends neither on one definition nor on one framework. See `sensiti
 - `per_model_cells.csv`: each model's NRp, interpolation-reference NRp and r in each extrapolation cell
 - `sensitivity.json`: the sensitivity checks
 - `config.json`: code and input hashes, commands, the MPtrj check and timings
+- `posthoc_canonical_framework/`: the same analysis after the post-hoc correction of the framework key
 
 ## Next, in dependency order
 

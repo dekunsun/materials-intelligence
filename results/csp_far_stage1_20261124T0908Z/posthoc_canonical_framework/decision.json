@@ -1,0 +1,83 @@
+{
+ "what": "Far-from-training stability test, Stage 1 (WBM): pre-registered decision (src/csp/far_decide.py)",
+ "decision_models": [
+  "EquiformerV3+DeNS-MP",
+  "DPA-4.0.1-Pro-MPtrj",
+  "DPA-4.0-Pro-MPtrj",
+  "MatRIS-10M-MP",
+  "eSEN-30M-MP",
+  "eqV2 S DeNS",
+  "MatRIS v0.5.0 MPtrj",
+  "DPA-3.1-MPtrj",
+  "AlphaNet-v1-MPtrj",
+  "Eqnorm MPtrj"
+ ],
+ "lead_model": "EquiformerV3+DeNS-MP",
+ "baseline": "Wrenformer",
+ "inputs": {
+  "split_sha256": "f276bcac3c309f64df398cde262a2c37d0b649212a85eaa3f2fc2e2466c7fcf6",
+  "model_metrics_sha256": "2b151933a3911a5a72776121abeb762a0ad9da54f29dacac33eca0c23601ae91"
+ },
+ "thresholds": {
+  "min_stable": 50,
+  "min_frameworks_with_stable": 20,
+  "r_fail_upper": 0.5,
+  "r_hold_lower": 0.8,
+  "d_margin": 0.1
+ },
+ "cells": {
+  "structural_extrapolation": {
+   "n": 920,
+   "stable": 129,
+   "frameworks_with_stable": 30,
+   "median_r": 0.9076763394462427,
+   "median_r_95": [
+    0.813072754159812,
+    1.033984203813245
+   ],
+   "d_lead_minus_baseline": 0.5734278070149648,
+   "d_95": [
+    0.45804313156540066,
+    0.6874553364056993
+   ],
+   "outcome": "holds"
+  },
+  "chemical_extrapolation": {
+   "n": 115088,
+   "stable": 20300,
+   "frameworks_with_stable": 486,
+   "median_r": 1.0738129601431186,
+   "median_r_95": [
+    1.04056902678165,
+    1.1016692611897207
+   ],
+   "d_lead_minus_baseline": 0.46168066419831166,
+   "d_95": [
+    0.419564545728172,
+    0.5058315855366244
+   ],
+   "outcome": "holds"
+  },
+  "double_extrapolation": {
+   "n": 444,
+   "stable": 102,
+   "frameworks_with_stable": 20,
+   "median_r": 1.1814563475067175,
+   "median_r_95": [
+    1.0564671895495812,
+    1.2360327447604433
+   ],
+   "d_lead_minus_baseline": 0.4772961816305469,
+   "d_95": [
+    0.24728660538720076,
+    0.7131413934197354
+   ],
+   "outcome": "holds"
+  }
+ },
+ "d10_stage1": {
+  "cell": "structural_extrapolation",
+  "outcome": "holds",
+  "note": "Stage 1 alone does not change D10 (pre-registered); it updates the evidence only."
+ }
+}
