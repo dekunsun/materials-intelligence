@@ -1,0 +1,85 @@
+{
+ "what": "Alexandria PBE 2025.07.02 pool after exclusions (src/csp/far_stage2_pool.py); truth = own e_above_hull <= 0",
+ "entries": 5777914,
+ "excluded_plus_u": 191520,
+ "excluded_in_wbm": 230202,
+ "excluded_no_framework": 0,
+ "cells": {
+  "chemical_extrapolation": {
+   "n": 3639328,
+   "stable": 87795,
+   "near_hull_unstable_0_0.1": 1264928,
+   "frameworks": 5635,
+   "frameworks_with_stable": 2515,
+   "stable_by_source": {
+    "orbital": 31810,
+    "m3gnet": 23343,
+    "cgat_comp": 18221,
+    "cgat_comp_2": 11283,
+    "cgat_prot": 2232,
+    "extra": 408,
+    "high_throughput": 290,
+    "varia": 167,
+    "genetic": 35,
+    "mhm": 6
+   }
+  },
+  "double_extrapolation": {
+   "n": 194687,
+   "stable": 2233,
+   "near_hull_unstable_0_0.1": 67608,
+   "frameworks": 4666,
+   "frameworks_with_stable": 340,
+   "stable_by_source": {
+    "m3gnet": 880,
+    "orbital": 841,
+    "cgat_comp_2": 333,
+    "cgat_comp": 138,
+    "varia": 22,
+    "extra": 8,
+    "high_throughput": 7,
+    "genetic": 3,
+    "mhm": 1
+   }
+  },
+  "interpolation": {
+   "n": 1431588,
+   "stable": 53418,
+   "near_hull_unstable_0_0.1": 589159,
+   "frameworks": 10901,
+   "frameworks_with_stable": 4483,
+   "stable_by_source": {
+    "extra": 19856,
+    "orbital": 11431,
+    "cgat_comp_2": 8669,
+    "m3gnet": 7173,
+    "cgat_comp": 3912,
+    "cgat_prot": 1168,
+    "high_throughput": 846,
+    "outliers": 127,
+    "varia": 114,
+    "genetic": 104,
+    "substitutions": 15,
+    "mhm": 3
+   }
+  },
+  "structural_extrapolation": {
+   "n": 97442,
+   "stable": 1874,
+   "near_hull_unstable_0_0.1": 43234,
+   "frameworks": 4402,
+   "frameworks_with_stable": 324,
+   "stable_by_source": {
+    "orbital": 665,
+    "cgat_comp_2": 600,
+    "m3gnet": 510,
+    "extra": 46,
+    "cgat_comp": 41,
+    "varia": 5,
+    "genetic": 3,
+    "high_throughput": 3,
+    "mhm": 1
+   }
+  }
+ }
+}

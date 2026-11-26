@@ -1,0 +1,45 @@
+{
+ "what": "Stage 2 of the far-from-training stability test: sample drawn before any model prediction on it",
+ "created_utc": "2026-11-25T17:25Z",
+ "data": {
+  "source": "https://alexandria.icams.rub.de/data/pbe/2025.07.02/",
+  "licence": "CC BY 4.0",
+  "manifest_sha256": "ea4ba28a3d6919dd42173be84a106b2fa15fe1bd72e3d2e5105a29a87db72ff4",
+  "pool_sha256": "4bfedc983978994b2263e9c0240122b4ded85237c478659bd80b059e035ccaa7",
+  "sample_structures_sha256": "893510958e3ff5780b0ba62966d624e64b5850c2b2a83d32cc8e797d46fc3f84"
+ },
+ "sample_csv_sha256": "e9ac1bef26e1de15de01969366418f2d78600e3b23dbeaeecbaac5c0821613ab",
+ "seed": 11,
+ "n_stable_per_cell": 300,
+ "n_unstable_per_bin": 75,
+ "bins_ev_per_atom": [
+  0,
+  0.025,
+  0.05,
+  0.075,
+  0.1
+ ],
+ "code_sha256": {
+  "src/csp/far_stage2_pool.py": "7a53e62393bc3e0e096d9799d39578ad2f1ae7581b1c955ea62090e82d79da4f",
+  "src/csp/far_stage2_sample.py": "ca916be2a62bd7047081977701414750aea75e0e096e776a24915c89dc30747a",
+  "src/csp/far_stage2_relax.py": "ada3d6626d6ae71cc4fc7f7d46c9be04731159cb97845d6200970a389afe86fc",
+  "src/csp/far_stage2_decide.py": "504d5acd8bc26dc4dc5f99ad2b6f75668bfe8c7c0b1e21d9c3fed8f2c0c5b1f7",
+  "src/csp/far_stage2_checks/spglib_framework.py": "1fac4c3c50395a5ad12ab2c4489ff46b9f8141e1a10c6fc8f8a8a9dd3e4170bc",
+  "src/csp/far_posthoc_canonical.py": "ac3c157c5fc97cfe459f6a5246dfa935e253f12a907b7bcf5d02f7bc452c6cfe",
+  "src/csp/far_split.py": "25482c3ec7cbd81409f90c8ead91b03e4d02c9f008d3af755038655634447cc1",
+  "tests/check_far_stage2.py": "6b387395e8a8057675bc7bb4048fdc061f6df05382869407329870591cf7a220"
+ },
+ "model_env": [
+  "ase==3.29.0",
+  "chgnet==0.4.2",
+  "e3nn==0.4.4",
+  "mace-torch==0.3.17",
+  "matris==1.0.0",
+  "numpy==2.5.5",
+  "pymatgen==2026.10.24",
+  "sevenn==0.10.4",
+  "spglib==2.8.0",
+  "torch==2.15.0"
+ ],
+ "platform": "Apple M3 Pro, CPU, torch threads 4"
+}
