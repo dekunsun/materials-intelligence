@@ -1,0 +1,208 @@
+{
+ "what": "Descriptive numbers, Stage 2 (src/csp/far_stage2_describe.py); never change the decision",
+ "stage2_per_model_cell": {
+  "CHGNet": {
+   "double_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.0390713715942385,
+    "median_error_ev_per_atom": -0.02450688996866853,
+    "median_steps": 13.0,
+    "share_not_converged": 0.0
+   },
+   "interpolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.03658145319661473,
+    "median_error_ev_per_atom": -0.01828857842958391,
+    "median_steps": 11.0,
+    "share_not_converged": 0.0033333333333333335
+   },
+   "structural_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.026060288038940227,
+    "median_error_ev_per_atom": -0.009488804377848246,
+    "median_steps": 9.0,
+    "share_not_converged": 0.0016666666666666668
+   }
+  },
+  "MACE-MP-0": {
+   "double_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.02068521308823179,
+    "median_error_ev_per_atom": 0.004407786552868664,
+    "median_steps": 13.0,
+    "share_not_converged": 0.0
+   },
+   "interpolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.013216648701862729,
+    "median_error_ev_per_atom": -0.0008583592328639256,
+    "median_steps": 12.0,
+    "share_not_converged": 0.0
+   },
+   "structural_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.014230186820966514,
+    "median_error_ev_per_atom": 0.0014557793962923782,
+    "median_steps": 11.0,
+    "share_not_converged": 0.0
+   }
+  },
+  "SevenNet-0": {
+   "double_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.014623928317871057,
+    "median_error_ev_per_atom": 0.0034057479052736917,
+    "median_steps": 12.0,
+    "share_not_converged": 0.0
+   },
+   "interpolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.010215656120086826,
+    "median_error_ev_per_atom": -0.001525433754759314,
+    "median_steps": 10.0,
+    "share_not_converged": 0.0
+   },
+   "structural_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.01116731103445856,
+    "median_error_ev_per_atom": -1.3735178223820755e-06,
+    "median_steps": 11.0,
+    "share_not_converged": 0.0
+   }
+  },
+  "MatRIS-10M-MP": {
+   "double_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.00825472187106661,
+    "median_error_ev_per_atom": 0.0030682282555044293,
+    "median_steps": 7.0,
+    "share_not_converged": 0.0
+   },
+   "interpolation": {
+    "n": 600,
+    "failed_or_missing": 1,
+    "median_abs_error_ev_per_atom": 0.005430982400716526,
+    "median_error_ev_per_atom": -6.664939184795251e-07,
+    "median_steps": 6.0,
+    "share_not_converged": 0.0033333333333333335
+   },
+   "structural_extrapolation": {
+    "n": 600,
+    "failed_or_missing": 0,
+    "median_abs_error_ev_per_atom": 0.006395926617634847,
+    "median_error_ev_per_atom": 0.001649915616862193,
+    "median_steps": 7.0,
+    "share_not_converged": 0.0
+   }
+  }
+ },
+ "stage1_somers_D": {
+  "somers_D": {
+   "EquiformerV3+DeNS-MP": {
+    "interpolation": 0.926737977352194,
+    "structural_extrapolation": 0.8455688511255501,
+    "chemical_extrapolation": 0.9425601305563196,
+    "double_extrapolation": 0.9860681114551084
+   },
+   "DPA-4.0.1-Pro-MPtrj": {
+    "interpolation": 0.9186071068124604,
+    "structural_extrapolation": 0.8256254961338312,
+    "chemical_extrapolation": 0.9224063245311134,
+    "double_extrapolation": 0.9720788900355464
+   },
+   "DPA-4.0-Pro-MPtrj": {
+    "interpolation": 0.9174969229717611,
+    "structural_extrapolation": 0.8364644890679054,
+    "chemical_extrapolation": 0.9290169698893522,
+    "double_extrapolation": 0.9680082559339525
+   },
+   "MatRIS-10M-MP": {
+    "interpolation": 0.9117152226129153,
+    "structural_extrapolation": 0.837924715059928,
+    "chemical_extrapolation": 0.9213666110174616,
+    "double_extrapolation": 0.9640809540190345
+   },
+   "eSEN-30M-MP": {
+    "interpolation": 0.9092679616947297,
+    "structural_extrapolation": 0.8271641235213987,
+    "chemical_extrapolation": 0.9268747150758623,
+    "double_extrapolation": 0.9772388487558765
+   },
+   "eqV2 S DeNS": {
+    "interpolation": 0.8884680840554711,
+    "structural_extrapolation": 0.7588961083507286,
+    "chemical_extrapolation": 0.9085019923122193,
+    "double_extrapolation": 0.9551656920077973
+   },
+   "MatRIS v0.5.0 MPtrj": {
+    "interpolation": 0.893164916138562,
+    "structural_extrapolation": 0.77944707415792,
+    "chemical_extrapolation": 0.9075366901216528,
+    "double_extrapolation": 0.9514963880288958
+   },
+   "DPA-3.1-MPtrj": {
+    "interpolation": 0.8872137075386297,
+    "structural_extrapolation": 0.800791854095003,
+    "chemical_extrapolation": 0.8972520726054782,
+    "double_extrapolation": 0.958519665176012
+   },
+   "AlphaNet-v1-MPtrj": {
+    "interpolation": 0.8872480136203806,
+    "structural_extrapolation": 0.8785856388243711,
+    "chemical_extrapolation": 0.9470183844019249,
+    "double_extrapolation": 0.9734548790276345
+   },
+   "Eqnorm MPtrj": {
+    "interpolation": 0.8838646099227863,
+    "structural_extrapolation": 0.822342437695391,
+    "chemical_extrapolation": 0.8935222017877178,
+    "double_extrapolation": 0.9653422772617819
+   },
+   "CHGNet": {
+    "interpolation": 0.7380430214719766,
+    "structural_extrapolation": 0.6082870275090897,
+    "chemical_extrapolation": 0.8028455920611846,
+    "double_extrapolation": 0.8794576310056186
+   },
+   "MACE-MP-0": {
+    "interpolation": 0.8000313867858564,
+    "structural_extrapolation": 0.7511245700173463,
+    "chemical_extrapolation": 0.8240384110478536,
+    "double_extrapolation": 0.9153766769865841
+   },
+   "Wrenformer": {
+    "interpolation": 0.524552267781017,
+    "structural_extrapolation": 0.2181910838012917,
+    "chemical_extrapolation": 0.6147606044788358,
+    "double_extrapolation": 0.6038011695906433
+   }
+  },
+  "median_r_top10": {
+   "structural_extrapolation": 0.910692169371227,
+   "chemical_extrapolation": 1.0143233959033247,
+   "double_extrapolation": 1.0700310765752388
+  },
+  "top10": [
+   "EquiformerV3+DeNS-MP",
+   "DPA-4.0.1-Pro-MPtrj",
+   "DPA-4.0-Pro-MPtrj",
+   "MatRIS-10M-MP",
+   "eSEN-30M-MP",
+   "eqV2 S DeNS",
+   "MatRIS v0.5.0 MPtrj",
+   "DPA-3.1-MPtrj",
+   "AlphaNet-v1-MPtrj",
+   "Eqnorm MPtrj"
+  ]
+ }
+}

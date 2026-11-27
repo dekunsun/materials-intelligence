@@ -77,6 +77,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--threads", type=int)
     ap.add_argument("--structures", default=str(STRUCTURES), help="for timing tests only")
+    ap.add_argument("--exclude", nargs="*", default=[],
+                    help="mat_ids to leave for a separate run (operational only: e.g. one that ran out of memory)")
     args = ap.parse_args()
     import torch
     from pymatgen.core import Structure
@@ -89,6 +91,7 @@ def main() -> int:
     ids = [ids[i] for i in np.random.default_rng(SEED).permutation(len(ids))]
     if args.limit:
         ids = ids[:args.limit]
+    ids = [i for i in ids if i not in set(args.exclude)]
     out = Path(args.run) / "predictions" / f"{args.model}.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
     done = set()

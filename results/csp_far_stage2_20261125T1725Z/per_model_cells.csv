@@ -1,0 +1,17 @@
+analysis,cell,model,D_cell,D_interpolation,r
+all_sources,structural_extrapolation,CHGNet,0.3089,0.2645,1.1678638941398864
+all_sources,structural_extrapolation,MACE-MP-0,0.5432,0.5554,0.9780338494778538
+all_sources,structural_extrapolation,SevenNet-0,0.6183,0.6486,0.9532839962997225
+all_sources,structural_extrapolation,MatRIS-10M-MP,0.7707,0.8209,0.938847606285784
+all_sources,double_extrapolation,CHGNet,0.3507,0.2645,1.3258979206049148
+all_sources,double_extrapolation,MACE-MP-0,0.4362,0.5554,0.7853799063737846
+all_sources,double_extrapolation,SevenNet-0,0.5799,0.6486,0.8940795559666975
+all_sources,double_extrapolation,MatRIS-10M-MP,0.758,0.8209,0.9233767815811914
+without_m3gnet_orbital,structural_extrapolation,CHGNet,0.412,0.2692,1.5304606240713223
+without_m3gnet_orbital,structural_extrapolation,MACE-MP-0,0.5448,0.6243,0.8726573762614127
+without_m3gnet_orbital,structural_extrapolation,SevenNet-0,0.6558,0.7074,0.9270568278201866
+without_m3gnet_orbital,structural_extrapolation,MatRIS-10M-MP,0.8441,0.8664,0.9742613111726686
+without_m3gnet_orbital,double_extrapolation,CHGNet,0.3935,0.2692,1.461738484398217
+without_m3gnet_orbital,double_extrapolation,MACE-MP-0,0.3874,0.6243,0.620534999199103
+without_m3gnet_orbital,double_extrapolation,SevenNet-0,0.4404,0.7074,0.6225614927905004
+without_m3gnet_orbital,double_extrapolation,MatRIS-10M-MP,0.7118,0.8664,0.8215604801477377

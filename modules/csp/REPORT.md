@@ -117,6 +117,8 @@ AI 能一次产出几十万个候选晶体结构，但每验证一个都要花�
     - 所以在这个设置下，PEROV 的下降不能用“数据变少”解释，PEROV 组和随机组也不再是只训练一次。判定脚本在任何 R 组结果出来之前就 commit 了。
     - 范围：只有 11 个目标、一个模型（EquiCSP）、每组 3 次训练（ABC2D6 组 1 次）。它没有说明框架里哪些结构起作用。详见 [`results/csp_r_eval_20261124T0335Z/report.md`](../../results/csp_r_eval_20261124T0335Z/report.md)。
 
+- **2026-11-27 更新：远离训练数据的稳定性检验，两个阶段都成立。** 按预登记规则，只用 MP 数据训练的模型在框架不在 MP 里、化学体系熟悉的候选上，挑稳定结构的能力和熟悉的候选上相近：第一阶段（WBM）0.91（事后修正后，95% 区间 0.81–1.03），第二阶段（Alexandria，四个模型，1,800 个结构）0.97（0.80–1.19）。化学和框架都陌生时为部分成立。第二阶段从 DFT 弛豫后的结构出发，没有模板式基线；两个下限都刚过 0.8。D10 从暂缓改为候选投入。详见 [`results/csp_far_stage2_20261125T1725Z/report.md`](../../results/csp_far_stage2_20261125T1725Z/report.md)。
+
 **和 D2A 合起来看。** D2A 的候选来自对已知结构做元素替换，按筛选时的信息判断，新结构类型只占 2%；D2B 说明在真正要预测新结构时，生成模型还没有超过模板。所以"AI 能发现新结构"这个卖点，目前缺的是**离已知原型更远**的测试证据，而不是更高的排行榜分数。
 
 ## 这个结果能改变什么决策
@@ -295,6 +297,8 @@ This part runs no experiments; it audits one benchmark paper and one review. All
     - with the same number removed at random (R1–R3), it is 8, 8 and 8, the same as the 8 with only the ABC2D6 family removed.
     - So in this setup, PEROV's drop is not explained by less data, and the PEROV and random arms are no longer single runs. The decision script was committed before any R result existed.
     - Scope: only 11 targets, one model (EquiCSP), and 3 runs per arm (1 for ABC2D6). It does not show which framework structures matter. See [`results/csp_r_eval_20261124T0335Z/report.md`](../../results/csp_r_eval_20261124T0335Z/report.md).
+
+- **Update 2026-11-27: the stability test far from training data holds in both stages.** By the pre-registered rules, MP-only models pick stable structures about as well on candidates whose framework is absent from MP (familiar chemistry) as on familiar ones: Stage 1 (WBM) 0.91 after a post-hoc fix (95% interval 0.81–1.03), Stage 2 (Alexandria, four models, 1,800 structures) 0.97 (0.80–1.19). With both chemistry and framework unfamiliar, the outcome is partial. Stage 2 starts from DFT-relaxed structures and has no template baseline; both lower bounds are just above 0.8. D10 moves from defer to candidate investment. See [`results/csp_far_stage2_20261125T1725Z/report.md`](../../results/csp_far_stage2_20261125T1725Z/report.md).
 
 **Taken together with D2A.** D2A's candidates come from element substitution on known structures; judged by screening-time information, new structure types make up only 2%. D2B shows that when new structures really have to be predicted, generative models do not yet outperform templates. So what the selling point "AI can discover new structures" currently lacks is test evidence **further from known prototypes**, not higher leaderboard scores.
 

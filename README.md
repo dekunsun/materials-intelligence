@@ -36,6 +36,8 @@
 
 ![CSP 随机移除对照：逐目标结果](results/csp_r_eval_20261124T0335Z/per_target_consensus.png)
 
+**远离训练数据的稳定性检验（预登记，两个阶段）。** 只用 MP 数据训练的模型，在框架不在 MP 里、化学体系熟悉的候选上，挑出稳定结构的能力和熟悉的候选上相近：第一阶段（WBM）比值 0.91（事后修正后），第二阶段（Alexandria，四个模型）0.97，95% 区间下限都刚过 0.8 的门槛。化学和框架都陌生时开始下降（部分成立）。按预登记规则，D10 从“暂缓”改为“候选投入”。设计见 [modules/csp/FAR_FROM_TRAINING_TEST.md](modules/csp/FAR_FROM_TRAINING_TEST.md) 和 [modules/csp/FAR_FROM_TRAINING_STAGE2.md](modules/csp/FAR_FROM_TRAINING_STAGE2.md)，结果见 [第一阶段](results/csp_far_stage1_20261124T0908Z/report.md) 和 [第二阶段](results/csp_far_stage2_20261125T1725Z/report.md)。
+
 ## 证据规则
 
 每个模块都按同一套规则做：
@@ -165,6 +167,8 @@ Both re-scoring modules match the official leaderboard value by value (κ_SRME: 
 **CSP random-removal control.** With the perovskite frameworks removed, the three training seeds recover 3, 4 and 4 targets; with the same number of structures removed at random, every seed recovers 8. Under the pre-registered rules the outcome is template_specific. Design and scope: [modules/csp/RANDOM_REMOVAL_CONTROL.md](modules/csp/RANDOM_REMOVAL_CONTROL.md); results: [results/csp_r_eval_20261124T0335Z/report.md](results/csp_r_eval_20261124T0335Z/report.md).
 
 ![CSP random-removal control: per-target results](results/csp_r_eval_20261124T0335Z/per_target_consensus.png)
+
+**Stability test far from training data (pre-registered, two stages).** On candidates whose framework is absent from MP but whose chemistry is familiar, MP-only models pick stable structures about as well as on familiar candidates: Stage 1 (WBM) ratio 0.91 (after a post-hoc fix), Stage 2 (Alexandria, four models) 0.97, with both 95% lower bounds just above the 0.8 threshold. When chemistry and framework are both unfamiliar, performance starts to drop (partial). By the pre-registered rule, D10 moves from "defer" to "candidate investment". Design: [modules/csp/FAR_FROM_TRAINING_TEST.md](modules/csp/FAR_FROM_TRAINING_TEST.md) and [modules/csp/FAR_FROM_TRAINING_STAGE2.md](modules/csp/FAR_FROM_TRAINING_STAGE2.md); results: [Stage 1](results/csp_far_stage1_20261124T0908Z/report.md) and [Stage 2](results/csp_far_stage2_20261125T1725Z/report.md).
 
 ### Evidence rules
 

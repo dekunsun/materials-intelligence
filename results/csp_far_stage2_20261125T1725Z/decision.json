@@ -1,0 +1,130 @@
+{
+ "what": "Stage 2 decision (src/csp/far_stage2_decide.py); structural cell decides",
+ "outcome": "holds",
+ "main": {
+  "structural_extrapolation": {
+   "n": 600,
+   "stable": 300,
+   "frameworks": 184,
+   "frameworks_with_stable": 90,
+   "median_r": 0.9656911691886034,
+   "median_r_95": [
+    0.8043599985635996,
+    1.1868032931080374
+   ],
+   "median_D": 0.5807777777777777,
+   "median_D_95": [
+    0.4887894684701224,
+    0.683461405474808
+   ],
+   "D_cell": {
+    "CHGNet": 0.3089,
+    "MACE-MP-0": 0.5432,
+    "SevenNet-0": 0.6183,
+    "MatRIS-10M-MP": 0.7707
+   },
+   "D_interpolation": {
+    "CHGNet": 0.2645,
+    "MACE-MP-0": 0.5554,
+    "SevenNet-0": 0.6486,
+    "MatRIS-10M-MP": 0.8209
+   },
+   "outcome": "holds"
+  },
+  "double_extrapolation": {
+   "n": 600,
+   "stable": 300,
+   "frameworks": 170,
+   "frameworks_with_stable": 88,
+   "median_r": 0.9087198019063059,
+   "median_r_95": [
+    0.7652945700382809,
+    1.0570162901042317
+   ],
+   "median_D": 0.5080888888888889,
+   "median_D_95": [
+    0.42577625947708525,
+    0.6082136349356903
+   ],
+   "D_cell": {
+    "CHGNet": 0.3507,
+    "MACE-MP-0": 0.4362,
+    "SevenNet-0": 0.5799,
+    "MatRIS-10M-MP": 0.758
+   },
+   "D_interpolation": {
+    "CHGNet": 0.2645,
+    "MACE-MP-0": 0.5554,
+    "SevenNet-0": 0.6486,
+    "MatRIS-10M-MP": 0.8209
+   },
+   "outcome": "partial"
+  }
+ },
+ "without_m3gnet_orbital": {
+  "structural_extrapolation": {
+   "n": 294,
+   "stable": 110,
+   "frameworks": 98,
+   "frameworks_with_stable": 39,
+   "median_r": 0.9506836832370438,
+   "median_r_95": [
+    0.8267636089781036,
+    1.1357255131130608
+   ],
+   "median_D": 0.6002964426877471,
+   "median_D_95": [
+    0.5050243557510999,
+    0.7309986152242898
+   ],
+   "D_cell": {
+    "CHGNet": 0.412,
+    "MACE-MP-0": 0.5448,
+    "SevenNet-0": 0.6558,
+    "MatRIS-10M-MP": 0.8441
+   },
+   "D_interpolation": {
+    "CHGNet": 0.2692,
+    "MACE-MP-0": 0.6243,
+    "SevenNet-0": 0.7074,
+    "MatRIS-10M-MP": 0.8664
+   },
+   "outcome": "holds"
+  },
+  "double_extrapolation": {
+   "n": 217,
+   "stable": 73,
+   "frameworks": 80,
+   "frameworks_with_stable": 27,
+   "median_r": 0.722085977801402,
+   "median_r_95": [
+    0.48855498672977343,
+    0.9529490800632026
+   ],
+   "median_D": 0.41695205479452047,
+   "median_D_95": [
+    0.2759413099352124,
+    0.5953778108465608
+   ],
+   "D_cell": {
+    "CHGNet": 0.3935,
+    "MACE-MP-0": 0.3874,
+    "SevenNet-0": 0.4404,
+    "MatRIS-10M-MP": 0.7118
+   },
+   "D_interpolation": {
+    "CHGNet": 0.2692,
+    "MACE-MP-0": 0.6243,
+    "SevenNet-0": 0.7074,
+    "MatRIS-10M-MP": 0.8664
+   },
+   "outcome": "partial"
+  }
+ },
+ "failed_relaxations": {
+  "CHGNet": 0,
+  "MACE-MP-0": 0,
+  "SevenNet-0": 0,
+  "MatRIS-10M-MP": 1
+ }
+}
