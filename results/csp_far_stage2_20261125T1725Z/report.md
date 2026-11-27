@@ -47,7 +47,7 @@ Somers' D：任取一个稳定、一个不稳定的结构，模型把稳定的�
 - 输入是 DFT 弛豫后的结构，比从初始结构出发容易。
 - 预测凸包距离里含有 DFT 真值，D 衡量的是误差是否小于离凸包的距离，不是从零开始的发现能力。
 - 没有模板式基线，增量价值只能和随机比（D > 0.2）；第一阶段里模板式基线 Wrenformer 在结构外推格明显下降。
-- 排除了 GGA+U 体系，不覆盖含过渡金属的氧化物和氟化物。
+- 排除了 GGA+U 体系，不覆盖含 Co、Cr、Fe、Mn、Mo、Ni、V、W 的氧化物和氟化物（其他过渡金属的氧化物和氟化物仍在样本里）。
 - 结构外推格的稳定结构多来自机器学习预筛的来源（orbital、cgat_comp_2、m3gnet）；分层只去掉了两个。
 - 一台 Mac CPU，四个模型；不是第一阶段的前 10 名。
 
@@ -106,7 +106,7 @@ Each model's D (all sources):
 - Inputs are DFT-relaxed structures, which is easier than starting from initial structures.
 - The predicted hull distance contains the DFT truth, so D measures whether the error is smaller than the distance to the hull, not discovery from scratch.
 - There is no template-like baseline, so added value is judged only against random (D > 0.2); in Stage 1 the template-like baseline Wrenformer dropped clearly in the structural cell.
-- GGA+U systems are excluded, so transition-metal oxides and fluorides are not covered.
+- GGA+U systems are excluded, so oxides and fluorides of Co, Cr, Fe, Mn, Mo, Ni, V and W are not covered (those of other transition metals remain in the sample).
 - Most stable structures in the structural cell come from ML pre-screened sources (orbital, cgat_comp_2, m3gnet); the stratification removes only two of them.
 - One Mac CPU and four models, which are not Stage 1's top 10.
 
