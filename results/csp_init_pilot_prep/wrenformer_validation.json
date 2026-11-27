@@ -1,0 +1,9 @@
+{
+ "n": 5000,
+ "what": "single checkpoint vs published 10-model ensemble, WBM initial labels",
+ "mean_abs_vs_ensemble": 0.03205982679386425,
+ "corr_vs_ensemble": 0.9984355164041568,
+ "mae_single_vs_dft": 0.11293124767229672,
+ "mae_ensemble_vs_dft": 0.1050729208,
+ "median_abs_vs_ensemble": 0.018901004693508215
+}
